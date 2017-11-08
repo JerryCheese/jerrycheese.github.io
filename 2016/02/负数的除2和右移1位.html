@@ -88,7 +88,7 @@
 <meta property="og:description" content="令人费解的输出且看如下代码，试问输出是什么。 1234int F, G, X = -5;F = X / 2;G = X &amp;gt;&amp;gt; 1;Console.WriteLine(&amp;quot;F = &amp;#123;0&amp;#125;, G= &amp;#123;1&amp;#125;&amp;quot;, F, G); 老师说过“乘2是二进制左移1位”，那除2理所当然应该是右移1位，所以两者结果是一样的。 然而，输出却是F =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1flajjjcgflj30cj06mjrv.jpg">
-<meta property="og:updated_time" content="2017-11-08T04:04:06.213Z">
+<meta property="og:updated_time" content="2017-11-08T04:06:56.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="负数的除2和右移1位">
 <meta name="twitter:description" content="令人费解的输出且看如下代码，试问输出是什么。 1234int F, G, X = -5;F = X / 2;G = X &amp;gt;&amp;gt; 1;Console.WriteLine(&amp;quot;F = &amp;#123;0&amp;#125;, G= &amp;#123;1&amp;#125;&amp;quot;, F, G); 老师说过“乘2是二进制左移1位”，那除2理所当然应该是右移1位，所以两者结果是一样的。 然而，输出却是F =">
@@ -346,18 +346,18 @@
       
 
       
-        <h3 id="令人费解的输出"><a href="#令人费解的输出" class="headerlink" title="令人费解的输出"></a>令人费解的输出</h3><p>且看如下代码，试问输出是什么。</p>
+        <h2 id="令人费解的输出"><a href="#令人费解的输出" class="headerlink" title="令人费解的输出"></a>令人费解的输出</h2><p>且看如下代码，试问输出是什么。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int F, G, X = -5;</div><div class="line">F = X / 2;</div><div class="line">G = X &gt;&gt; 1;</div><div class="line">Console.WriteLine(&quot;F = &#123;0&#125;, G= &#123;1&#125;&quot;, F, G);</div></pre></td></tr></table></figure>
 <p>老师说过“乘2是二进制左移1位”，那除2理所当然应该是右移1位，所以两者结果是一样的。</p>
 <p>然而，输出却是<code>F = -2, G = -3</code> ，在VS2013中，换成在codeblocks中，结果是一样的。</p>
-<h3 id="反汇编"><a href="#反汇编" class="headerlink" title="反汇编"></a>反汇编</h3><p>在VS2013中对上述代码反汇编得到下图</p>
+<h2 id="反汇编"><a href="#反汇编" class="headerlink" title="反汇编"></a>反汇编</h2><p>在VS2013中对上述代码反汇编得到下图</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1flajjjcgflj30cj06mjrv.jpg" alt=""></p>
 <p>第一句：<code>F = X / 2</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">00DF39F7  mov         eax,dword ptr [ebp-58h]   ;将X的值移到寄存器eax  </div><div class="line">00DF39FA  mov         ecx,2                     ;将值2移到ecx  </div><div class="line">00DF39FF  cdq                                   ;将eax高位扩展到edx  </div><div class="line">00DF3A00  idiv        eax,ecx                   ;做除法运算  </div><div class="line">00DF3A02  mov         dword ptr [ebp-50h],eax   ;移动到内存</div></pre></td></tr></table></figure>
 <p>idiv指令是<code>带符号的二进制除法</code> </p>
 <p>第二句：<code>G = X &gt;&gt; 1</code></p>
 <p>逻辑右移，最低位被舍弃</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><strong>除法运算，结果都向0取整；位运算结果向下取整</strong></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p><strong>除法运算，结果都向0取整；位运算结果向下取整</strong></p>
 
       
     </div>
@@ -388,14 +388,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/12/汇编实现回文判断.html" rel="next" title="汇编实现回文判断">
+                <i class="fa fa-chevron-left"></i> 汇编实现回文判断
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/hello-world.html" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/打开FTP服务器上的文件夹时发生错误-请检查是否有权限访问该文件夹.html" rel="prev" title="打开FTP服务器上的文件夹时发生错误,请检查是否有权限访问该文件夹">
+                打开FTP服务器上的文件夹时发生错误,请检查是否有权限访问该文件夹 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +485,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +498,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -529,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#令人费解的输出"><span class="nav-number">1.</span> <span class="nav-text">令人费解的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反汇编"><span class="nav-number">2.</span> <span class="nav-text">反汇编</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#令人费解的输出"><span class="nav-number">1.</span> <span class="nav-text">令人费解的输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反汇编"><span class="nav-number">2.</span> <span class="nav-text">反汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>

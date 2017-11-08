@@ -11,9 +11,51 @@
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
   <entry>
+    <title><![CDATA[Centos7修改docker的Data Space Total大小]]></title>
+    <url>%2F2017%2F11%2FCentos7%E4%BF%AE%E6%94%B9docker%E7%9A%84Data-Space-Total%E5%A4%A7%E5%B0%8F.html</url>
+    <content type="text"><![CDATA[记得备份你的容器此处就不多做介绍了 –storage-opts 参数介绍devicemapper文档：https://github.com/moby/moby/tree/master/daemon/graphdriver/devmapperdocker官方文档：https://docs.docker.com/engine/reference/commandline/dockerd/#options-per-storage-driver 修改–storage-opts参数停止docker，修改配置，重新加载配置12sudo systemctl stop dockersudo vi /lib/systemd/system/docker.service 找到ExecStart=/usr/bin/dockerd在这一行后面加上--storage-opt dm.loopdatasize=8G --storage-opt dm.loopmetadatasize=4G --storage-opt dm.basesize=8G 意思是为，设置devicemapper的data为8G，metadata为4G，镜像的大小不能大于8G 记得还要抹去现有的空间，请确保你已经完成了第一步1234sudo rm -rf /var/lib/dockersudo mkdir -p /var/lib/docker/devicemapper/devicemapper/sudo dd if=/dev/zero of=/var/lib/docker/devicemapper/devicemapper/data bs=1M count=0 seek=8192sudo dd if=/dev/zero of=/var/lib/docker/devicemapper/devicemapper/metadata bs=1M count=0 seek=4096 完成后运行123sudo systemctl daemon-reloadsudo systemctl start dockerdocker info 查看是否设置正确，貌似比预设的大了一点点。]]></content>
+      <tags>
+        <tag>devopps</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下使用命令行或脚本删除文件到废纸篓]]></title>
+    <url>%2F2017%2F10%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%88%96%E8%84%9A%E6%9C%AC%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93.html</url>
+    <content type="text"><![CDATA[mac删除文件有两种方式： 使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究 Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废纸篓但是它只是一个普通的目录，只是Finder将删除的文件移动到了这个目录而已，不相信？接着往下看 ~/.Trash的本质只是文件夹123$ cd ~$ echo &quot;666666&quot; &gt;&gt; wantodel.txt$ mv wantodel.txt ~/.Trash 此时打开你的废纸篓一看，里面有一个wantodel.txt文件，但是你无法将它放回原处，而如果你使用Finder的移到废纸篓功能删除的文件却可以放回原处 Finder是如何实现放回原处的呢？最有可能是将操作记录到了数据库中。 不大可能写在log日志中，因为我grep了整个磁盘都没找到相关的文件。 最好的帮手是Finder既然~/.Trash只是普通文件夹，那我们单纯使用linux命令是无法达到目的的了。我们现在已知Finder可以达到预期目的，如果我们能调用或是告诉Finder的我们要做什么，并且它也愿意做，不就可以达到目的了么？在window中有一个消息的概念，意思是一个应用程序A可以对另一个应用程序B发送消息以操作B来完成某项指定的任务，那Mac种是否也有这种或是类似这种的机制呢？答案是AppleScript，是一种脚本语言，可以用来控制Mac上的应用程序。最后附上使用shell通知Finder程序移动文件废纸篓的样例代码1234567#!/bin/bashfp=/absolute/path/to/fileosascript &lt;&lt; EOFtell application &quot;Finder&quot; posix path of ((delete posix file &quot;$&#123;fp&#125;&quot;) as unicode text)end tellEOF]]></content>
+      <tags>
+        <tag>mac</tag>
+        <tag>applescript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git托管现有代码]]></title>
+    <url>%2F2017%2F02%2Fgit%E6%89%98%E7%AE%A1%E7%8E%B0%E6%9C%89%E4%BB%A3%E7%A0%81.html</url>
+    <content type="text"><![CDATA[场景：将现有的文件托管至新的git repo 用到的命令： git clone 复制网络仓库到本地 git add [file] 加入一个文件/目录到版本控制 git commit 提交修改到仓库(本地) git push 推送对仓库的修改到网络仓库 操作步骤如果对一个非空目录执行clone命令是会失败的，因为git不允许这样做。 进入项目目录（非空），运行下面命令： 1234567cd /path/to/dirgit clone &#123;repo_url&#125; tmpmv tmp/.git .rmdir tmpgit add .git commit -m &apos;current files&apos;git push 解释.git是一个隐藏的git用于管理本地代码的目录 git clone {repo_url} tmp 其实是把远程repo加载到tmp目录 将tmp/.git 直接移动到项目的根目录后运行git add . 其实相当于是把项目的文件放到了本地的git repo中 此时运行git commit 就提交了现有项目文件到本地，git push 就把操作推向了服务器 操作完成后，你的另外一个同事就可以使用git clone {repo_url} 来加载你的代码]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[打开FTP服务器上的文件夹时发生错误,请检查是否有权限访问该文件夹]]></title>
+    <url>%2F2017%2F01%2F%E6%89%93%E5%BC%80FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%B6%E5%8F%91%E7%94%9F%E9%94%99%E8%AF%AF-%E8%AF%B7%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E8%AF%A5%E6%96%87%E4%BB%B6%E5%A4%B9.html</url>
+    <content type="text"><![CDATA[环境：Wndows2012 R2， 已完成操作：FTP服务器搭建、防火墙规则允许(或关闭防火墙)、权限已给(Administrator) 客户端：FileZilla（或ie浏览器、windows资源管理器） 场景： 使用windows资源管理器连接ftp报错：“打开FTP服务器上的文件夹时发生错误,请检查是否有权限访问该文件夹” 使用FileZilla链接时超时 最后解决方法： 在FileZilla中将FTP模式改为PORT(主动模式)即可]]></content>
+      <tags>
+        <tag>FTP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[负数的除2和右移1位]]></title>
     <url>%2F2016%2F02%2F%E8%B4%9F%E6%95%B0%E7%9A%84%E9%99%A42%E5%92%8C%E5%8F%B3%E7%A7%BB1%E4%BD%8D.html</url>
     <content type="text"><![CDATA[令人费解的输出且看如下代码，试问输出是什么。 1234int F, G, X = -5;F = X / 2;G = X &gt;&gt; 1;Console.WriteLine(&quot;F = &#123;0&#125;, G= &#123;1&#125;&quot;, F, G); 老师说过“乘2是二进制左移1位”，那除2理所当然应该是右移1位，所以两者结果是一样的。 然而，输出却是F = -2, G = -3 ，在VS2013中，换成在codeblocks中，结果是一样的。 反汇编在VS2013中对上述代码反汇编得到下图 第一句：F = X / 2 1234500DF39F7 mov eax,dword ptr [ebp-58h] ;将X的值移到寄存器eax 00DF39FA mov ecx,2 ;将值2移到ecx 00DF39FF cdq ;将eax高位扩展到edx 00DF3A00 idiv eax,ecx ;做除法运算 00DF3A02 mov dword ptr [ebp-50h],eax ;移动到内存 idiv指令是带符号的二进制除法 第二句：G = X &gt;&gt; 1 逻辑右移，最低位被舍弃 结论除法运算，结果都向0取整；位运算结果向下取整]]></content>
+      <tags>
+        <tag>汇编</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[汇编实现回文判断]]></title>
+    <url>%2F2015%2F12%2F%E6%B1%87%E7%BC%96%E5%AE%9E%E7%8E%B0%E5%9B%9E%E6%96%87%E5%88%A4%E6%96%AD.html</url>
+    <content type="text"><![CDATA[不多说，直接上代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061DATA SEGMENT Prompt DB &apos;Please enter a string:$&apos; YesStr DB 13, 10, &apos;This string is palindrome$&apos; NoStr DB 13, 10, &apos;This string is not palindrome$&apos; Input DB 128, ?, 128 DUP(0) DATA ENDS STACK SEGMENT DB 128 DUP(?) STACK ENDS CODE SEGMENT ASSUME CS:CODE, DS:DATA, SS:STACK MAIN: MOV AX, DATA MOV DS, AX MOV DX, offset Prompt MOV AH, 09H INT 21H ; MOV DX, OFFSET Input MOV AH, 0AH INT 21H ; MOV DI, OFFSET Input MOV SI, OFFSET Input XOR CX, CX MOV CL, [DI+1] ADD DI, 2 ADD SI, 2 DEC CX ADD DI, CX ;force DI point to the last word of Input AGAIN: CMP SI, DI JA TESSKIP MOV AH, byte ptr [SI] MOV AL, byte ptr [DI] CMP AH, AL JNE NOSKIP INC SI DEC DI JMP AGAIN TESSKIP: MOV DX, OFFSET YesStr MOV AH, 09H INT 21H JMP ENDSKPI ; NOSKIP: MOV DX, OFFSET NoStr MOV AH, 09H INT 21H ; ENDSKPI: MOV AH, 4CH INT 21H CODE ENDS END MAIN]]></content>
       <tags>
         <tag>汇编</tag>
       </tags>

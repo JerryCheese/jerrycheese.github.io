@@ -10,4 +10,12 @@
     <url>%2F2017%2F11%2Fhello-world.html</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
+  <entry>
+    <title><![CDATA[负数的除2和右移1位]]></title>
+    <url>%2F2016%2F02%2F%E8%B4%9F%E6%95%B0%E7%9A%84%E9%99%A42%E5%92%8C%E5%8F%B3%E7%A7%BB1%E4%BD%8D.html</url>
+    <content type="text"><![CDATA[令人费解的输出且看如下代码，试问输出是什么。 1234int F, G, X = -5;F = X / 2;G = X &gt;&gt; 1;Console.WriteLine(&quot;F = &#123;0&#125;, G= &#123;1&#125;&quot;, F, G); 老师说过“乘2是二进制左移1位”，那除2理所当然应该是右移1位，所以两者结果是一样的。 然而，输出却是F = -2, G = -3 ，在VS2013中，换成在codeblocks中，结果是一样的。 反汇编在VS2013中对上述代码反汇编得到下图 第一句：F = X / 2 1234500DF39F7 mov eax,dword ptr [ebp-58h] ;将X的值移到寄存器eax 00DF39FA mov ecx,2 ;将值2移到ecx 00DF39FF cdq ;将eax高位扩展到edx 00DF3A00 idiv eax,ecx ;做除法运算 00DF3A02 mov dword ptr [ebp-50h],eax ;移动到内存 idiv指令是带符号的二进制除法 第二句：G = X &gt;&gt; 1 逻辑右移，最低位被舍弃 结论除法运算，结果都向0取整；位运算结果向下取整]]></content>
+      <tags>
+        <tag>汇编</tag>
+      </tags>
+  </entry>
 </search>

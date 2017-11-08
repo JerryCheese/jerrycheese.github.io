@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="可建韦&#39;s 博客">
 <meta property="og:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-08T06:22:32.175Z">
+<meta property="og:updated_time" content="2017-11-08T06:41:31.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下使用命令行或脚本删除文件到废纸篓">
 <meta name="twitter:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
@@ -407,7 +407,7 @@
 <p>此时打开你的废纸篓一看，里面有一个<code>wantodel.txt</code>文件，但是你无法将它<code>放回原处</code>，而如果你使用Finder的<code>移到废纸篓</code>功能删除的文件却可以<code>放回原处</code></p>
 <h3 id="Finder是如何实现放回原处的呢？"><a href="#Finder是如何实现放回原处的呢？" class="headerlink" title="Finder是如何实现放回原处的呢？"></a>Finder是如何实现放回原处的呢？</h3><p>最有可能是将操作记录到了数据库中。</p>
 <p>不大可能写在log日志中，因为我grep了整个磁盘都没找到相关的文件。</p>
-<h3 id="最好的帮手是Finder"><a href="#最好的帮手是Finder" class="headerlink" title="最好的帮手是Finder"></a>最好的帮手是Finder</h3><p>既然<code>~/.Trash</code>只是普通文件夹，那我们单纯使用linux命令是无法达到目的的了。<br>我们现在已知<code>Finder</code>可以达到预期目的，如果我们能调用或是告诉<code>Finder</code>的我们要做什么，并且它也愿意做，不就可以达到目的了么？<br>在window中有一个<code>消息</code>的概念，意思是一个应用程序A可以对另一个应用程序B发送<code>消息</code>以操作B来完成某项指定的任务，那Mac种是否也有这种或是类似这种的机制呢？<br>答案是AppleScript，是一种脚本语言，可以用来控制Mac上的应用程序。<br>最后附上使用shell通知Finder程序移动文件废纸篓的样例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">fp=/absolute/path/to/file</div><div class="line">osascript &lt;&lt; EOF</div><div class="line">tell application &quot;Finder&quot;</div><div class="line">    posix path of ((delete posix file &quot;$&#123;fp&#125;&quot;) as unicode text)</div><div class="line">end tell</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
+<h3 id="最好的帮手是Finder"><a href="#最好的帮手是Finder" class="headerlink" title="最好的帮手是Finder"></a>最好的帮手是Finder</h3><p>既然<code>~/.Trash</code>只是普通文件夹，那我们单纯使用linux命令是无法达到目的的了。<br>我们现在已知<code>Finder</code>可以达到预期目的，如果我们能调用或是告诉<code>Finder</code>的我们要做什么，并且它也愿意做，不就可以达到目的了么？<br>在window中有一个<code>消息</code>的概念，意思是一个应用程序A可以对另一个应用程序B发送<code>消息</code>以操作B来完成某项指定的任务，那Mac种是否也有这种或是类似这种的机制呢？<br>答案是AppleScript，是一种脚本语言，可以用来控制Mac上的应用程序。<br>最后附上使用shell通知Finder程序移动文件废纸篓的样例代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line">fp=/absolute/path/to/file</div><div class="line">osascript &lt;&lt; EOF</div><div class="line">tell application "Finder"</div><div class="line">    posix path of ((delete posix file "$&#123;fp&#125;") as unicode text)</div><div class="line">end tell</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
 
       
     </div>

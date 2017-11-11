@@ -695,31 +695,22 @@
 
 
 
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: true,
+        notify: false,
+        app_id: 'EQT2jfdoprWjnALVbYHro6Wy-gzGzoHsz',
+        app_key: 'zgjyNKXovG43HpCN4Rq9zC0G',
+        placeholder: '键入您的高见...'
+    });
+  </script>
 
 
-   
-   
-   
-   
-   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-   
-       <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.pathname, 
-                   owner: 'JerryCheese',
-                   repo: 'hexo-kjwsblog',
-                   oauth: {
-                       client_id: '7458d38a2be7981a0f29',
-                       client_secret: '1e2183eba0284fa9dc81e9ba4e5b65814eced695',
-                   }});
-               gitment.render('gitment-container');
-           }
-       </script>
-   
 
 
 

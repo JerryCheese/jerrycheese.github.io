@@ -1937,7 +1937,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #87ffff;
+  background: #c7ffc9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2792,9 +2792,6 @@ article {
 }
 .posts-expand .post-eof {
   margin: 60px auto 40px;
-}
-article .post-body p {
-  text-indent: 2em;
 }
 .pace .pace-activity,
 .pace .pace-activity:after,

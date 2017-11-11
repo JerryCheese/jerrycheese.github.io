@@ -185,8 +185,8 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-family: 'Open Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 h1,
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Open Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -226,51 +226,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
+  font-size: 26px;
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 h2 {
-  font-size: 20px;
+  font-size: 24px;
 }
 @media (max-width: 767px) {
   h2 {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 h3 {
-  font-size: 18px;
+  font-size: 22px;
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 h4 {
-  font-size: 16px;
+  font-size: 20px;
 }
 @media (max-width: 767px) {
   h4 {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 h5 {
-  font-size: 14px;
+  font-size: 18px;
 }
 @media (max-width: 767px) {
   h5 {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 h6 {
-  font-size: 12px;
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   h6 {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 p {
@@ -486,7 +486,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
@@ -501,7 +501,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 14px;
 }
 pre {
   padding: 10px;
@@ -1124,7 +1124,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Open Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1212,7 +1212,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Open Sans', 'Open Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1230,7 +1230,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1490,7 +1490,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Open Sans', 'Open Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1947,7 +1947,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6cd791;
+  background: #ff2dff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2783,4 +2783,21 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+article {
+  word-break: break-all;
+}
+.posts-expand .post-eof {
+  margin: 60px auto 40px;
+}
+article p {
+  text-indent: 2em;
+}
+.pace .pace-activity,
+.pace .pace-activity:after,
+.pace .pace-activity:before {
+  border-color: #000;
+}
+.pace .pace-progress:before {
+  background: #000;
 }

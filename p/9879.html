@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="mac," />
+  <meta name="keywords" content="汇编," />
 
 
 
@@ -124,18 +124,18 @@
 
 
 
-<meta name="description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
-<meta name="keywords" content="mac">
+<meta name="description" content="不多说，直接上代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061DATA    SEGMENT  Prompt  DB  &amp;apos;Please enter a string:$&amp;apos;  YesStr  DB">
+<meta name="keywords" content="汇编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac下使用命令行或脚本删除文件到废纸篓">
-<meta property="og:url" content="http://blog.hijerry.cn/2017/10/Mac下使用命令行或脚本删除文件到废纸篓.html">
+<meta property="og:title" content="汇编实现回文判断">
+<meta property="og:url" content="http://blog.hijerry.cn/p/9879.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
+<meta property="og:description" content="不多说，直接上代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061DATA    SEGMENT  Prompt  DB  &amp;apos;Please enter a string:$&amp;apos;  YesStr  DB">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-08T06:41:31.577Z">
+<meta property="og:updated_time" content="2017-11-11T07:49:52.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac下使用命令行或脚本删除文件到废纸篓">
-<meta name="twitter:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
+<meta name="twitter:title" content="汇编实现回文判断">
+<meta name="twitter:description" content="不多说，直接上代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061DATA    SEGMENT  Prompt  DB  &amp;apos;Please enter a string:$&amp;apos;  YesStr  DB">
 
 
 
@@ -165,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/2017/10/Mac下使用命令行或脚本删除文件到废纸篓.html"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/9879.html"/>
 
 
 
 
 
-  <title>Mac下使用命令行或脚本删除文件到废纸篓 | 可建韦's 博客</title>
+  <title>汇编实现回文判断 | 可建韦's 博客</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/2017/10/Mac下使用命令行或脚本删除文件到废纸篓.html">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/9879.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac下使用命令行或脚本删除文件到废纸篓</h1>
+          <h1 class="post-title" itemprop="name headline">汇编实现回文判断</h1>
         
 
         <div class="post-meta">
@@ -381,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T17:37:00+08:00">
-                2017-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-13T10:48:00+08:00">
+                2015-12-13
               </time>
             
 
@@ -417,17 +417,6 @@
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/10/Mac下使用命令行或脚本删除文件到废纸篓.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/Mac下使用命令行或脚本删除文件到废纸篓.html" itemprop="commentsCount"></span>
-                </a>
-              
-            
           
 
           
@@ -452,18 +441,8 @@
       
 
       
-        <p>mac删除文件有两种方式：</p>
-<ol>
-<li>使用Finder的<code>移到废纸篓</code>功能</li>
-<li>使用rm命令<br>第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的<code>彻底删除</code><br>但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究</li>
-</ol>
-<h3 id="Mac废纸篓的真实面目"><a href="#Mac废纸篓的真实面目" class="headerlink" title="Mac废纸篓的真实面目"></a>Mac废纸篓的真实面目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls ~/.Trash</div></pre></td></tr></table></figure>
-<p>你会发现，<code>~/.Trash</code>目录就是废纸篓<br>但是它只是一个普通的目录，只是Finder将删除的文件移动到了这个目录而已，不相信？接着往下看</p>
-<h3 id="Trash的本质只是文件夹"><a href="#Trash的本质只是文件夹" class="headerlink" title="~/.Trash的本质只是文件夹"></a>~/.Trash的本质只是文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">echo &quot;666666&quot; &gt;&gt; wantodel.txt</div><div class="line">mv wantodel.txt ~/.Trash</div></pre></td></tr></table></figure>
-<p>此时打开你的废纸篓一看，里面有一个<code>wantodel.txt</code>文件，但是你无法将它<code>放回原处</code>，而如果你使用Finder的<code>移到废纸篓</code>功能删除的文件却可以<code>放回原处</code></p>
-<h3 id="Finder是如何实现放回原处的呢？"><a href="#Finder是如何实现放回原处的呢？" class="headerlink" title="Finder是如何实现放回原处的呢？"></a>Finder是如何实现放回原处的呢？</h3><p>最有可能是将操作记录到了数据库中。</p>
-<p>不大可能写在log日志中，因为我grep了整个磁盘都没找到相关的文件。</p>
-<h3 id="最好的帮手是Finder"><a href="#最好的帮手是Finder" class="headerlink" title="最好的帮手是Finder"></a>最好的帮手是Finder</h3><p>既然<code>~/.Trash</code>只是普通文件夹，那我们单纯使用linux命令是无法达到目的的了。<br>我们现在已知<code>Finder</code>可以达到预期目的，如果我们能调用或是告诉<code>Finder</code>的我们要做什么，并且它也愿意做，不就可以达到目的了么？<br>在window中有一个<code>消息</code>的概念，意思是一个应用程序A可以对另一个应用程序B发送<code>消息</code>以操作B来完成某项指定的任务，那Mac种是否也有这种或是类似这种的机制呢？<br>答案是AppleScript，是一种脚本语言，可以用来控制Mac上的应用程序。<br>最后附上使用shell通知Finder程序移动文件废纸篓的样例代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line">fp=/absolute/path/to/file</div><div class="line">osascript &lt;&lt; EOF</div><div class="line">tell application "Finder"</div><div class="line">    posix path of ((delete posix file "$&#123;fp&#125;") as unicode text)</div><div class="line">end tell</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
+        <p>不多说，直接上代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">DATA    SEGMENT  </div><div class="line">Prompt  DB  &apos;Please enter a string:$&apos;  </div><div class="line">YesStr  DB  13, 10, &apos;This string is palindrome$&apos;  </div><div class="line">NoStr   DB  13, 10, &apos;This string is not palindrome$&apos;  </div><div class="line">Input   DB  128, ?, 128 DUP(0)  </div><div class="line">DATA    ENDS  </div><div class="line">STACK   SEGMENT  </div><div class="line">    DB  128 DUP(?)  </div><div class="line">STACK   ENDS  </div><div class="line">CODE    SEGMENT  </div><div class="line">    ASSUME  CS:CODE, DS:DATA, SS:STACK  </div><div class="line">MAIN:     </div><div class="line">    MOV AX, DATA  </div><div class="line">    MOV DS, AX  </div><div class="line">    MOV DX, offset Prompt  </div><div class="line">    MOV AH, 09H  </div><div class="line">    INT 21H  </div><div class="line">    ;  </div><div class="line">    MOV DX, OFFSET Input  </div><div class="line">    MOV AH, 0AH  </div><div class="line">    INT 21H  </div><div class="line">    ;  </div><div class="line">    MOV DI, OFFSET Input  </div><div class="line">    MOV SI, OFFSET Input  </div><div class="line">      </div><div class="line"></div><div class="line">    XOR CX, CX  </div><div class="line">    MOV CL, [DI+1]  </div><div class="line">    ADD DI, 2  </div><div class="line">    ADD SI, 2  </div><div class="line">    DEC CX  </div><div class="line">    ADD DI, CX  </div><div class="line">    ;force DI point to the last word of Input  </div><div class="line">AGAIN:  </div><div class="line">    CMP SI, DI  </div><div class="line">    JA  TESSKIP  </div><div class="line">    MOV AH, byte ptr [SI]  </div><div class="line">    MOV AL, byte ptr [DI]  </div><div class="line">    CMP AH, AL  </div><div class="line">    JNE NOSKIP  </div><div class="line">    INC SI  </div><div class="line">    DEC DI  </div><div class="line">    JMP AGAIN  </div><div class="line">TESSKIP:  </div><div class="line">    MOV DX, OFFSET YesStr  </div><div class="line">    MOV AH, 09H  </div><div class="line">    INT     21H  </div><div class="line">    JMP ENDSKPI  </div><div class="line">    ;  </div><div class="line">  </div><div class="line">NOSKIP:  </div><div class="line">    MOV DX, OFFSET NoStr  </div><div class="line">    MOV AH, 09H  </div><div class="line">    INT     21H  </div><div class="line">    ;  </div><div class="line">ENDSKPI:  </div><div class="line">    MOV AH, 4CH  </div><div class="line">    INT     21H  </div><div class="line">      </div><div class="line">CODE    ENDS  </div><div class="line">    END MAIN</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -510,7 +489,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/汇编/" rel="tag"># 汇编</a>
           
         </div>
       
@@ -523,18 +502,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/git托管现有代码.html" rel="next" title="git托管现有代码">
-                <i class="fa fa-chevron-left"></i> git托管现有代码
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/Centos7修改docker的Data-Space-Total大小.html" rel="prev" title="Centos7修改docker的Data Space Total大小">
-                Centos7修改docker的Data Space Total大小 <i class="fa fa-chevron-right"></i>
+              <a href="/p/14496.html" rel="prev" title="负数的除2和右移1位">
+                负数的除2和右移1位 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,9 +545,10 @@
 
           
   
-    <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
-    </div>
+    
+      <div onclick="ShowGitment()" id="gitment-display-button">显示评论</div>
+      <div id="gitment-container" style="display:none"></div>
+    
   
 
 
@@ -595,17 +571,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -709,22 +676,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac废纸篓的真实面目"><span class="nav-number">1.</span> <span class="nav-text">Mac废纸篓的真实面目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trash的本质只是文件夹"><span class="nav-number">2.</span> <span class="nav-text">~/.Trash的本质只是文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder是如何实现放回原处的呢？"><span class="nav-number">3.</span> <span class="nav-text">Finder是如何实现放回原处的呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最好的帮手是Finder"><span class="nav-number">4.</span> <span class="nav-text">最好的帮手是Finder</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -886,22 +837,33 @@
 
 
 
-  
-    <script type="text/javascript">
-    (function(){
-      var appid = 'cytiWwI8S';
-      var conf = '4bddfa1636ed24c6c2469017ba6f29c3';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
-        window.changyan.api.config({appid:appid,conf:conf})});
-      }
-    })();
-    </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-  
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.pathname, 
+                   owner: 'JerryCheese',
+                   repo: 'kjwblog-comments',
+                   oauth: {
+                       client_id: '7458d38a2be7981a0f29',
+                       client_secret: '1e2183eba0284fa9dc81e9ba4e5b65814eced695',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
 

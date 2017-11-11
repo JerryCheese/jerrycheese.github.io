@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="mac," />
 
 
 
@@ -124,30 +124,18 @@
 
 
 
-<meta name="description" content="序一个月快过去了，总算是学完Coursera上的第三课了，其实我的进度比预期满了一周。这是第二次做Coursera的编程作业，对比大学课程的作业，Coursera的难度应该在中等甚至偏下，对我来说唯一的难度在于适应“新”，有以下几点：  新语言 新工具 新的思考方式  对于一个Software Engineer来说以上都是最基础的技能，即保持学习态度，及时学习新技术、新知识。 第三周的课程内容主要">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
+<meta name="keywords" content="mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exercise2: Logistic Regression">
-<meta property="og:url" content="http://blog.hijerry.cn/2017/11/Exercise2-Logistic-Regression.html">
+<meta property="og:title" content="Mac下使用命令行或脚本删除文件到废纸篓">
+<meta property="og:url" content="http://blog.hijerry.cn/p/35267.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="序一个月快过去了，总算是学完Coursera上的第三课了，其实我的进度比预期满了一周。这是第二次做Coursera的编程作业，对比大学课程的作业，Coursera的难度应该在中等甚至偏下，对我来说唯一的难度在于适应“新”，有以下几点：  新语言 新工具 新的思考方式  对于一个Software Engineer来说以上都是最基础的技能，即保持学习态度，及时学习新技术、新知识。 第三周的课程内容主要">
+<meta property="og:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/1WFqZHntEead-BJkoDOYOw_2413fbec8ff9fa1f19aaf78265b8a33b_Logistic_function.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-234015.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-225636.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-230636.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/0cOOdKsMEeaCrQqTpeD5ng_2a806eb8d988461f716f4799915ab779_Screenshot-2016-11-15-00.23.30.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-234540.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-234417.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/QQ20171110-234423.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/a.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/b.png">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/d.png">
-<meta property="og:updated_time" content="2017-11-11T04:14:25.954Z">
+<meta property="og:updated_time" content="2017-11-11T07:49:34.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Exercise2: Logistic Regression">
-<meta name="twitter:description" content="序一个月快过去了，总算是学完Coursera上的第三课了，其实我的进度比预期满了一周。这是第二次做Coursera的编程作业，对比大学课程的作业，Coursera的难度应该在中等甚至偏下，对我来说唯一的难度在于适应“新”，有以下几点：  新语言 新工具 新的思考方式  对于一个Software Engineer来说以上都是最基础的技能，即保持学习态度，及时学习新技术、新知识。 第三周的课程内容主要">
-<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/1WFqZHntEead-BJkoDOYOw_2413fbec8ff9fa1f19aaf78265b8a33b_Logistic_function.png">
+<meta name="twitter:title" content="Mac下使用命令行或脚本删除文件到废纸篓">
+<meta name="twitter:description" content="mac删除文件有两种方式：  使用Finder的移到废纸篓功能 使用rm命令第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的彻底删除但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究  Mac废纸篓的真实面目1$ ls ~/.Trash 你会发现，~/.Trash目录就是废">
 
 
 
@@ -177,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/2017/11/Exercise2-Logistic-Regression.html"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/35267.html"/>
 
 
 
 
 
-  <title>Exercise2: Logistic Regression | 可建韦's 博客</title>
+  <title>Mac下使用命令行或脚本删除文件到废纸篓 | 可建韦's 博客</title>
   
 
 
@@ -364,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/2017/11/Exercise2-Logistic-Regression.html">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/35267.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -381,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Exercise2: Logistic Regression</h1>
+          <h1 class="post-title" itemprop="name headline">Mac下使用命令行或脚本删除文件到废纸篓</h1>
         
 
         <div class="post-meta">
@@ -393,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T22:03:24+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T17:37:00+08:00">
+                2017-10-10
               </time>
             
 
@@ -416,8 +404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/研/" itemprop="url" rel="index">
-                    <span itemprop="name">研</span>
+                  <a href="/categories/软件技术/" itemprop="url" rel="index">
+                    <span itemprop="name">软件技术</span>
                   </a>
                 </span>
 
@@ -428,17 +416,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/11/Exercise2-Logistic-Regression.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/11/Exercise2-Logistic-Regression.html" itemprop="commentsCount"></span>
-                </a>
-              
             
           
 
@@ -464,48 +441,18 @@
       
 
       
-        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>一个月快过去了，总算是学完Coursera上的第三课了，其实我的进度比预期满了一周。这是第二次做Coursera的编程作业，对比大学课程的作业，Coursera的难度应该在中等甚至偏下，对我来说唯一的难度在于适应“新”，有以下几点：</p>
-<ul>
-<li>新语言</li>
-<li>新工具</li>
-<li>新的思考方式</li>
-</ul>
-<p>对于一个Software Engineer来说以上都是最基础的技能，即保持学习态度，及时学习新技术、新知识。</p>
-<p>第三周的课程内容主要讲分类、<code>逻辑回归</code>，与<code>线性回归</code>相比，也就是把Hypothesis函数用Sigmoid函数来表示，也就是：$设 g(z) =  \frac{1} {1 + e ^{-z}}$，$令 z = θ^T x$，$则 h_θ(x) = g(θ^Tx)$</p>
-<p>为什么要 $设 g(z) =  \frac{1} {1 + e ^{-z}}$ 呢，因为它的值域为 $(0, 1)$，定义域为(-∞, +∞) 的单调连续增函数，这意味着可以用<code>换元法</code>把所有函数的值域压缩到$(0, 1)$，它的函数图像如下。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/1WFqZHntEead-BJkoDOYOw_2413fbec8ff9fa1f19aaf78265b8a33b_Logistic_function.png" alt=""></p>
-<p>这非常适合作为二分类（01分类）函数，我们可以取 $ h<em>θ(x) &gt;= 0.5$ 时 $y = 1$ ，$ h</em>θ(x) &lt; 0.5$ 时 $y = 0$ 。</p>
-<p>同时Cost函数和Gradient Descent方程也有些许改变，这种改变是<code>换元法</code>带来的（公式识别失败，用图代替了）</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-234015.png" alt=""></p>
-<p>它们对应的矩阵形式是</p>
-<p>① $J(θ) = \frac {1} {m} (- y ^T log(h) - (1 - y)^T log(1 - h))，h = g(Xθ)$</p>
-<p>② $θ = θ - \frac {α} {m} X^T (g(Xθ) - y)$</p>
-<p>注意其中$X、y、θ$ 都是矩阵</p>
-<h2 id="作业内容"><a href="#作业内容" class="headerlink" title="作业内容"></a>作业内容</h2><p>标<strong>*</strong>的是需要做的，没标的是作业中已经实现</p>
-<h3 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h3><p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-225636.png" alt=""></p>
-<h3 id="Sigdmoid函数"><a href="#Sigdmoid函数" class="headerlink" title="* Sigdmoid函数"></a>* Sigdmoid函数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">g</span> = <span class="title">sigmoid</span><span class="params">(z)</span></span></div><div class="line"><span class="comment">%SIGMOID Compute sigmoid function</span></div><div class="line"><span class="comment">%   g = SIGMOID(z) computes the sigmoid of z.</span></div><div class="line"></div><div class="line"><span class="comment">% You need to return the following variables correctly </span></div><div class="line">g = <span class="built_in">zeros</span>(<span class="built_in">size</span>(z));</div><div class="line"></div><div class="line"><span class="comment">% ====================== YOUR CODE HERE ======================</span></div><div class="line"><span class="comment">% Instructions: Compute the sigmoid of each value of z (z can be a matrix,</span></div><div class="line"><span class="comment">%               vector or scalar).</span></div><div class="line">    </div><div class="line">g = <span class="number">1</span> ./ (<span class="number">1</span> + <span class="built_in">exp</span>(-z));</div><div class="line"></div><div class="line"><span class="comment">% =============================================================</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>传入的参数是一个矩阵，所以需要算出每一个元素的sigmoid函数值，这里用到的<code>./</code>操作符来对每一个元素进行取倒数操作。</p>
-<h3 id="Cost函数和对应的Gradient-Descent方程"><a href="#Cost函数和对应的Gradient-Descent方程" class="headerlink" title="* Cost函数和对应的Gradient Descent方程"></a>* Cost函数和对应的Gradient Descent方程</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[J, grad]</span> = <span class="title">costFunction</span><span class="params">(theta, X, y)</span></span></div><div class="line"><span class="comment">%COSTFUNCTION Compute cost and gradient for logistic regression</span></div><div class="line"><span class="comment">%   J = COSTFUNCTION(theta, X, y) computes the cost of using theta as the</span></div><div class="line"><span class="comment">%   parameter for logistic regression and the gradient of the cost</span></div><div class="line"><span class="comment">%   w.r.t. to the parameters.</span></div><div class="line"></div><div class="line"><span class="comment">% Initialize some useful values</span></div><div class="line">m = <span class="built_in">length</span>(y); <span class="comment">% number of training examples</span></div><div class="line"></div><div class="line"><span class="comment">% You need to return the following variables correctly </span></div><div class="line">J = <span class="number">0</span>;</div><div class="line">grad = <span class="built_in">zeros</span>(<span class="built_in">size</span>(theta));</div><div class="line"></div><div class="line"><span class="comment">% ====================== YOUR CODE HERE ======================</span></div><div class="line"><span class="comment">% Instructions: Compute the cost of a particular choice of theta.</span></div><div class="line"><span class="comment">%               You should set J to the cost.</span></div><div class="line"><span class="comment">%               Compute the partial derivatives and set grad to the partial</span></div><div class="line"><span class="comment">%               derivatives of the cost w.r.t. each parameter in theta</span></div><div class="line"><span class="comment">%</span></div><div class="line"><span class="comment">% Note: grad should have the same dimensions as theta</span></div><div class="line"><span class="comment">%</span></div><div class="line"></div><div class="line">J = <span class="number">1</span>/m * sum(-y .* <span class="built_in">log</span>(sigmoid(X * theta)) - (<span class="number">1</span> - y) .* <span class="built_in">log</span>(<span class="number">1</span> - sigmoid(X * theta)));</div><div class="line"></div><div class="line">grad = <span class="number">1</span>/m * (X' * (sigmoid(X * theta) - y));</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">% =============================================================</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>在这个函数中需要同时计算代价和梯度，通过公式①、②不难得到上述两行代码</p>
-<h3 id="Hypothesis函数"><a href="#Hypothesis函数" class="headerlink" title="* Hypothesis函数"></a>* Hypothesis函数</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">p</span> = <span class="title">predict</span><span class="params">(theta, X)</span></span></div><div class="line"><span class="comment">%PREDICT Predict whether the label is 0 or 1 using learned logistic </span></div><div class="line"><span class="comment">%regression parameters theta</span></div><div class="line"><span class="comment">%   p = PREDICT(theta, X) computes the predictions for X using a </span></div><div class="line"><span class="comment">%   threshold at 0.5 (i.e., if sigmoid(theta'*x) &gt;= 0.5, predict 1)</span></div><div class="line"></div><div class="line">m = <span class="built_in">size</span>(X, <span class="number">1</span>); <span class="comment">% Number of training examples</span></div><div class="line"></div><div class="line"><span class="comment">% You need to return the following variables correctly</span></div><div class="line">p = <span class="built_in">zeros</span>(m, <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">% ====================== YOUR CODE HERE ======================</span></div><div class="line"><span class="comment">% Instructions: Complete the following code to make predictions using</span></div><div class="line"><span class="comment">%               your learned logistic regression parameters. </span></div><div class="line"><span class="comment">%               You should set p to a vector of 0's and 1's</span></div><div class="line"><span class="comment">%</span></div><div class="line"></div><div class="line">s = sigmoid(X * theta);</div><div class="line">p = <span class="built_in">floor</span>(s + <span class="number">0.5</span>);</div><div class="line"></div><div class="line"><span class="comment">% =========================================================================</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>预测函数就比较简单的，由$则 h_θ(x) = g(θ^Tx)$，$g$ 是Sigmoid函数，可以得到上述两行代码，因为当函数值大于0.5时$y = 1$ ，又得到的 $s$ 其实是一个矩阵，所以使用<code>floor(s + 0.5)</code>来进行批量操作。</p>
-<p>完成上述三个函数后，运行<code>ex2</code>函数可以得到一条预测线，如图。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-230636.png" alt=""></p>
-<h3 id="正规化"><a href="#正规化" class="headerlink" title="* 正规化"></a>* 正规化</h3><p>正规化是为了防止<code>过拟合</code>，核心是保持 $ x$ 值不变， <code>减小</code> (惩罚) $θ$的值。</p>
-<p>当然还有一种方式防止<code>过拟合</code>的方法是建立一个模型来去除用处不大的特征，保留作用相对较大的特征。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/0cOOdKsMEeaCrQqTpeD5ng_2a806eb8d988461f716f4799915ab779_Screenshot-2016-11-15-00.23.30.png" alt=""></p>
-<p>上图表示的预测函数，从左到右依次是<code>欠拟合</code>、<code>拟合</code> 也叫<code>刚好拟合</code>、<code>过拟合</code>，欠拟合一般是因为多项式的最高次太小，过拟合一般是因为多项式的最高次幂太大。</p>
-<p>正规化后的代价函数如下，注意尾巴上对 $θ_j$ 的求和是从1开始，也就意味着跳过了 $θ_0$</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-234540.png" alt=""></p>
-<p>值得注意的是梯度方程不需要对 $θ_0$ 进行正规化，所以方程变成了两部分：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-234417.png" alt=""></p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/QQ20171110-234423.png" alt=""></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[J, grad]</span> = <span class="title">costFunctionReg</span><span class="params">(theta, X, y, lambda)</span></span></div><div class="line"><span class="comment">%COSTFUNCTIONREG Compute cost and gradient for logistic regression with regularization</span></div><div class="line"><span class="comment">%   J = COSTFUNCTIONREG(theta, X, y, lambda) computes the cost of using</span></div><div class="line"><span class="comment">%   theta as the parameter for regularized logistic regression and the</span></div><div class="line"><span class="comment">%   gradient of the cost w.r.t. to the parameters. </span></div><div class="line"></div><div class="line"><span class="comment">% Initialize some useful values</span></div><div class="line">m = <span class="built_in">length</span>(y); <span class="comment">% number of training examples</span></div><div class="line"></div><div class="line"><span class="comment">% You need to return the following variables correctly </span></div><div class="line">J = <span class="number">0</span>;</div><div class="line">grad = <span class="built_in">zeros</span>(<span class="built_in">size</span>(theta));</div><div class="line"></div><div class="line"><span class="comment">% ====================== YOUR CODE HERE ======================</span></div><div class="line"><span class="comment">% Instructions: Compute the cost of a particular choice of theta.</span></div><div class="line"><span class="comment">%               You should set J to the cost.</span></div><div class="line"><span class="comment">%               Compute the partial derivatives and set grad to the partial</span></div><div class="line"><span class="comment">%               derivatives of the cost w.r.t. each parameter in theta</span></div><div class="line"></div><div class="line">J = <span class="number">1</span>/m * sum(-y .* <span class="built_in">log</span>(sigmoid(X * theta)) - (<span class="number">1</span> - y) .* <span class="built_in">log</span>(<span class="number">1</span> - sigmoid(X * theta)));</div><div class="line">J = J + lambda/(<span class="number">2</span>*m) * sum(theta(<span class="number">2</span>:<span class="built_in">size</span>(theta)) .^ <span class="number">2</span>);</div><div class="line"></div><div class="line">grad = <span class="number">1</span>/m * (X' * (sigmoid(X * theta) - y)) + lambda/m * theta;</div><div class="line">grad(<span class="number">1</span>) = grad(<span class="number">1</span>) - lambda/m * theta(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">% =============================================================</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>根据上述的三张图不难写出上述四行代码</p>
-<h3 id="调整λ参数的大小"><a href="#调整λ参数的大小" class="headerlink" title="调整λ参数的大小"></a>调整λ参数的大小</h3><h4 id="λ-1"><a href="#λ-1" class="headerlink" title="λ = 1"></a>λ = 1</h4><p><img src="http://os9coobhw.bkt.clouddn.com/a.png" alt=""></p>
-<h4 id="λ-10"><a href="#λ-10" class="headerlink" title="λ = 10"></a>λ = 10</h4><p><img src="http://os9coobhw.bkt.clouddn.com/b.png" alt=""></p>
-<h4 id="λ-0-0001"><a href="#λ-0-0001" class="headerlink" title="λ = 0.0001"></a>λ = 0.0001</h4><p><img src="http://os9coobhw.bkt.clouddn.com/d.png" alt=""></p>
-<p>可以看出 $λ$ 越小，对训练样本的拟合程度越好，从而导致了整个曲线看起来比较扭曲，没有平滑感；而 $λ$ 越大，对训练样本的拟合程度越差，曲线越光滑。</p>
+        <p>mac删除文件有两种方式：</p>
+<ol>
+<li>使用Finder的<code>移到废纸篓</code>功能</li>
+<li>使用rm命令<br>第二种方式删除的文件，不能在废纸篓中找到，也就是所谓的<code>彻底删除</code><br>但是我们在使用terminal的时候，一般都会使用rm删除文件，那要是删错了不就完了？而且我们的mac上本身又自带了废纸篓，为什么不能将两者结合起来呢？于是我做了一些探究</li>
+</ol>
+<h3 id="Mac废纸篓的真实面目"><a href="#Mac废纸篓的真实面目" class="headerlink" title="Mac废纸篓的真实面目"></a>Mac废纸篓的真实面目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls ~/.Trash</div></pre></td></tr></table></figure>
+<p>你会发现，<code>~/.Trash</code>目录就是废纸篓<br>但是它只是一个普通的目录，只是Finder将删除的文件移动到了这个目录而已，不相信？接着往下看</p>
+<h3 id="Trash的本质只是文件夹"><a href="#Trash的本质只是文件夹" class="headerlink" title="~/.Trash的本质只是文件夹"></a>~/.Trash的本质只是文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">echo &quot;666666&quot; &gt;&gt; wantodel.txt</div><div class="line">mv wantodel.txt ~/.Trash</div></pre></td></tr></table></figure>
+<p>此时打开你的废纸篓一看，里面有一个<code>wantodel.txt</code>文件，但是你无法将它<code>放回原处</code>，而如果你使用Finder的<code>移到废纸篓</code>功能删除的文件却可以<code>放回原处</code></p>
+<h3 id="Finder是如何实现放回原处的呢？"><a href="#Finder是如何实现放回原处的呢？" class="headerlink" title="Finder是如何实现放回原处的呢？"></a>Finder是如何实现放回原处的呢？</h3><p>最有可能是将操作记录到了数据库中。</p>
+<p>不大可能写在log日志中，因为我grep了整个磁盘都没找到相关的文件。</p>
+<h3 id="最好的帮手是Finder"><a href="#最好的帮手是Finder" class="headerlink" title="最好的帮手是Finder"></a>最好的帮手是Finder</h3><p>既然<code>~/.Trash</code>只是普通文件夹，那我们单纯使用linux命令是无法达到目的的了。<br>我们现在已知<code>Finder</code>可以达到预期目的，如果我们能调用或是告诉<code>Finder</code>的我们要做什么，并且它也愿意做，不就可以达到目的了么？<br>在window中有一个<code>消息</code>的概念，意思是一个应用程序A可以对另一个应用程序B发送<code>消息</code>以操作B来完成某项指定的任务，那Mac种是否也有这种或是类似这种的机制呢？<br>答案是AppleScript，是一种脚本语言，可以用来控制Mac上的应用程序。<br>最后附上使用shell通知Finder程序移动文件废纸篓的样例代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line">fp=/absolute/path/to/file</div><div class="line">osascript &lt;&lt; EOF</div><div class="line">tell application "Finder"</div><div class="line">    posix path of ((delete posix file "$&#123;fp&#125;") as unicode text)</div><div class="line">end tell</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -552,7 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/mac/" rel="tag"># mac</a>
           
         </div>
       
@@ -565,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/Centos7修改docker的Data-Space-Total大小.html" rel="next" title="Centos7修改docker的Data Space Total大小">
-                <i class="fa fa-chevron-left"></i> Centos7修改docker的Data Space Total大小
+              <a href="/p/49319.html" rel="next" title="git托管现有代码">
+                <i class="fa fa-chevron-left"></i> git托管现有代码
               </a>
             
           </div>
@@ -575,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/提高你的记忆力：记忆宫殿法.html" rel="prev" title="提高你的记忆力：记忆宫殿法">
-                提高你的记忆力：记忆宫殿法 <i class="fa fa-chevron-right"></i>
+              <a href="/p/55543.html" rel="prev" title="Centos7修改docker的Data Space Total大小">
+                Centos7修改docker的Data Space Total大小 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -612,9 +559,10 @@
 
           
   
-    <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
-    </div>
+    
+      <div onclick="ShowGitment()" id="gitment-display-button">显示评论</div>
+      <div id="gitment-container" style="display:none"></div>
+    
   
 
 
@@ -761,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业内容"><span class="nav-number">2.</span> <span class="nav-text">作业内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据可视化"><span class="nav-number">2.1.</span> <span class="nav-text">数据可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sigdmoid函数"><span class="nav-number">2.2.</span> <span class="nav-text">* Sigdmoid函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cost函数和对应的Gradient-Descent方程"><span class="nav-number">2.3.</span> <span class="nav-text">* Cost函数和对应的Gradient Descent方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hypothesis函数"><span class="nav-number">2.4.</span> <span class="nav-text">* Hypothesis函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正规化"><span class="nav-number">2.5.</span> <span class="nav-text">* 正规化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整λ参数的大小"><span class="nav-number">2.6.</span> <span class="nav-text">调整λ参数的大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#λ-1"><span class="nav-number">2.6.1.</span> <span class="nav-text">λ = 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#λ-10"><span class="nav-number">2.6.2.</span> <span class="nav-text">λ = 10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#λ-0-0001"><span class="nav-number">2.6.3.</span> <span class="nav-text">λ = 0.0001</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac废纸篓的真实面目"><span class="nav-number">1.</span> <span class="nav-text">Mac废纸篓的真实面目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trash的本质只是文件夹"><span class="nav-number">2.</span> <span class="nav-text">~/.Trash的本质只是文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder是如何实现放回原处的呢？"><span class="nav-number">3.</span> <span class="nav-text">Finder是如何实现放回原处的呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最好的帮手是Finder"><span class="nav-number">4.</span> <span class="nav-text">最好的帮手是Finder</span></a></li></ol></div>
             
 
           </div>
@@ -928,22 +876,33 @@
 
 
 
-  
-    <script type="text/javascript">
-    (function(){
-      var appid = 'cytiWwI8S';
-      var conf = '4bddfa1636ed24c6c2469017ba6f29c3';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
-        window.changyan.api.config({appid:appid,conf:conf})});
-      }
-    })();
-    </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-  
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.pathname, 
+                   owner: 'JerryCheese',
+                   repo: 'kjwblog-comments',
+                   oauth: {
+                       client_id: '7458d38a2be7981a0f29',
+                       client_secret: '1e2183eba0284fa9dc81e9ba4e5b65814eced695',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
 

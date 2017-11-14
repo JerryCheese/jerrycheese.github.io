@@ -124,21 +124,21 @@
 
 
 
-<meta name="description" content="暴力暴利原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input: [7,">
+<meta name="description" content="问题1：一次交易原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input:">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode买股票系列">
 <meta property="og:url" content="http://blog.hijerry.cn/p/52113.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="暴力暴利原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input: [7,">
+<meta property="og:description" content="问题1：一次交易原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input:">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/3f859fb3dcc6d082ba897ee3789e190d.jpg">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/b1563d3da87674727753dcdcb575348d.jpg">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/0faf7652b9c2121e9ab64c36e719912e.jpg">
-<meta property="og:updated_time" content="2017-11-11T16:28:20.854Z">
+<meta property="og:updated_time" content="2017-11-14T03:37:26.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode买股票系列">
-<meta name="twitter:description" content="暴力暴利原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input: [7,">
+<meta name="twitter:description" content="问题1：一次交易原题：Best Time to Buy and Sell Stock 题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？ Example 1: 1234Input: [7, 1, 5, 3, 6, 4]Output: 51买进，6卖出，获利5 Example 2: 1234Input:">
 <meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/3f859fb3dcc6d082ba897ee3789e190d.jpg">
 
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  950 字
+                  1,683 字
                 </span>
               
 
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分
+                  12 分
                 </span>
               
             </div>
@@ -481,7 +481,7 @@
       
 
       
-        <h2 id="暴力暴利"><a href="#暴力暴利" class="headerlink" title="暴力暴利"></a>暴力暴利</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/" target="_blank" rel="external">Best Time to Buy and Sell Stock</a></p>
+        <h2 id="问题1：一次交易"><a href="#问题1：一次交易" class="headerlink" title="问题1：一次交易"></a>问题1：一次交易</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/" target="_blank" rel="external">Best Time to Buy and Sell Stock</a></p>
 <p>题意：给定一个数组，第 $i$ 个元素表示第 $i$ 天股票的价值，你只能进行一次交易（买入+卖出= 一次交易），请告诉我你获得的最大价值是多少？</p>
 <p><strong>Example 1:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Input: [7, 1, 5, 3, 6, 4]</div><div class="line">Output: 5</div><div class="line"></div><div class="line">1买进，6卖出，获利5</div></pre></td></tr></table></figure>
@@ -494,7 +494,7 @@
 </ul>
 <p>对于第一个思路，<strong>Example 2:</strong> 已经告诉你是错的。</p>
 <p>对于第二个思路，你怎么确保最小值索引是小于最大值索引的，万一不是呢，那是不是要进行搜索了呢？那搜索策略又是什么呢？顿时觉得前途一片昏暗</p>
-<p>不妨先用暴力法试试，设</p>
+<h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><p>从下至上的计算，设</p>
 <ul>
 <li>总天数为n</li>
 </ul>
@@ -504,11 +504,19 @@
 <ul>
 <li>$d[i]$ 是第 $i$ 天买入股票所能达到的最大利益 $ i = 1,2,…,n$</li>
 </ul>
-<p>那么 $d[i] = max{a[i], a[i+1], .. , a[n]} - a[i] ， i = 1,2,…,n$ </p>
-<p>那么最大价值就是 $max { d[1], d[2], .., d[n] }， i = 1,2,…,n$</p>
+<p>那么 $d[i] = max(a[i], a[i+1], .. , a[n]) - a[i] ， i = 1,2,…,n$ </p>
+<p>那么最大价值就是 $max ( d[1], d[2], .., d[n])， i = 1,2,…,n$</p>
 <p>相信聪明的你已经知道代码怎么写了。</p>
-<h2 id="低买高卖"><a href="#低买高卖" class="headerlink" title="低买高卖"></a>低买高卖</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="external">Best Time to Buy and Sell Stock II</a> </p>
-<p>题意：在第一题基础上，你可以进行多次交易，求出你所能获得的最大价值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        max_after = <span class="number">0</span></div><div class="line">        max_profit = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(prices) - <span class="number">1</span>, <span class="number">-1</span> , <span class="number">-1</span>):</div><div class="line">            max_profit = max(max_profit, max(<span class="number">0</span>, max_after - prices[i]))</div><div class="line">            max_after = max(max_after, prices[i])</div><div class="line">        <span class="keyword">return</span> max_profit</div></pre></td></tr></table></figure>
+<h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><p>从上至下计算。假设你现在就是一个股民，用变量money表示你现在有多少钱，所以初始你是0元，</p>
+<ul>
+<li>买入一个<code>a</code>元的股票，$money = -a$（欠钱）</li>
+<li>今天股票价值是<code>b</code>，如果今天卖掉，则 $money = money + b$ </li>
+</ul>
+<p>要达到两个最大即可，一是买入欠钱最少，所以<code>-a</code>越大越好，二是<code>money</code>越大越好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        debt = <span class="number">-2147483648</span></div><div class="line">        money = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</div><div class="line">            money = max(money, price + debt)</div><div class="line">            debt = max(debt, -price)</div><div class="line">        <span class="keyword">return</span> money</div></pre></td></tr></table></figure>
+<h2 id="问题2：任意次交易"><a href="#问题2：任意次交易" class="headerlink" title="问题2：任意次交易"></a>问题2：任意次交易</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="external">Best Time to Buy and Sell Stock II</a> </p>
+<p>题意：在问题1基础上，交易次数变为任意多次</p>
 <p>一瞬间没啥思路，感觉问题很复杂？其实，如果你炒股你就知道，其实很简单，一句话：<strong>低买高卖</strong></p>
 <p>啥意思？借一张leecode某个答主的图，股票的波动一般像下图一样</p>
 <p><img src="http://os9coobhw.bkt.clouddn.com/3f859fb3dcc6d082ba897ee3789e190d.jpg" alt=""></p>
@@ -534,6 +542,24 @@
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>找一个低谷点买入，在遇到下一个顶峰点的时候立马卖出，这样你就能拿到最大的收益。</p>
 <p>不过在代码上要注意最后一天的处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        buy = <span class="number">-1</span>;</div><div class="line">        profit = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(prices)):</div><div class="line">            <span class="keyword">if</span> i + <span class="number">1</span> &gt;= len(prices):</div><div class="line">                profit += prices[i] - buy <span class="keyword">if</span> buy != <span class="number">-1</span>  <span class="keyword">else</span> <span class="number">0</span></div><div class="line">            <span class="keyword">elif</span> prices[i + <span class="number">1</span>] &gt; prices[i]:</div><div class="line">                buy = prices[i] <span class="keyword">if</span> buy == <span class="number">-1</span> <span class="keyword">else</span> buy</div><div class="line">            <span class="keyword">elif</span> prices[i + <span class="number">1</span>] &lt; prices[i]:</div><div class="line">                profit += prices[i] - buy <span class="keyword">if</span> buy != <span class="number">-1</span> <span class="keyword">else</span> <span class="number">0</span></div><div class="line">                buy = <span class="number">-1</span></div><div class="line">        <span class="keyword">return</span> profit</div></pre></td></tr></table></figure>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>其实仔细看刚刚写的代码你会发现，只要是“上升期”的股票我们都可以买，所以代码可以优化为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        max_profit = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(prices) - <span class="number">1</span>):</div><div class="line">            max_profit += max(<span class="number">0</span>, prices[i + <span class="number">1</span>] - prices[i])</div><div class="line">        <span class="keyword">return</span> max_profit</div></pre></td></tr></table></figure>
+<h2 id="问题3：最多两次交易"><a href="#问题3：最多两次交易" class="headerlink" title="问题3：最多两次交易"></a>问题3：最多两次交易</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/" target="_blank" rel="external">Best Time to Buy and Sell Stock III</a></p>
+<p>题意：在问题1的基础上，交易次数变为最多两次</p>
+<p>这和问题1非常类似，意思是在问题1交易完成后，还能再交易1次。站在问题1的基础上，我们把解法扩展一下。</p>
+<p>问题1的的贪心解法的成功运用，表示问题1其实是具有<code>局部最优</code>性质的，意思是这个算法可以用于任何一个局部，当这个局部扩大到全局的时候，就得到的原问题的最优解。那如果把交易次数增加到2次，这种局部最优性质是否还有呢，答案是有的。</p>
+<p>我们可以设两对个变量，一对记录第一次交易状态，一对记录第二次交易状态，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        debt1, money1, debt2, money2 = <span class="number">-2147483648</span>, <span class="number">0</span>, <span class="number">-2147483648</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</div><div class="line">            money2 = max(money2, debt2  + price)</div><div class="line">            debt2  = max(debt2 , money1 - price)</div><div class="line">            money1 = max(money1, debt1  + price)</div><div class="line">            debt1  = max(debt1 , -price)</div><div class="line">        <span class="keyword">return</span> money2</div></pre></td></tr></table></figure>
+<h2 id="问题4：最多K次交易"><a href="#问题4：最多K次交易" class="headerlink" title="问题4：最多K次交易"></a>问题4：最多K次交易</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/" target="_blank" rel="external">Best Time to Buy and Sell Stock IV</a></p>
+<p>题意：在问题1的基础上，交易次数变为最多K次，K是程序的输入</p>
+<p>注意到K是可变的，所以：</p>
+<ul>
+<li>K = 1时，退化成问题1</li>
+<li>K = 2时，退化成问题3</li>
+<li>K &gt;= 总天数/2 时，退化成问题2</li>
+</ul>
+<p>对于第3种情况，我们直接调用问题2的解法即可，以免超时</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, k, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type k: int</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        <span class="keyword">if</span> k &gt;= len(prices) / <span class="number">2</span>: </div><div class="line">            <span class="keyword">return</span> maxProfitAny(prices)</div><div class="line">        </div><div class="line">        debt, money, max_money = [<span class="number">-2147483648</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(k)], [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(k)], <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</div><div class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> range(k - <span class="number">1</span>, - <span class="number">1</span>, <span class="number">-1</span>):</div><div class="line">                money[t] = max(money[t], debt[t] + price)</div><div class="line">                debt[t] = max(debt[t], (money[t - <span class="number">1</span>] <span class="keyword">if</span> t &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>) - price)</div><div class="line">                max_money = max(max_money, money[t])</div><div class="line">        <span class="keyword">return</span> max_money</div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxProfitAny</span><span class="params">(prices)</span>:</span></div><div class="line">    max_profit = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(prices) - <span class="number">1</span>):</div><div class="line">        max_profit += max(<span class="number">0</span>, prices[i + <span class="number">1</span>] - prices[i])</div><div class="line">    <span class="keyword">return</span> max_profit</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -780,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力暴利"><span class="nav-number">1.</span> <span class="nav-text">暴力暴利</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#低买高卖"><span class="nav-number">2.</span> <span class="nav-text">低买高卖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#股票一直跌，跌倒谷底了，马上要开始涨了"><span class="nav-number">2.1.</span> <span class="nav-text">股票一直跌，跌倒谷底了，马上要开始涨了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#股票一直涨，涨到顶峰了，马上要开始降了"><span class="nav-number">2.2.</span> <span class="nav-text">股票一直涨，涨到顶峰了，马上要开始降了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个顶峰，分开买"><span class="nav-number">2.3.</span> <span class="nav-text">两个顶峰，分开买</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.4.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1：一次交易"><span class="nav-number">1.</span> <span class="nav-text">问题1：一次交易</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DP"><span class="nav-number">1.1.</span> <span class="nav-text">DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心"><span class="nav-number">1.2.</span> <span class="nav-text">贪心</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2：任意次交易"><span class="nav-number">2.</span> <span class="nav-text">问题2：任意次交易</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#股票一直跌，跌倒谷底了，马上要开始涨了"><span class="nav-number">2.1.</span> <span class="nav-text">股票一直跌，跌倒谷底了，马上要开始涨了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#股票一直涨，涨到顶峰了，马上要开始降了"><span class="nav-number">2.2.</span> <span class="nav-text">股票一直涨，涨到顶峰了，马上要开始降了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个顶峰，分开买"><span class="nav-number">2.3.</span> <span class="nav-text">两个顶峰，分开买</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">2.5.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题3：最多两次交易"><span class="nav-number">3.</span> <span class="nav-text">问题3：最多两次交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题4：最多K次交易"><span class="nav-number">4.</span> <span class="nav-text">问题4：最多K次交易</span></a></li></ol></div>
             
 
           </div>
@@ -810,15 +836,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
 
 
 

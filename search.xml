@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MP3]]></title>
+    <url>%2F%2Fp%2F748.html</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>无标签</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode买股票系列2]]></title>
     <url>%2F%2Fp%2F31115.html</url>
     <content type="text"><![CDATA[上一个系列是对交易次数进行限制，本系列是无限次交易但是有一些其他限制。 问题1：卖出后休息一天原题：Best Time to Buy and Sell Stock with Cooldown 题意：你可以进行任意次交易，但完成一次交易后，接下来的一天不能进行买入/卖出操作。 我们先回顾一下上一期 买股票系列 的问题2，它和这个问题就差了一个条件，当时我们用了贪心算法，策略是低买高卖，且经过思考后得到的下述的状态叠加公式 $ profit += max(0, prices[i + 1] - prices[i])$ 直观上理解为，只要今天的股票比昨天高，我就可以挣一个净增值。例如对于序列 $[1,2,3,4]​$ 第2天比第1天多1，我们就在第1天买入，第2天卖出，这样能挣1元 第3天比第2天多1，我们就在第2天买入，第3天卖出，这样能挣1元 …… 细看发现，其实这个状态是连续叠加的，所以如果一次交易后必须休息一天，那么这个状态就不连续了。 现在再看上述的过程，发现 profit += 这一句代码其实隐含着一个意思，就是局部最优，当前状态下的最优值是从上一个状态的最优值加上本次状态的最佳选择得到的，到这一步其实就已经得到本题的结果了，也就是公式 今天的最优值 = 上一个状态的最优值 + 今天的最佳选择 ，上述题目中的上一个状态的最优值 其实就是昨天的最优值，而本题确是上一次交易的最优值 123456789101112131415class Solution(object): def maxProfit(self, prices): """ :type prices: List[int] :rtype: int """ if len(prices) &lt; 2: return 0 sell, buy, prev_sell, prev_buy = 0, -2147483648, 0, 0 for price in prices: prev_buy = buy buy = max(prev_sell - price, prev_buy) prev_sell = sell sell = max(prev_buy + price, prev_sell) return sell 把买和卖拆开看，buy表示今天买入后最大价值，sell表示今天卖出后最大价值，prev_buy表示今天前买入的最大价值，prev_sell表示今天前卖出的最大价值。 问题2：交易收费原题：Best Time to Buy and Sell Stock with Transaction Fee 题意：每次交易收费 还是今天的最优值 = 上一个状态的最优值 + 今天的最佳选择 ，把买和卖拆开看，但是卖的时候要收手续费。 12345678910111213class Solution(object): def maxProfit(self, prices, fee): """ :type prices: List[int] :type fee: int :rtype: int """ buy, sell, prev_sell = -2147483648, 0, 0 for price in prices: prev_sell = sell sell = max(prev_sell, buy + price - fee) buy = max(buy, prev_sell - price) return sell]]></content>

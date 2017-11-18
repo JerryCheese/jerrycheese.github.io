@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -124,17 +124,18 @@
 
 
 
-<meta name="description" content="我过我要的生活不是生活过我就好">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://blog.hijerry.cn/tags/index.html">
+<meta name="description" content="上一个系列是对交易次数进行限制，本系列是无限次交易但是有一些其他限制。 问题1：卖出后休息一天原题：Best Time to Buy and Sell Stock with Cooldown 题意：你可以进行任意次交易，但完成一次交易后，接下来的一天不能进行买入/卖出操作。 我们先回顾一下上一期 买股票系列 的问题2，它和这个问题就差了一个条件，当时我们用了贪心算法，策略是低买高卖，且经过思考后">
+<meta name="keywords" content="leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode买股票系列2">
+<meta property="og:url" content="http://blog.hijerry.cn/p/31115.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="我过我要的生活不是生活过我就好">
+<meta property="og:description" content="上一个系列是对交易次数进行限制，本系列是无限次交易但是有一些其他限制。 问题1：卖出后休息一天原题：Best Time to Buy and Sell Stock with Cooldown 题意：你可以进行任意次交易，但完成一次交易后，接下来的一天不能进行买入/卖出操作。 我们先回顾一下上一期 买股票系列 的问题2，它和这个问题就差了一个条件，当时我们用了贪心算法，策略是低买高卖，且经过思考后">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-11T06:07:20.558Z">
+<meta property="og:updated_time" content="2017-11-18T14:12:26.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="我过我要的生活不是生活过我就好">
+<meta name="twitter:title" content="LeetCode买股票系列2">
+<meta name="twitter:description" content="上一个系列是对交易次数进行限制，本系列是无限次交易但是有一些其他限制。 问题1：卖出后休息一天原题：Best Time to Buy and Sell Stock with Cooldown 题意：你可以进行任意次交易，但完成一次交易后，接下来的一天不能进行买入/卖出操作。 我们先回顾一下上一期 买股票系列 的问题2，它和这个问题就差了一个条件，当时我们用了贪心算法，策略是低买高卖，且经过思考后">
 
 
 
@@ -164,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/tags/"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/31115.html"/>
 
 
 
 
 
-  <title>tags | 可建韦's 博客</title>
+  <title>LeetCode买股票系列2 | 可建韦's 博客</title>
   
 
 
@@ -339,40 +340,251 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/31115.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可建韦's 博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 7 个标签
+          <h1 class="post-title" itemprop="name headline">LeetCode买股票系列2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T00:16:35+08:00">
+                2017-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程题/" itemprop="url" rel="index">
+                    <span itemprop="name">编程题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  664 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/devopps/" style="font-size: 12px; color: #ccc">devopps</a> <a href="/tags/leetcode/" style="font-size: 30px; color: #111">leetcode</a> <a href="/tags/mac/" style="font-size: 12px; color: #ccc">mac</a> <a href="/tags/无标签/" style="font-size: 30px; color: #111">无标签</a> <a href="/tags/机器学习/" style="font-size: 12px; color: #ccc">机器学习</a> <a href="/tags/汇编/" style="font-size: 30px; color: #111">汇编</a> <a href="/tags/知乎/" style="font-size: 12px; color: #ccc">知乎</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p> 上一个系列是对交易次数进行限制，本系列是无限次交易但是有一些其他限制。</p>
+<h2 id="问题1：卖出后休息一天"><a href="#问题1：卖出后休息一天" class="headerlink" title="问题1：卖出后休息一天"></a>问题1：卖出后休息一天</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown" target="_blank" rel="external">Best Time to Buy and Sell Stock with Cooldown</a></p>
+<p>题意：你可以进行任意次交易，但完成一次交易后，接下来的一天不能进行买入/卖出操作。</p>
+<p>我们先回顾一下上一期 <a href="/p/52113.html">买股票系列</a> 的问题2，它和这个问题就差了一个条件，当时我们用了贪心算法，策略是<strong>低买高卖</strong>，且经过思考后得到的下述的状态叠加公式</p>
+<p>$ profit  += max(0, prices[i + 1] - prices[i])$ </p>
+<p>直观上理解为，只要今天的股票比昨天高，我就可以<code>挣一个净增值</code>。例如对于序列 $[1,2,3,4]​$</p>
+<ul>
+<li>第2天比第1天多1，我们就在第1天买入，第2天卖出，这样能挣1元</li>
+<li>第3天比第2天多1，我们就在第2天买入，第3天卖出，这样能挣1元</li>
+<li>……</li>
+</ul>
+<p>细看发现，其实这个状态是连续叠加的，所以如果一次交易后必须休息一天，那么这个状态就不连续了。</p>
+<p>现在再看上述的过程，发现 <code>profit +=</code> 这一句代码其实隐含着一个意思，就是<code>局部最优</code>，当前状态下的最优值是从<code>上一个状态的最优值</code>加上<code>本次状态的最佳选择</code>得到的，到这一步其实就已经得到本题的结果了，也就是公式</p>
+<p><code>今天的最优值 = 上一个状态的最优值 + 今天的最佳选择</code> ，上述题目中的<code>上一个状态的最优值</code> 其实就是<code>昨天的最优值</code>，而本题确是<code>上一次交易的最优值</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        <span class="keyword">if</span> len(prices) &lt; <span class="number">2</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        sell, buy, prev_sell, prev_buy = <span class="number">0</span>, <span class="number">-2147483648</span>, <span class="number">0</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</div><div class="line">            prev_buy = buy</div><div class="line">            buy = max(prev_sell - price, prev_buy)</div><div class="line">            prev_sell = sell</div><div class="line">            sell = max(prev_buy + price, prev_sell)</div><div class="line">        <span class="keyword">return</span> sell</div></pre></td></tr></table></figure>
+<p>把买和卖拆开看，buy表示<code>今天买入后最大价值</code>，sell表示<code>今天卖出后最大价值</code>，prev_buy表示<code>今天前买入的最大价值</code>，prev_sell表示<code>今天前卖出的最大价值</code>。</p>
+<h2 id="问题2：交易收费"><a href="#问题2：交易收费" class="headerlink" title="问题2：交易收费"></a>问题2：交易收费</h2><p>原题：<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee" target="_blank" rel="external">Best Time to Buy and Sell Stock with Transaction Fee</a></p>
+<p>题意：每次交易收费</p>
+<p>还是<code>今天的最优值 = 上一个状态的最优值 + 今天的最佳选择</code> ，把买和卖拆开看，但是卖的时候要收手续费。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(self, prices, fee)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type prices: List[int]</span></div><div class="line"><span class="string">        :type fee: int</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        buy, sell, prev_sell = <span class="number">-2147483648</span>, <span class="number">0</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</div><div class="line">            prev_sell = sell</div><div class="line">            sell = max(prev_sell, buy + price - fee)</div><div class="line">            buy = max(buy, prev_sell - price)</div><div class="line">        <span class="keyword">return</span> sell</div></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创文章分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/pay.jpg" alt="可建韦 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/52113.html" rel="next" title="LeetCode买股票系列">
+                <i class="fa fa-chevron-left"></i> LeetCode买股票系列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -381,6 +593,12 @@
 
 
           
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
 
         </div>
         
@@ -401,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -506,6 +733,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1：卖出后休息一天"><span class="nav-number">1.</span> <span class="nav-text">问题1：卖出后休息一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2：交易收费"><span class="nav-number">2.</span> <span class="nav-text">问题2：交易收费</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -124,16 +124,26 @@
 
 
 
-<meta name="description" content="我过我要的生活不是生活过我就好">
-<meta property="og:type" content="website">
-<meta property="og:title" content="可建韦&#39;s 博客">
-<meta property="og:url" content="http://blog.hijerry.cn/archives/2016/index.html">
+<meta name="description" content="维数约简假如你负责一项机器学习项目，最开始你需要收集数据集，也许把收集任务下发给各部门后，收集上来的数据特征有上千个，你是全部用呢？还是只用一部分呢？如果只用一部分，应该如何选择呢？ 首先我们肯定是不能全用的，因为特征太多会拖慢训练速度。 我们需要选择其中的一部分特征，但是这些特征又要能保证一些特性，使他能够较好的代表所有特征。 二维转一维假设现在有2个特征 $x_1, x_2$，我们需要将其转成">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week8-2:Dimensionality Reduction">
+<meta property="og:url" content="http://blog.hijerry.cn/p/26479.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="我过我要的生活不是生活过我就好">
+<meta property="og:description" content="维数约简假如你负责一项机器学习项目，最开始你需要收集数据集，也许把收集任务下发给各部门后，收集上来的数据特征有上千个，你是全部用呢？还是只用一部分呢？如果只用一部分，应该如何选择呢？ 首先我们肯定是不能全用的，因为特征太多会拖慢训练速度。 我们需要选择其中的一部分特征，但是这些特征又要能保证一些特性，使他能够较好的代表所有特征。 二维转一维假设现在有2个特征 $x_1, x_2$，我们需要将其转成">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/d7f142726a396bc1d6575feab4c559e6.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/70c483f6c36f7fba0ba478bc714f1b43.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/30595dab71f2c30226924381c20a469c.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/3cf1ffb7aa06f777ac16d4f2a8b2e950.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/d18cb6c886ca02e19401bc72a2e1eb2f.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/e2accbff5ae2aa621e0afdb997e39551.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/a5594a587f3c4e0ae165d3a19862dc05.jpg">
+<meta property="og:updated_time" content="2017-11-30T15:22:15.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="可建韦&#39;s 博客">
-<meta name="twitter:description" content="我过我要的生活不是生活过我就好">
+<meta name="twitter:title" content="Week8-2:Dimensionality Reduction">
+<meta name="twitter:description" content="维数约简假如你负责一项机器学习项目，最开始你需要收集数据集，也许把收集任务下发给各部门后，收集上来的数据特征有上千个，你是全部用呢？还是只用一部分呢？如果只用一部分，应该如何选择呢？ 首先我们肯定是不能全用的，因为特征太多会拖慢训练速度。 我们需要选择其中的一部分特征，但是这些特征又要能保证一些特性，使他能够较好的代表所有特征。 二维转一维假设现在有2个特征 $x_1, x_2$，我们需要将其转成">
+<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/d7f142726a396bc1d6575feab4c559e6.jpg">
 
 
 
@@ -163,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/archives/2016/"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/26479.html"/>
 
 
 
 
 
-  <title>归档 | 可建韦's 博客</title>
+  <title>Week8-2:Dimensionality Reduction | 可建韦's 博客</title>
   
 
 
@@ -198,7 +208,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -336,74 +346,264 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 18 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2016">2016</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/26479.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可建韦's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/p/14496.html" itemprop="url">
-              
-                <span itemprop="name">负数的除2和右移1位</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Week8-2:Dimensionality Reduction</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-23T18:26:00+08:00"
-              content="2016-02-23" >
-          02-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T22:35:18+08:00">
+                2017-11-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  977 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="维数约简"><a href="#维数约简" class="headerlink" title="维数约简"></a>维数约简</h2><p>假如你负责一项机器学习项目，最开始你需要收集数据集，也许把收集任务下发给各部门后，收集上来的数据特征有上千个，你是全部用呢？还是只用一部分呢？如果只用一部分，应该如何选择呢？</p>
+<p>首先我们肯定是不能全用的，因为特征太多会拖慢训练速度。</p>
+<p>我们需要选择其中的一部分特征，但是这些特征又要能保证一些特性，使他能够较好的<code>代表</code>所有特征。</p>
+<h3 id="二维转一维"><a href="#二维转一维" class="headerlink" title="二维转一维"></a>二维转一维</h3><p>假设现在有2个特征 $x_1, x_2$，我们需要将其转成一维数据 $y$ ，我们将所有的点 $(x_1, x_2)$ 投影到一条直线上去，那么最后会得到一条数轴上的一些点集，也就是把二维转成一维了。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/d7f142726a396bc1d6575feab4c559e6.jpg" alt=""></p>
+<h3 id="三维转二维"><a href="#三维转二维" class="headerlink" title="三维转二维"></a>三维转二维</h3><p>我们将所有的三维上的点投影到一个平面上，这个平面用两个向量$z_1, z_2$来表示，那么最后我们将得到一个平面上的点集，这样也就将三维转成二维了。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/70c483f6c36f7fba0ba478bc714f1b43.jpg" alt=""></p>
+<h2 id="主要成分分析"><a href="#主要成分分析" class="headerlink" title="主要成分分析"></a>主要成分分析</h2><p>又叫PCA，它寻找一条低维的面，使得所有点到该面的距离的平方和最小。如下图中的这条直线，所有点到该直线的距离的平方和最短。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/30595dab71f2c30226924381c20a469c.jpg" alt=""></p>
+<p>那么其实不用找一条直线，可以发现，只要方向与直线一样，投影的结果是一样的，所以只需要找到一个向量即可。</p>
+<h3 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h3><h4 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h4><p>如果给定m个数据 $x^{(1)}, x^{(2)}, .. , x^{(m)}$ ，我们首先对数据进行缩放，像第二周讲的那样，我们先求得每一个特征的平均数$\mu_j = \frac 1 m (x_j^{(1)} + x_j^{(2)} … +x_j^{(m)})$  ，用 $x_j^{(i)} - \mu_j$ 替换 $x_j^{(i)}$  。</p>
+<h4 id="计算协方差矩阵"><a href="#计算协方差矩阵" class="headerlink" title="计算协方差矩阵"></a>计算协方差矩阵</h4><p>计算出每一个数据的协方差矩阵</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/3cf1ffb7aa06f777ac16d4f2a8b2e950.jpg" alt=""></p>
+<h4 id="计算特征向量"><a href="#计算特征向量" class="headerlink" title="计算特征向量"></a>计算特征向量</h4><p>再计算协方差矩阵的特征向量，在matlab中，可以使用[U, S, V] = svd(Sigma)（Sigma是协方差矩阵）来计算特征向量U，那么这时我们会得到一个 $n \times n$ 的特征向量。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/d18cb6c886ca02e19401bc72a2e1eb2f.jpg" alt=""></p>
+<p>取前k列作为$U_{reduce}$ 值，用来做降维映射。</p>
+<h4 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h4><p>令向量$z^{(i)} = U_{reduce}^T * x^{(i)}$ 就得到了n维的 $x^{(i)}$ 降成k维后的$z^{(i)}$</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/e2accbff5ae2aa621e0afdb997e39551.jpg" alt=""></p>
+<h2 id="k的选取"><a href="#k的选取" class="headerlink" title="k的选取"></a>k的选取</h2><p>现在你有1000个特征，那么到底降成多少个比较合适呢？也许可以是500个，也有可能100个就够了。</p>
+<p>这里有一个方法可以检测降维后，新数据对原始数据特性的保留程度，计算下面公式，你将得到新数据与原始数据之间的差异度。假设计算出来的结果是0.05，那么新数据保留了原始数据95%的特性，一般来说，我们只要保持计算结果小于0.01即可。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/a5594a587f3c4e0ae165d3a19862dc05.jpg" alt=""></p>
+<p>所以最好的方式是，尝试不同的k值，找到一个比较小的k值，同时新数据保留原始数据99%~90%的特性均可。</p>
+<h2 id="PCA的应用"><a href="#PCA的应用" class="headerlink" title="PCA的应用"></a>PCA的应用</h2><p>PCA常用于：</p>
+<ul>
+<li>压缩数据，节约空间</li>
+<li>加速机器学习过程</li>
+<li>数据可视化（如取k=2、k=3）</li>
+</ul>
+<p>一种不好的用法是，用PCA来避免<code>过拟合</code>，我们前几周知道，过拟合问题可以通过用正规化参数 $\lambda$ 来处理，虽然PCA可以减少特征数量，但其实它保持了原数据的特性，也就是<code>方差</code>，所以效果不尽人意。</p>
+<p>同时在进行一次机器学习训练过程中，我们也许根本用不到PCA算法，最好的方式还是先不用PCA降维，得到训练结果后，再使用PCA降维重新训练一次，看哪种方式带来的结果比较合乎人意。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创文章分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/pay.jpg" alt="可建韦 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/31473.html" rel="next" title="Week8-1: Clustering">
+                <i class="fa fa-chevron-left"></i> Week8-1: Clustering
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -411,6 +611,12 @@
 
 
           
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
 
         </div>
         
@@ -431,8 +637,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +751,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#维数约简"><span class="nav-number">1.</span> <span class="nav-text">维数约简</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维转一维"><span class="nav-number">1.1.</span> <span class="nav-text">二维转一维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三维转二维"><span class="nav-number">1.2.</span> <span class="nav-text">三维转二维</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要成分分析"><span class="nav-number">2.</span> <span class="nav-text">主要成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理过程"><span class="nav-number">2.1.</span> <span class="nav-text">处理过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预处理"><span class="nav-number">2.1.1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算协方差矩阵"><span class="nav-number">2.1.2.</span> <span class="nav-text">计算协方差矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算特征向量"><span class="nav-number">2.1.3.</span> <span class="nav-text">计算特征向量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降维"><span class="nav-number">2.1.4.</span> <span class="nav-text">降维</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k的选取"><span class="nav-number">3.</span> <span class="nav-text">k的选取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA的应用"><span class="nav-number">4.</span> <span class="nav-text">PCA的应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -669,6 +900,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

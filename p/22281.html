@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="NLP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="安装NLTK按照官方步骤：Installing NLTK 在安装完nltk后，通过下述命令可查看nltk版本： 12import nltkprint nltk.__doc__ 输出： 123456789The Natural Language Toolkit (NLTK) is an open source Python libraryfor Natural Language Processing">
+<meta name="keywords" content="NLP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLTK常用操作和语料库">
+<meta property="og:url" content="http://blog.hijerry.cn/p/22281.html">
+<meta property="og:site_name" content="可建韦&#39;s 博客">
+<meta property="og:description" content="安装NLTK按照官方步骤：Installing NLTK 在安装完nltk后，通过下述命令可查看nltk版本： 12import nltkprint nltk.__doc__ 输出： 123456789The Natural Language Toolkit (NLTK) is an open source Python libraryfor Natural Language Processing">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/57cae6c392c6022993a4dfa52f52a050.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/5cf65b8fc8a1643f0d21e53c14021bf4.jpg">
+<meta property="og:updated_time" content="2017-12-19T12:36:58.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NLTK常用操作和语料库">
+<meta name="twitter:description" content="安装NLTK按照官方步骤：Installing NLTK 在安装完nltk后，通过下述命令可查看nltk版本： 12import nltkprint nltk.__doc__ 输出： 123456789The Natural Language Toolkit (NLTK) is an open source Python libraryfor Natural Language Processing">
+<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/57cae6c392c6022993a4dfa52f52a050.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.hijerry.cn/p/22281.html"/>
+
+
+
+
+
+  <title>NLTK常用操作和语料库 | 可建韦's 博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3693e3a7f3385f3178527bcab766f862";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">可建韦's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生🐟忧患死🐟安乐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/22281.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可建韦's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NLTK常用操作和语料库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T15:29:24+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  2,018 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装NLTK"><a href="#安装NLTK" class="headerlink" title="安装NLTK"></a>安装NLTK</h2><p>按照官方步骤：<a href="http://www.nltk.org/install.html" target="_blank" rel="external">Installing NLTK</a></p>
+<p>在安装完nltk后，通过下述命令可查看nltk版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import nltk</div><div class="line">print nltk.__doc__</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">The Natural Language Toolkit (NLTK) is an open source Python library</div><div class="line">for Natural Language Processing.  A free online book is available.</div><div class="line">(If you use the library for academic research, please cite the book.)</div><div class="line"></div><div class="line">Steven Bird, Ewan Klein, and Edward Loper (2009).</div><div class="line">Natural Language Processing with Python.  O&apos;Reilly Media Inc.</div><div class="line">http://nltk.org/book</div><div class="line"></div><div class="line">@version: 3.2.5</div></pre></td></tr></table></figure>
+<p>所以，我的版本是 <code>3.2.5</code></p>
+<h2 id="获取图书集合"><a href="#获取图书集合" class="headerlink" title="获取图书集合"></a>获取图书集合</h2><p>为便于学习，nltk提供了图书集合，通过下述命令下载该集合：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nltk.download()</div></pre></td></tr></table></figure>
+<p>在出现的界面中选择 <code>book</code> 进行下载，文件大概有100M，这也是《Python自然语言处理》这本书中推荐的图书集合。</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/57cae6c392c6022993a4dfa52f52a050.jpg" alt=""></p>
+<p>下载完成后，回到python解析器，导入刚刚下载的图书集合：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from nltk.book import *</div></pre></td></tr></table></figure>
+<p>运行 <code>texts()</code> 可以查看书籍列表，<code>sents()</code> 可以查看句子列表。</p>
+<p>查看 <code>book.py</code> 文件可知，该文件导入了下面一些模块</p>
+<ul>
+<li><code>nltk.corpus</code> 中的一些<code>语料库</code></li>
+<li><code>nltk.text</code> 中的<code>Text</code>类</li>
+<li><code>nltk.probability</code> 中的 <code>FreqDist</code> 类</li>
+<li><code>nltk.util</code> 中的 <code>bigrams</code> 模块</li>
+</ul>
+<p>同时通过<code>语料库</code>创建9个 <code>Text</code> 实例，变量为<code>text1~text9</code>。</p>
+<p>而 <code>sent1~sent9</code> 是硬编码的9个句子。</p>
+<h2 id="语料库介绍"><a href="#语料库介绍" class="headerlink" title="语料库介绍"></a>语料库介绍</h2><p>在<code>book.py</code> 文件中，我们可以看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import (gutenberg, genesis, inaugural,</div><div class="line">                         nps_chat, webtext, treebank, wordnet)</div></pre></td></tr></table></figure>
+<p>所以我们已经引入了语料库了，通过打印可知：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print gutenberg</div><div class="line"></div><div class="line">outputs:</div><div class="line">&lt;PlaintextCorpusReader in u&apos;/Users/jerry/nltk_data/corpora/gutenberg&apos;&gt;</div></pre></td></tr></table></figure>
+<p>可见 <code>gutenberg</code> 是一个 <code>PlaintextCorpusReader</code> 类。</p>
+<p>进入到指定的目录可见<code>gutenberg</code> 的所有文本，可见都是<code>txt文档</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">cd /Users/jerry/nltk_data/corpora/gutenberg</div><div class="line">ls</div><div class="line"></div><div class="line">outputs:</div><div class="line">README                  burgess-busterbrown.txt milton-paradise.txt</div><div class="line">austen-emma.txt         carroll-alice.txt       shakespeare-caesar.txt</div><div class="line">austen-persuasion.txt   chesterton-ball.txt     shakespeare-hamlet.txt</div><div class="line">austen-sense.txt        chesterton-brown.txt    shakespeare-macbeth.txt</div><div class="line">bible-kjv.txt           chesterton-thursday.txt whitman-leaves.txt</div><div class="line">blake-poems.txt         edgeworth-parents.txt</div><div class="line">bryant-stories.txt      melville-moby_dick.txt</div></pre></td></tr></table></figure>
+<h3 id="古腾堡语料库"><a href="#古腾堡语料库" class="headerlink" title="古腾堡语料库"></a>古腾堡语料库</h3><p><a href="http://www.gutenberg.org" target="_blank" rel="external">古腾堡项目</a> 大约有36000本免费电子图书，NLTK中只包含了其中的一小部分，通过下述命令可以查看语料库中的文件标识符（文件名）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import gutenberg</div><div class="line">gutenberg.fileids()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;austen-emma.txt&apos;, u&apos;austen-persuasion.txt&apos;, u&apos;austen-sense.txt&apos;, u&apos;bible-kjv.txt&apos;, u&apos;blake-poems.txt&apos;, u&apos;bryant-stories.txt&apos;, u&apos;burgess-busterbrown.txt&apos;, u&apos;carroll-alice.txt&apos;, u&apos;chesterton-ball.txt&apos;, u&apos;chesterton-brown.txt&apos;, u&apos;chesterton-thursday.txt&apos;, u&apos;edgeworth-parents.txt&apos;, u&apos;melville-moby_dick.txt&apos;, u&apos;milton-paradise.txt&apos;, u&apos;shakespeare-caesar.txt&apos;, u&apos;shakespeare-hamlet.txt&apos;, u&apos;shakespeare-macbeth.txt&apos;, u&apos;whitman-leaves.txt&apos;]</div></pre></td></tr></table></figure>
+<h3 id="网络和聊天文本"><a href="#网络和聊天文本" class="headerlink" title="网络和聊天文本"></a>网络和聊天文本</h3><p>古腾堡项目代表的既定文学，考虑到非正式的文本也很重要，所以NLTK中也包含网络小说和论坛、《加勒比海盗》的电影剧本等内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import webtext</div><div class="line">webtext.fileids()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;firefox.txt&apos;, u&apos;grail.txt&apos;, u&apos;overheard.txt&apos;, u&apos;pirates.txt&apos;, u&apos;singles.txt&apos;, u&apos;wine.txt&apos;]</div></pre></td></tr></table></figure>
+<p>即时聊天会话语料库，是美国海军研究生院的研究生收集的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import nps_chat</div><div class="line">nps_chat.fileids()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;10-19-20s_706posts.xml&apos;, u&apos;10-19-30s_705posts.xml&apos;, u&apos;10-19-40s_686posts.xml&apos;, u&apos;10-19-adults_706posts.xml&apos;, u&apos;10-24-40s_706posts.xml&apos;, u&apos;10-26-teens_706posts.xml&apos;, u&apos;11-06-adults_706posts.xml&apos;, u&apos;11-08-20s_705posts.xml&apos;, u&apos;11-08-40s_706posts.xml&apos;, u&apos;11-08-adults_705posts.xml&apos;, u&apos;11-08-teens_706posts.xml&apos;, u&apos;11-09-20s_706posts.xml&apos;, u&apos;11-09-40s_706posts.xml&apos;, u&apos;11-09-adults_706posts.xml&apos;, u&apos;11-09-teens_706posts.xml&apos;]</div></pre></td></tr></table></figure>
+<h3 id="布朗语料库"><a href="#布朗语料库" class="headerlink" title="布朗语料库"></a>布朗语料库</h3><p>布朗语料库是第一个百万词级别的英语电子语料库，这个语料库包含500个不同来源的文本，按文体分类有新闻、社论等，<a href="http://clu.uni.no/icame/brown/bcm-los.html" target="_blank" rel="external">完整列表</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import brown</div><div class="line">brown.categories()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;adventure&apos;, u&apos;belles_lettres&apos;, u&apos;editorial&apos;, u&apos;fiction&apos;, u&apos;government&apos;, u&apos;hobbies&apos;, u&apos;humor&apos;, u&apos;learned&apos;, u&apos;lore&apos;, u&apos;mystery&apos;, u&apos;news&apos;, u&apos;religion&apos;, u&apos;reviews&apos;, u&apos;romance&apos;, u&apos;science_fiction&apos;]</div></pre></td></tr></table></figure>
+<p>这里注意的是它是按文体分类的，例如要取得<code>news</code>类别的文本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print brown.words(categories=&apos;news&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;The&apos;, u&apos;Fulton&apos;, u&apos;County&apos;, u&apos;Grand&apos;, u&apos;Jury&apos;, ...]</div></pre></td></tr></table></figure>
+<p>当前也可以用<code>fileids</code> 方法列出所有<code>文件标识</code>，再用文件标识来获取文本，但最好还是用类别来取得文本。</p>
+<h3 id="自定义语料库"><a href="#自定义语料库" class="headerlink" title="自定义语料库"></a>自定义语料库</h3><p>例如我们在家目录建立一个<code>texts</code> 目录和一个文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd ~ &amp;&amp; mkdir texts &amp;&amp; cd texts</div><div class="line">echo &quot;This is a love story&quot; &gt;&gt; lovestory.txt</div><div class="line">pwd</div><div class="line"></div><div class="line">outputs:</div><div class="line">/Users/jerry/texts</div></pre></td></tr></table></figure>
+<p>将上面的output放在下面的dir变量中，在python解析器中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from nltk.corpus import PlaintextCorpusReader</div><div class="line">dir = &apos;/Users/jerry/texts&apos;</div><div class="line">my_corpus = PlaintextCorpusReader(dir, &apos;.*\.txt&apos;)</div><div class="line">print my_corpus.fileids()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[&apos;lovestory.txt&apos;]</div></pre></td></tr></table></figure>
+<p>断词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print my_corpus.words(&apos;lovestory.txt&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;This&apos;, u&apos;is&apos;, u&apos;a&apos;, u&apos;love&apos;, u&apos;story&apos;]</div></pre></td></tr></table></figure>
+<h2 id="PlaintextCorpusReader类"><a href="#PlaintextCorpusReader类" class="headerlink" title="PlaintextCorpusReader类"></a>PlaintextCorpusReader类</h2><p>官方文档：<a href="http://www.nltk.org/api/nltk.corpus.reader.html#nltk.corpus.reader.plaintext.PlaintextCorpusReader" target="_blank" rel="external">nltk.corpus.reader.plaintext.PlaintextCorpusReader</a></p>
+<p>介绍：基于文件系统，用来加载纯文本的类</p>
+<p>所在文件：<code>corpus/reader/plaintext.py</code>，大约在23~138行</p>
+<h3 id="断词"><a href="#断词" class="headerlink" title="断词"></a>断词</h3><p>定义：<code>words</code>(<em>fileids=None</em>)</p>
+<p>我们可以使用<code>words</code>函数将这些文件分割成<code>tokens</code>(词，此处也叫words)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">words = gutenberg.words(&apos;shakespeare-macbeth.txt&apos;)</div><div class="line">print words</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;[&apos;, u&apos;The&apos;, u&apos;Tragedie&apos;, u&apos;of&apos;, u&apos;Macbeth&apos;, u&apos;by&apos;, ...]</div></pre></td></tr></table></figure>
+<p>标点符号也会被单独分出来</p>
+<h3 id="断句"><a href="#断句" class="headerlink" title="断句"></a>断句</h3><p>定义：<code>sents</code>(<em>fileids=None</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sents = gutenberg.sents(&apos;shakespeare-macbeth.txt&apos;)</div><div class="line">print sents</div><div class="line"></div><div class="line">outputs:</div><div class="line">[[u&apos;[&apos;, u&apos;The&apos;, u&apos;Tragedie&apos;, u&apos;of&apos;, u&apos;Macbeth&apos;, u&apos;by&apos;, u&apos;William&apos;, u&apos;Shakespeare&apos;, u&apos;1603&apos;, u&apos;]&apos;], [u&apos;Actus&apos;, u&apos;Primus&apos;, u&apos;.&apos;], ...]</div></pre></td></tr></table></figure>
+<p>可以发现每一句都是一个字符串数组，连起来就是一个句子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print &apos; &apos;.join(sents[0])</div><div class="line"></div><div class="line">outputs:</div><div class="line">[ The Tragedie of Macbeth by William Shakespeare 1603 ]</div></pre></td></tr></table></figure>
+<h3 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h3><p>定义：<code>paras</code>(<em>fileids=None</em>)</p>
+<p><code>段</code>是指自然段，一个<code>空白行</code>表示自然段之间的分隔符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">paras = gutenberg.paras(&apos;shakespeare-macbeth.txt&apos;)</div><div class="line">print &apos; &apos;.join(paras[0][0]) #first para, first sentence</div><div class="line"></div><div class="line">outputs:</div><div class="line">[ The Tragedie of Macbeth by William Shakespeare 1603 ]</div></pre></td></tr></table></figure>
+<h3 id="加载原始文本"><a href="#加载原始文本" class="headerlink" title="加载原始文本"></a>加载原始文本</h3><p>定义：<code>raw</code>(<em>fileids=None</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">str = gutenberg.raw(&apos;shakespeare-macbeth.txt&apos;)</div><div class="line">print str[:100]</div><div class="line"></div><div class="line">outputs:</div><div class="line">[The Tragedie of Macbeth by William Shakespeare 1603]</div><div class="line"></div><div class="line"></div><div class="line">Actus Primus. Scoena Prima.</div><div class="line"></div><div class="line">Thunder and Lig</div></pre></td></tr></table></figure>
+<h2 id="Text类"><a href="#Text类" class="headerlink" title="Text类"></a>Text类</h2><p>官方文档：<a href="http://www.nltk.org/api/nltk.html#nltk.text.Text" target="_blank" rel="external">nltk.text.Text</a></p>
+<p>介绍：token(词)序列的容器，同时提供一些常用的文本分析函数。</p>
+<p>所在文件：<code>text.py</code>，大约在264行~395行</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>定义：<code>__init__</code>(self, tokens, name=None)</p>
+<p><code>text1</code> 变量其实是通过下述语句创建的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">text1 = Text(gutenberg.words(&apos;melville-moby_dick.txt&apos;))</div><div class="line">print text1</div><div class="line"></div><div class="line">outputs:</div><div class="line">&lt;Text: Moby Dick by Herman Melville 1851&gt;</div></pre></td></tr></table></figure>
+<p>通过打印words方法的结果可知：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print gutenberg.words(&apos;melville-moby_dick.txt&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;[&apos;, u&apos;Moby&apos;, u&apos;Dick&apos;, u&apos;by&apos;, u&apos;Herman&apos;, u&apos;Melville&apos;, ...]</div></pre></td></tr></table></figure>
+<p>发现<code>gutenberg</code> 的 <code>words</code> 方法返回的其实是一个<code>字符串数组</code> 。</p>
+<h3 id="查找单词"><a href="#查找单词" class="headerlink" title="查找单词"></a>查找单词</h3><p>定义：<code>concordance</code>(<em>word</em>, <em>width=79</em>, <em>lines=25</em>)</p>
+<p>参阅： ConcordanceIndex 类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">text1.concordance(&apos;monstrous&apos;, 30, 5)</div><div class="line"></div><div class="line">outputs:</div><div class="line">Displaying 5 of 11 matches:</div><div class="line">of a most monstrous size . ..</div><div class="line">hing that monstrous bulk of t</div><div class="line"> array of monstrous clubs and</div><div class="line">ered what monstrous cannibal</div><div class="line">od ; most monstrous and most</div></pre></td></tr></table></figure>
+<p>这里我指定了只显示<code>5</code>行，每一行宽度是<code>30</code>。</p>
+<p>细心的你可能发现每行只有29个字符，详细原因看<code>text.py</code>文件的<code>print_concordance</code> 方法即可。</p>
+<h3 id="搭配词"><a href="#搭配词" class="headerlink" title="搭配词"></a>搭配词</h3><p>定义：<code>collocations</code>(<em>num=20</em>, <em>window_size=2</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">text1.collocations()</div><div class="line"></div><div class="line">outputs:</div><div class="line">Sperm Whale; Moby Dick; White Whale; old man; Captain Ahab; sperm</div><div class="line">whale; Right Whale; Captain Peleg; New Bedford; Cape Horn; cried Ahab;</div><div class="line">years ago; lower jaw; never mind; Father Mapple; cried Stubb; chief</div><div class="line">mate; white whale; ivory leg; one hand</div></pre></td></tr></table></figure>
+<p>可见，该函数是打印出文中由多个词组成的<code>搭配词</code>，如上文的<code>old man</code>、<code>years ago</code>。</p>
+<h3 id="相似词"><a href="#相似词" class="headerlink" title="相似词"></a>相似词</h3><p>定义：<code>similar</code>(<em>word</em>, <em>num=20</em>)</p>
+<p>参阅：ContextIndex.similar_word 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text1.similar(&apos;monstrous&apos;, 5)</div><div class="line"></div><div class="line">outputs:</div><div class="line">imperial subtly impalpable pitiable curious</div></pre></td></tr></table></figure>
+<p>该方法根据单词在上下文中的用法，返回与给定词相似的词，相似度越高的词排名越靠前。</p>
+<p><code>num</code> 参数表示查找数量，例如上面就只显示了<code>5</code>个。</p>
+<h3 id="相同上下文"><a href="#相同上下文" class="headerlink" title="相同上下文"></a>相同上下文</h3><p>定义：<code>common_contexts</code>(<em>words</em>, <em>num=20</em>)</p>
+<p>参阅：ContextIndex.common_contexts 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text2.common_contexts([&apos;monstrous&apos;, &apos;very&apos;])</div><div class="line"></div><div class="line">outputs:</div><div class="line">a_pretty is_pretty a_lucky am_glad be_glad</div></pre></td></tr></table></figure>
+<p>给出两个词的共同的上下文。这意味着下划线部分可用<code>monstrous</code> 或 <code>very</code>进行填空，而且<code>a_pretty</code> 这个公共上下文出现的频率最大。</p>
+<h3 id="词分布"><a href="#词分布" class="headerlink" title="词分布"></a>词分布</h3><p>定义：<code>dispersion_plot</code>(<em>words</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text4.dispersion_plot([&apos;citizens&apos;, &apos;democracy&apos;, &apos;freedom&apos;, &apos;duties&apos;, &apos;America&apos;])</div></pre></td></tr></table></figure>
+<p><img src="http://os9coobhw.bkt.clouddn.com/5cf65b8fc8a1643f0d21e53c14021bf4.jpg" alt=""></p>
+<p><code>text4</code> 是美国总统就职演说的文本，上述图像打印出了这五个词在演说过程中的分布情况。</p>
+<p>这可以用来研究随时间推移，语言使用上的变化。</p>
+<h3 id="正则表达式匹配单词"><a href="#正则表达式匹配单词" class="headerlink" title="正则表达式匹配单词"></a>正则表达式匹配单词</h3><p>定义：<code>findall</code>(<em>regexp</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text5.findall(&quot;&lt;.*&gt;&lt;.*&gt;&lt;bro&gt;&quot;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">you rule bro; telling you bro; u twizted bro</div></pre></td></tr></table></figure>
+<h3 id="词出现次数"><a href="#词出现次数" class="headerlink" title="词出现次数"></a>词出现次数</h3><p>定义：<code>count</code>(<em>word</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text1.count(&apos;I&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">2124</div></pre></td></tr></table></figure>
+<h3 id="词索引"><a href="#词索引" class="headerlink" title="词索引"></a>词索引</h3><p>定义：<code>index</code>(<em>word</em>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text1.index(&apos;I&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">37</div></pre></td></tr></table></figure>
+<h3 id="文本总长度"><a href="#文本总长度" class="headerlink" title="文本总长度"></a>文本总长度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">len(text1)</div><div class="line"></div><div class="line">outputs:</div><div class="line">260819</div></pre></td></tr></table></figure>
+<h3 id="生成FreqDist类"><a href="#生成FreqDist类" class="headerlink" title="生成FreqDist类"></a>生成FreqDist类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dist = text1.vocab()</div><div class="line">print dist</div><div class="line"></div><div class="line">outputs:</div><div class="line">&lt;FreqDist with 19317 samples and 260819 outcomes&gt;</div></pre></td></tr></table></figure>
+<h3 id="打印频率分布图"><a href="#打印频率分布图" class="headerlink" title="打印频率分布图"></a>打印频率分布图</h3><p>定义：<code>plot</code>(<em>*args</em>)</p>
+<p>参阅：nltk.prob.FreqDist.plot 方法</p>
+<p>从定义可以看出，其实就是调用了FreqDist的plot方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def plot(self, *args):</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        See documentation for FreqDist.plot()</div><div class="line">        :seealso: nltk.prob.FreqDist.plot()</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        self.vocab().plot(*args)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创文章分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/pay.jpg" alt="可建韦 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NLP/" rel="tag"># NLP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/57750.html" rel="next" title="科学上网神器之ss">
+                <i class="fa fa-chevron-left"></i> 科学上网神器之ss
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="可建韦" />
+            
+              <p class="site-author-name" itemprop="name">可建韦</p>
+              <p class="site-description motion-element" itemprop="description">我过我要的生活不是生活过我就好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JerryCheese" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:thinkjerry@icloud.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/5340792685" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/qq_18661257" title="77458" target="_blank">77458</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mochiko.cn" title="mochiko" target="_blank">mochiko</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装NLTK"><span class="nav-number">1.</span> <span class="nav-text">安装NLTK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取图书集合"><span class="nav-number">2.</span> <span class="nav-text">获取图书集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语料库介绍"><span class="nav-number">3.</span> <span class="nav-text">语料库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#古腾堡语料库"><span class="nav-number">3.1.</span> <span class="nav-text">古腾堡语料库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络和聊天文本"><span class="nav-number">3.2.</span> <span class="nav-text">网络和聊天文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布朗语料库"><span class="nav-number">3.3.</span> <span class="nav-text">布朗语料库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义语料库"><span class="nav-number">3.4.</span> <span class="nav-text">自定义语料库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PlaintextCorpusReader类"><span class="nav-number">4.</span> <span class="nav-text">PlaintextCorpusReader类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#断词"><span class="nav-number">4.1.</span> <span class="nav-text">断词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断句"><span class="nav-number">4.2.</span> <span class="nav-text">断句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分段"><span class="nav-number">4.3.</span> <span class="nav-text">分段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载原始文本"><span class="nav-number">4.4.</span> <span class="nav-text">加载原始文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text类"><span class="nav-number">5.</span> <span class="nav-text">Text类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">5.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找单词"><span class="nav-number">5.2.</span> <span class="nav-text">查找单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭配词"><span class="nav-number">5.3.</span> <span class="nav-text">搭配词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相似词"><span class="nav-number">5.4.</span> <span class="nav-text">相似词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相同上下文"><span class="nav-number">5.5.</span> <span class="nav-text">相同上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词分布"><span class="nav-number">5.6.</span> <span class="nav-text">词分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式匹配单词"><span class="nav-number">5.7.</span> <span class="nav-text">正则表达式匹配单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词出现次数"><span class="nav-number">5.8.</span> <span class="nav-text">词出现次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词索引"><span class="nav-number">5.9.</span> <span class="nav-text">词索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本总长度"><span class="nav-number">5.10.</span> <span class="nav-text">文本总长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成FreqDist类"><span class="nav-number">5.11.</span> <span class="nav-text">生成FreqDist类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印频率分布图"><span class="nav-number">5.12.</span> <span class="nav-text">打印频率分布图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">可建韦</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: true,
+        notify: false,
+        app_id: 'EQT2jfdoprWjnALVbYHro6Wy-gzGzoHsz',
+        app_key: 'zgjyNKXovG43HpCN4Rq9zC0G',
+        placeholder: 'ヾ(o◕∀◕)ﾉ你要留言吗∽∽∽',
+        path: window.location.pathname,
+        avatar: 'mm',
+        guest_info: ['nick', 'link']
+    });
+  </script>
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

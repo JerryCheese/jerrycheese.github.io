@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="devopps,docker," />
+  <meta name="keywords" content="NLP," />
 
 
 
@@ -124,20 +124,23 @@
 
 
 
-<meta name="description" content="Docker基础这里不多说，借助docker官方文档可以学习到大部分内容，而且很详细。  在线阅读：GitBook 或 Github。 离线阅读。 pdf 版本 下载 epub 版本 下载  本次配置中用到的镜像：  nginx:1.12-alpine，Dockerfile   php:7.1-fpm-alpine，Dockerfile mysql/mysql-server:5.7.20，Dock">
-<meta name="keywords" content="devopps,docker">
+<meta name="description" content="FreqDist类官方文档：nltk.probability.FreqDist 介绍：词的概率分布类，包含一些概率学的方法。 所在文件：probability.py ，大约在63~427行 创建定义：__init__(self, samples=None) 1234567import nltkfrom nltk.book import *fdist = FreqDist(gutenberg.wor">
+<meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker模拟多机环境">
-<meta property="og:url" content="http://blog.hijerry.cn/p/47694.html">
+<meta property="og:title" content="NLTK之词频">
+<meta property="og:url" content="http://blog.hijerry.cn/p/45749.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="Docker基础这里不多说，借助docker官方文档可以学习到大部分内容，而且很详细。  在线阅读：GitBook 或 Github。 离线阅读。 pdf 版本 下载 epub 版本 下载  本次配置中用到的镜像：  nginx:1.12-alpine，Dockerfile   php:7.1-fpm-alpine，Dockerfile mysql/mysql-server:5.7.20，Dock">
+<meta property="og:description" content="FreqDist类官方文档：nltk.probability.FreqDist 介绍：词的概率分布类，包含一些概率学的方法。 所在文件：probability.py ，大约在63~427行 创建定义：__init__(self, samples=None) 1234567import nltkfrom nltk.book import *fdist = FreqDist(gutenberg.wor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/d6c6230a46f5cff94d795f28b21dc5cb.jpg">
-<meta property="og:updated_time" content="2017-12-06T09:07:12.322Z">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/04ddb01af2e26c576a78d54df6d3cfae.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/0c42cc8d75b002af0988674dfe4e1188.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/7fd216a35d94e6064fdf2d1df76559e7.jpg">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/f747171406e55481e79c3114983ce4f8.jpg">
+<meta property="og:updated_time" content="2017-12-20T15:08:07.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker模拟多机环境">
-<meta name="twitter:description" content="Docker基础这里不多说，借助docker官方文档可以学习到大部分内容，而且很详细。  在线阅读：GitBook 或 Github。 离线阅读。 pdf 版本 下载 epub 版本 下载  本次配置中用到的镜像：  nginx:1.12-alpine，Dockerfile   php:7.1-fpm-alpine，Dockerfile mysql/mysql-server:5.7.20，Dock">
-<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/d6c6230a46f5cff94d795f28b21dc5cb.jpg">
+<meta name="twitter:title" content="NLTK之词频">
+<meta name="twitter:description" content="FreqDist类官方文档：nltk.probability.FreqDist 介绍：词的概率分布类，包含一些概率学的方法。 所在文件：probability.py ，大约在63~427行 创建定义：__init__(self, samples=None) 1234567import nltkfrom nltk.book import *fdist = FreqDist(gutenberg.wor">
+<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/04ddb01af2e26c576a78d54df6d3cfae.jpg">
 
 
 
@@ -167,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/p/47694.html"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/45749.html"/>
 
 
 
 
 
-  <title>docker模拟多机环境 | 可建韦's 博客</title>
+  <title>NLTK之词频 | 可建韦's 博客</title>
   
 
 
@@ -354,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/47694.html">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/45749.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -371,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">docker模拟多机环境</h1>
+          <h1 class="post-title" itemprop="name headline">NLTK之词频</h1>
         
 
         <div class="post-meta">
@@ -383,8 +386,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T14:53:14+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T21:12:53+08:00">
+                2017-12-20
               </time>
             
 
@@ -406,8 +409,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件技术/" itemprop="url" rel="index">
-                    <span itemprop="name">软件技术</span>
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
                   </a>
                 </span>
 
@@ -442,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,759 字
+                  1,325 字
                 </span>
               
 
@@ -458,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分
+                  11 分
                 </span>
               
             </div>
@@ -479,85 +482,77 @@
       
 
       
-        <h2 id="Docker基础"><a href="#Docker基础" class="headerlink" title="Docker基础"></a>Docker基础</h2><p>这里不多说，借助docker官方文档可以学习到大部分内容，而且很详细。</p>
+        <h2 id="FreqDist类"><a href="#FreqDist类" class="headerlink" title="FreqDist类"></a>FreqDist类</h2><p>官方文档：<a href="http://www.nltk.org/api/nltk.html#nltk.probability.FreqDist" target="_blank" rel="external">nltk.probability.FreqDist</a></p>
+<p>介绍：词的概率分布类，包含一些概率学的方法。</p>
+<p>所在文件：<code>probability.py</code> ，大约在63~427行</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>定义：<code>__init__</code>(self, samples=None)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import nltk</div><div class="line">from nltk.book import *</div><div class="line">fdist = FreqDist(gutenberg.words(&apos;chesterton-thursday.txt&apos;))</div><div class="line">print fdist</div><div class="line"></div><div class="line">outputs:</div><div class="line">&lt;FreqDist with 6807 samples and 69213 outcomes&gt;</div></pre></td></tr></table></figure>
+<p>上面的<code>69213 outcomes</code>是指有<code>69213</code>个词，而<code>6807 samples</code>是指有<code>6807</code>个<strong>不重复</strong>的词。</p>
+<p>通过下述命令可以确认这一点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">len(wds)</div><div class="line">len(set(wds))</div><div class="line"></div><div class="line">outputs:</div><div class="line">69213</div><div class="line">6807</div></pre></td></tr></table></figure>
+<h3 id="词数量"><a href="#词数量" class="headerlink" title="词数量"></a>词数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist.N()</div><div class="line"></div><div class="line">outputs:</div><div class="line">69213</div></pre></td></tr></table></figure>
+<h3 id="不重复词的数量-样本数量"><a href="#不重复词的数量-样本数量" class="headerlink" title="不重复词的数量(样本数量)"></a>不重复词的数量(样本数量)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist.B()</div><div class="line"></div><div class="line">outputs:</div><div class="line">6807</div></pre></td></tr></table></figure>
+<h3 id="生成副本"><a href="#生成副本" class="headerlink" title="生成副本"></a>生成副本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fdist2 = fdist</div><div class="line">fdist3 = fdist.copy() #make copy</div><div class="line">fdist == fdist2</div><div class="line">fdist == fdist3</div><div class="line">fdist is fdist2</div><div class="line">fdist is fdist3</div><div class="line"></div><div class="line">outputs:</div><div class="line">True</div><div class="line">True</div><div class="line">True</div><div class="line">False</div></pre></td></tr></table></figure>
+<h3 id="词频率"><a href="#词频率" class="headerlink" title="词频率"></a>词频率</h3><p>定义：<code>freq</code>(<em>sample</em>)</p>
+<p>sample是词，返回值∈[0, 1]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist.freq(&apos;the&apos;)</div><div class="line"></div><div class="line">outputs:</div><div class="line">0.04754887087685839</div></pre></td></tr></table></figure>
+<p>可见，the的词频是<code>0.0475</code>，也就是<code>4.75%</code></p>
+<h3 id="词频度（出现次数）"><a href="#词频度（出现次数）" class="headerlink" title="词频度（出现次数）"></a>词频度（出现次数）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist[&apos;the&apos;]</div><div class="line"></div><div class="line">outputs:</div><div class="line">3291</div></pre></td></tr></table></figure>
+<h3 id="词和词频的对"><a href="#词和词频的对" class="headerlink" title="词和词频的对"></a>词和词频的对</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">items = fdist.items()</div><div class="line">print items[:5]</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(u&apos;yellow&apos;, 16), (u&apos;four&apos;, 18), (u&apos;Does&apos;, 6), (u&apos;conjuring&apos;, 2), (u&apos;marching&apos;, 4)]</div></pre></td></tr></table></figure>
+<h3 id="只出现一次的词"><a href="#只出现一次的词" class="headerlink" title="只出现一次的词"></a>只出现一次的词</h3><p>会一次性全部返回，下面只展示前5个。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hapaxes = fdist.hapaxes()</div><div class="line">print hapaxes[:5]</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;disturb&apos;, u&apos;buttonhole&apos;, u&apos;himselves&apos;, u&apos;woods&apos;, u&apos;wavered&apos;]</div></pre></td></tr></table></figure>
+<h3 id="出现次数最多的词"><a href="#出现次数最多的词" class="headerlink" title="出现次数最多的词"></a>出现次数最多的词</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist.max()</div><div class="line"></div><div class="line">outputs:</div><div class="line">u&apos;,&apos;</div></pre></td></tr></table></figure>
+<p>u是unicode的标志，说明<code>,</code>出现的最多。</p>
+<p>这明显不符合预期，因为<code>,</code>不应该被算作一个词，这会干扰我们分析文本，所以在我们<code>创建</code>FreqDist实例的时候，应该要把<code>词集</code>进行过滤，剔除掉标点符号。</p>
+<h3 id="词频分布介绍"><a href="#词频分布介绍" class="headerlink" title="词频分布介绍"></a>词频分布介绍</h3><p>定义：<code>pformat</code>(<em>maxlen=10</em>)</p>
+<p>返回一个可以代表本<code>FreqDist</code>类的字符串，其实就是把高频词和频度列出来了。</p>
+<p><code>maxlen</code> 表示打印多少个高频词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdist.pformat()</div><div class="line"></div><div class="line">outputs:</div><div class="line">u&apos;FreqDist(&#123;u\&apos;,\&apos;: 3488, u\&apos;the\&apos;: 3291, u\&apos;.\&apos;: 2717, u\&apos;a\&apos;: 1713, u\&apos;of\&apos;: 1710, u\&apos;and\&apos;: 1568, u\&apos;&quot;\&apos;: 1336, u\&apos;to\&apos;: 1045, u\&apos;in\&apos;: 888, u\&apos;I\&apos;: 885, ...&#125;)&apos;</div></pre></td></tr></table></figure>
+<h3 id="频率分布图"><a href="#频率分布图" class="headerlink" title="频率分布图"></a>频率分布图</h3><p>定义：<code>plot</code>(<em>args, \</em>*kwargs)</p>
+<p>可以指定的参数有</p>
 <ul>
-<li>在线阅读：<a href="https://www.gitbook.io/book/yeasy/docker_practice" target="_blank" rel="external">GitBook</a> 或 <a href="https://github.com/yeasy/docker_practice/blob/master/SUMMARY.md" target="_blank" rel="external">Github</a>。</li>
-<li><a href="https://github.com/yeasy/docker_practice/wiki/%E7%A6%BB%E7%BA%BF%E9%98%85%E8%AF%BB%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3" target="_blank" rel="external">离线阅读</a>。</li>
-<li>pdf 版本 <a href="https://www.gitbook.com/download/pdf/book/yeasy/docker_practice" target="_blank" rel="external">下载</a></li>
-<li>epub 版本 <a href="https://www.gitbook.com/download/epub/book/yeasy/docker_practice" target="_blank" rel="external">下载</a></li>
+<li><code>title</code> 表示图像的标题</li>
+<li><code>cumulative</code> 是否累计频度</li>
 </ul>
-<p>本次配置中用到的镜像：</p>
-<ul>
-<li><a href="https://hub.docker.com/_/nginx/" target="_blank" rel="external">nginx:1.12-alpine</a>，<a href="https://github.com/nginxinc/docker-nginx/blob/72ac2226580ee73c170163dbe6e4436373b6ece9/stable/alpine/Dockerfile" target="_blank" rel="external">Dockerfile</a></li>
-</ul>
-<ul>
-<li><a href="https://hub.docker.com/_/php/" target="_blank" rel="external">php:7.1-fpm-alpine</a>，<a href="https://github.com/docker-library/php/blob/25e8a9268e5308b127ef1e07e62ed346c9776490/7.1/alpine3.4/fpm/Dockerfile" target="_blank" rel="external">Dockerfile</a></li>
-<li><a href="https://hub.docker.com/r/mysql/mysql-server/" target="_blank" rel="external">mysql/mysql-server:5.7.20</a>，<a href="https://github.com/mysql/mysql-docker/blob/mysql-server/5.7/Dockerfile" target="_blank" rel="external">Dockerfile</a></li>
-</ul>
-<p>并且使用docker-compose来管理容器，它在pdf文档中有介绍，这里不再赘述。</p>
-<h2 id="多机结构"><a href="#多机结构" class="headerlink" title="多机结构"></a>多机结构</h2><p>为了实现一台真机模拟多台机，引入<code>逻辑主机</code>的概念。例如现在只有一台云主机，但是我们又要把<code>测试环境(dev)</code> 和  <code>正式环境(online)</code>分开。</p>
-<p>以下是项目完成后的目录结构，每一个目录对应一个<code>逻辑主机</code> 和独立<code>数据卷</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── dev</div><div class="line">│   ├── docker-compose.yml</div><div class="line">│   └── php</div><div class="line">│       └── Dockerfile</div><div class="line">├── online</div><div class="line">│   ├── docker-compose.yml</div><div class="line">│   └── php</div><div class="line">│       └── Dockerfile</div><div class="line">└── _self</div><div class="line">    └── docker-compose.yml</div></pre></td></tr></table></figure>
-<p>这里需要做以下说明：</p>
-<ul>
-<li><code>测试环境(dev)</code> 和 <code>正式环境(online)</code> 除了<code>数据卷</code> 不一样，其他配置都一样</li>
-<li><code>_self</code> 目录表示宿主主机，上面有<code>nginx</code> </li>
-</ul>
-<h2 id="dev-配置"><a href="#dev-配置" class="headerlink" title="dev 配置"></a>dev 配置</h2><p><code>dev</code> 环境下有php和mysql，两个app都在独立的容器中，两者通过 <code>sock文件</code> 或网络进行通信，以下是dev环境的<code>docker-compose.yml</code> 文件内容：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="attr">php1:</span></div><div class="line">    <span class="comment">#build: ./php</span></div><div class="line">    <span class="comment">#image: php:7.1-fpm-alpine</span></div><div class="line"><span class="attr">    image:</span> <span class="attr">php-fpm-composer:1.0</span></div><div class="line"><span class="attr">    container_name:</span> <span class="string">dev_php1</span></div><div class="line"><span class="attr">    expose:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"9000"</span></div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data1/:/data1/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data2/:/data2/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data2/php/conf/:/usr/local/etc/"</span></div><div class="line"><span class="attr">    links:</span></div><div class="line"><span class="attr">        - mysql1:</span><span class="string">server_mysql</span></div><div class="line"></div><div class="line"><span class="attr">mysql1:</span></div><div class="line"><span class="attr">    image:</span> <span class="string">mysql/mysql-server:5.7.20</span></div><div class="line"><span class="attr">    container_name:</span> <span class="string">dev_mysql1</span></div><div class="line"><span class="attr">    expose:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"11308"</span></div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data1/:/data1/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data2/:/data2/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-dev/data2/mysql/conf/:/etc/mysql/"</span></div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">MYSQL_ROOT_PASSWORD=123456789</span></div></pre></td></tr></table></figure>
-<h3 id="volumes"><a href="#volumes" class="headerlink" title="volumes"></a>volumes</h3><p>先看数据卷。以 <code>dev_php1</code> 容器为例，我们可以看到 <code>宿主</code> 的<code>/data-dev/data1</code> 和 <code>/data-dev/data2</code> 被映射到了php容器的<code>/data1</code> 和 <code>/data2</code> 目录。是的，宿主的<code>/data-dev</code> 目录就是专门为<code>dev</code> 环境划分的逻辑目录。</p>
-<p>再看<code>dev_mysql1</code> 容器，道理和上述一样。</p>
-<h3 id="端口配置"><a href="#端口配置" class="headerlink" title="端口配置"></a>端口配置</h3><p>先看<code>dev_php1</code>，根据 <code>php-fpm</code> 配置文件中监听了<code>9000</code> 端口，所以开放容器的<code>9000</code>端口。</p>
-<p><code>mysql</code> 配置文件中设置的是<code>11308</code> 端口，所以我们开放容器的<code>11308</code> 端口。</p>
-<p>其实在实际使用中，两者也都支持 <code>sock文件</code>方式进行连接。</p>
-<h3 id="自定义的php镜像"><a href="#自定义的php镜像" class="headerlink" title="自定义的php镜像"></a>自定义的php镜像</h3><p>由于官方的php缺少一些扩展，所以我基于该镜像添加了扩展和<code>compose</code>，Dockerfile如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">FROM php:7.1-fpm-alpine</div><div class="line">RUN apk add --no-cache \</div><div class="line">        libpng-dev \</div><div class="line">    &amp;&amp; docker-php-ext-install pdo_mysql gd zip \</div><div class="line">    &amp;&amp; php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \</div><div class="line">    &amp;&amp; php -r "if (hash_file('SHA384', 'composer-setup.php') ===                                                                  '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') &#123; echo 'Installer verified';  &#125; else &#123; echo 'Installer corrupt'; unlink('composer-setup.php'); &#125; echo PHP_EOL;" \</div><div class="line">    &amp;&amp; php composer-setup.php --install-dir=/usr/local/bin --filename=composer \</div><div class="line">    &amp;&amp; php -r "unlink('composer-setup.php');"</div></pre></td></tr></table></figure>
-<p>为了避免构建多层镜像又保证命令的整洁性，使用 <code>\</code> (表示换行)把要执行的命令分开。</p>
-<p>可以看到我这里添加了<code>pdo_mysql</code> 、<code>gd</code> 、<code>zip</code> 扩展，其中<code>zip</code> 镜像是安装compose必要的，且为了安装<code>gd</code> 扩展，系统必须要先安装<code>libpng-dev</code> 库。</p>
-<p>后面四行命令是安装composer的，安装后放在了<code>/usr/local/bin</code> 目录下，文件名是<code>composer</code>。</p>
-<p>根据这个Dockerfile构建了名为<code>php-fpm-composer:1.0</code> 的镜像。</p>
-<h3 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h3><p><code>dev_mysql1</code> 的 <code>MYSQL_ROOT_PASSWORD</code> 表示数据库初始密码，如果数据库初始化过了（数据卷中已有数据）则没效了。</p>
-<h2 id="online配置"><a href="#online配置" class="headerlink" title="online配置"></a>online配置</h2><p><code>online</code> 环境的<code>docker-compose.yml</code> 文件内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="attr">php1:</span></div><div class="line">    <span class="comment">#build: ./php</span></div><div class="line">    <span class="comment">#image: php:7.1-fpm-alpine</span></div><div class="line"><span class="attr">    image:</span> <span class="attr">php-fpm-composer:1.0</span></div><div class="line"><span class="attr">    container_name:</span> <span class="string">online_php1</span></div><div class="line"><span class="attr">    expose:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"9000"</span></div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data1/:/data1/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data2/:/data2/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data2/php/conf/:/usr/local/etc/"</span></div><div class="line"><span class="attr">    links:</span></div><div class="line"><span class="attr">        - mysql1:</span><span class="string">server_mysql</span></div><div class="line"></div><div class="line"><span class="attr">mysql1:</span></div><div class="line"><span class="attr">    image:</span> <span class="string">mysql/mysql-server:5.7.20</span></div><div class="line"><span class="attr">    container_name:</span> <span class="string">online_mysql1</span></div><div class="line"><span class="attr">    expose:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"11308"</span></div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data1/:/data1/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data2/:/data2/"</span></div><div class="line"><span class="bullet">        -</span> <span class="string">"/data-online/data2/mysql/conf/:/etc/mysql/"</span></div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">MYSQL_ROOT_PASSWORD=123456789</span></div></pre></td></tr></table></figure>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><p>可以看到<code>online</code> 环境除了<code>逻辑目录</code> 是<code>/data-onlie</code> 以外，其他的配置都和<code>dev</code> 一样，当然容器名是不一样的。</p>
-<p>如果我们已经成功部署了<code>dev</code> 环境，那么只需把<code>/data-dev</code> copy一份为 <code>/data-online</code> 即可完成数据卷的部署，保证online的数据和dev是一样的（主要是php、mysql等app的配置一样）。</p>
-<h2 id="nginx的配置"><a href="#nginx的配置" class="headerlink" title="nginx的配置"></a>nginx的配置</h2><p>本项目采取的方式是<code>nginx</code> 单例，所以nginx必须放在宿主主机上，稍后讨论多例nginx的配置。</p>
-<p>目前已经有了<code>dev</code> 和 <code>online</code> 两个环境，且分别运行了php和m ysql，单例nginx模式的架构如下：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/d6c6230a46f5cff94d795f28b21dc5cb.jpg" alt=""></p>
-<p><code>圆圈</code> 表示<code>逻辑主机</code>， <code>矩形框</code> 内是英文的表示容器，英文表示容器名称。</p>
-<p><code>宿主环境</code> （nginx）的<code>docker-compose.yml</code> 文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">nginx1:</div><div class="line">    image: nginx:1.12-alpine</div><div class="line">    container_name: nginx1</div><div class="line">    ports:</div><div class="line">        - &quot;80:80&quot;</div><div class="line">        - &quot;443:443&quot;</div><div class="line">    expose:</div><div class="line">        - &apos;80&apos;</div><div class="line">        - &apos;443&apos;</div><div class="line">    volumes:</div><div class="line">        - &quot;/data/:/data/&quot;</div><div class="line">        - &quot;/data1/:/data1/&quot;</div><div class="line">        - &quot;/data2/:/data2/&quot;</div><div class="line">        - &quot;/data2/nginx/conf/:/etc/nginx/&quot;</div><div class="line">        - &quot;/data-dev/:/data-dev/&quot;</div><div class="line">        - &quot;/data-online/:/data-online/&quot;</div></pre></td></tr></table></figure>
-<p>可以看到，为了<code>dev</code>、<code>online</code> 提供服务，需要将两个<code>逻辑主机</code>的<code>数据目录</code> 映射到nginx容器中去，从而达到nginx与宿主主机的文件系统是一样的。</p>
-<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><p>在进行nginx配置的时候，需要非常注意的是文件路径。</p>
-<p>在<code>dev</code> 逻辑主机中，网站根目录是<code>/data1/sites/html</code>，这个目录对应于宿主主机的<code>/data-dev/data1/sites/html</code> ，那么在nginx中配置的时候，就需要特别注意。</p>
-<p>下面是nginx 为<code>dev</code> 环境提供服务所写的配置信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">    listen 80;</div><div class="line">    server_name dev.domain.com;</div><div class="line">    root /data-dev/data1/sites/html/;</div><div class="line">    index index.html index.htm index.php;</div><div class="line"></div><div class="line">    access_log  /data2/nginx/logs/dev/html_access.log  main;</div><div class="line">    error_log  /data2/nginx/logs/dev/html_error.log  warn;</div><div class="line"></div><div class="line"></div><div class="line">    # use php-fpm.sock</div><div class="line">    location ~ \.php$ &#123;</div><div class="line">        fastcgi_pass   unix:/data-dev/data2/socks/php-fpm.sock;</div><div class="line">        fastcgi_index  index.php;</div><div class="line">        fastcgi_param  SCRIPT_FILENAME  /data1/sites/html$fastcgi_script_name;</div><div class="line">        include        fastcgi_params;</div><div class="line">    &#125;</div><div class="line">...</div></pre></td></tr></table></figure>
-<p>由于<code>nginx</code>运行在宿主主机，所以使用的是宿主主机的文件系统：（下面的<code>/data2</code> 是宿主主机上的）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">root /data-dev/data1/sites/html/;</div><div class="line">access_log  /data2/nginx/logs/dev/html_access.log  main;</div><div class="line">error_log  /data2/nginx/logs/dev/html_error.log  warn;</div></pre></td></tr></table></figure>
-<p>根据web请求流程和CGI原理，所以fastcgi在寻找文件时使用的是 <code>dev</code> 主机的文件系统：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fastcgi_param  SCRIPT_FILENAME  /data1/sites/html$fastcgi_script_name;</div></pre></td></tr></table></figure>
-<p><strong>注意：不能写成\$document_root\$fastcgi_script_name，因为$document_root是宿主主机的文件系统</strong></p>
-<h3 id="静态文件测试"><a href="#静态文件测试" class="headerlink" title="静态文件测试"></a>静态文件测试</h3><p>根据上述配置文件，配置好<code>root</code> 路径即可进行静态文件测试。</p>
-<p>现有两个文件，他们在<code>宿主主机</code> 文件系统中的路径如下：</p>
-<figure class="highlight d"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/data-dev/data1/sites/html/index.html</div><div class="line">/data-online/data1/sites/html/index.html</div></pre></td></tr></table></figure>
-<p>可以看到，一个在 <code>dev</code> 中，一个在 <code>online</code> 环境中</p>
-<p>那么在<code>dev</code> 的文件系统中，则是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/data1/sites/html/index.html</div></pre></td></tr></table></figure>
-<p>文件内容是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This is dev</div></pre></td></tr></table></figure>
-<p>在<code>online</code> 的文件系统中，则是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/data1/sites/html/index.html</div></pre></td></tr></table></figure>
-<p>文件内容是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This is online</div></pre></td></tr></table></figure>
-<p>可以发现，在两个逻辑主机中，他们并不知道宿主主机的存在，也就是宿主主机对于他们来说是<code>透明的</code>。</p>
-<p><code>/etc/hosts</code>配置如下，同步修改<code>nginx</code>的<code>server_name</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">127.0.0.1 dev.domain.com</div><div class="line">127.0.0.1 online.domain.com</div></pre></td></tr></table></figure>
-<p>进行测试：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl dev.domain.com</div><div class="line">curl online.domain.com</div></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This is dev</div><div class="line">This is online</div></pre></td></tr></table></figure>
-<h3 id="php测试"><a href="#php测试" class="headerlink" title="php测试"></a>php测试</h3><p>php的测试主要看nginx是否正确使用了对应环境的<code>php-fpm.sock</code>，如果你是用<code>9000</code>端口通信的，那就看ip是否填对了，方式与静态页面类似，不再赘述。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>详情：<a href="https://github.com/JerryCheese/docker-architecture" target="_blank" rel="external">https://github.com/JerryCheese/docker-architecture</a></p>
+<p>如果第一参数是整数的话，它表示展示词的数量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdist.plot(50)</div></pre></td></tr></table></figure>
+<p><img src="http://os9coobhw.bkt.clouddn.com/04ddb01af2e26c576a78d54df6d3cfae.jpg" alt=""></p>
+<p>这样看起来是不是别扭呢，因为曲线肯定会下降（频度越高的词越显示在左边）</p>
+<p>所以有时候我们需要看这些高频词<code>加起来</code>占了多少，所以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdist.plot(50, cumulative=True)</div></pre></td></tr></table></figure>
+<p><img src="http://os9coobhw.bkt.clouddn.com/0c42cc8d75b002af0988674dfe4e1188.jpg" alt=""></p>
+<p>可以发现，曲线越到后面越平缓。</p>
+<h3 id="频率分布表"><a href="#频率分布表" class="headerlink" title="频率分布表"></a>频率分布表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fdist.tabulate(10)</div><div class="line"></div><div class="line">outputs:</div><div class="line">   ,  the    .    a   of  and</div><div class="line">3488 3291 2717 1713 1710 1568</div></pre></td></tr></table></figure>
+<p>累计表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fdist.tabulate(10,cumulative=True)</div><div class="line"></div><div class="line">outputs:</div><div class="line">    ,   the     .     a    of   and</div><div class="line"> 3488  6779  9496 11209 12919 14487</div></pre></td></tr></table></figure>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><a href="/p/22281.html">前面</a>已经介绍了<code>Text</code>，结合本次的<code>FreqDist</code>类，我们已经可以做一些基础的NLP研究了。</p>
+<h3 id="理解文本的主题或风格"><a href="#理解文本的主题或风格" class="headerlink" title="理解文本的主题或风格"></a>理解文本的主题或风格</h3><h4 id="高频词"><a href="#高频词" class="headerlink" title="高频词"></a>高频词</h4><p> <code>text1</code> 变量保存的是《白鲸记》<code>Text</code>类实例，<code>高频词</code>是否可以帮助我们理解呢？</p>
+<p>打印出它前50个词的频率分布图可以发现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fdist1 = text1.vocab()</div><div class="line">fdist1.plot(50, cumulative=True)</div></pre></td></tr></table></figure>
+<p><img src="http://os9coobhw.bkt.clouddn.com/7fd216a35d94e6064fdf2d1df76559e7.jpg" alt=""></p>
+<p>相比<code>the</code>、<code>of</code> 这类助词，<code>whale</code>的频率相对靠后，而这个词恰恰是《白鲸记》中比较重要的词，可以体现出文本的主题。</p>
+<h4 id="低频词"><a href="#低频词" class="headerlink" title="低频词"></a>低频词</h4><p>既然高频率词没啥帮助，那只出现一次的词呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">len(fdist1.hapaxes())</div><div class="line"></div><div class="line">outputs:</div><div class="line">9002</div></pre></td></tr></table></figure>
+<p>emmm，貌似低频词太多了，如果不看上下文，我们也很难借助低频词来理解文本主题。</p>
+<h4 id="细粒度的选择词"><a href="#细粒度的选择词" class="headerlink" title="细粒度的选择词"></a>细粒度的选择词</h4><p>或许<code>长词</code>包含的信息比较多，是否有帮助呢？</p>
+<p>我们考虑以下哪些成都大于15的词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">samples = set(text1)</div><div class="line">print [w for w in samples if len(w) &gt; 15]</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;hermaphroditical&apos;, u&apos;subterraneousness&apos;, u&apos;uninterpenetratingly&apos;, </div><div class="line">u&apos;irresistibleness&apos;, u&apos;responsibilities&apos;, u&apos;comprehensiveness&apos;, </div><div class="line">u&apos;uncompromisedness&apos;, u&apos;superstitiousness&apos;, u&apos;uncomfortableness&apos;, </div><div class="line">u&apos;supernaturalness&apos;, u&apos;circumnavigating&apos;, u&apos;cannibalistically&apos;, </div><div class="line">u&apos;circumnavigations&apos;, u&apos;indispensableness&apos;, u&apos;preternaturalness&apos;, </div><div class="line">u&apos;apprehensiveness&apos;, u&apos;CIRCUMNAVIGATION&apos;, u&apos;simultaneousness&apos;, </div><div class="line">u&apos;undiscriminating&apos;, u&apos;characteristically&apos;, u&apos;Physiognomically&apos;, </div><div class="line">u&apos;physiognomically&apos;, u&apos;circumnavigation&apos;, u&apos;indiscriminately&apos;]</div></pre></td></tr></table></figure>
+<p>似乎比<code>低频词</code>的数量要少很多了，可以发现的是，<code>长词</code> 大多也是 <code>低频词</code>，所以从这个角度来说我们忽略了<code>短高频词</code>和大部分<code>低频词</code>，也许寻找那些<code>长高频词</code>会比较有帮助。</p>
+<h4 id="长高频词"><a href="#长高频词" class="headerlink" title="长高频词"></a>长高频词</h4><p>下面将选择出那些长度大于7，且出现的频度也大于7的词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print [w for w in samples if len(w) &gt; 7 and fdist1[w] &gt; 7]</div><div class="line"></div><div class="line">outputs:</div><div class="line">[u&apos;uncertain&apos;, u&apos;bringing&apos;, u&apos;substance&apos;, u&apos;cannibal&apos;, u&apos;therefore&apos;, u&apos;violently&apos;, u&apos;whalebone&apos; ...]</div></pre></td></tr></table></figure>
+<p>其实得到的结果数量还是很多，但我们已经看到了<code>whalebone</code> 这个词，可以大致确定下来《白鲸记》的主题了，所以寻找<code>长高频词</code>可以有效的帮助我们理解文本的主题。</p>
+<h4 id="搭配词"><a href="#搭配词" class="headerlink" title="搭配词"></a>搭配词</h4><p>文中出现的搭配词能非常明确的体现文本的类型。</p>
+<p>下面寻找搭配词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">text1.collocations()</div><div class="line"></div><div class="line">outputs:</div><div class="line">Sperm Whale; Moby Dick; White Whale; old man; Captain Ahab; sperm</div><div class="line">whale; Right Whale; Captain Peleg; New Bedford; Cape Horn; cried Ahab;</div><div class="line">years ago; lower jaw; never mind; Father Mapple; cried Stubb; chief</div><div class="line">mate; white whale; ivory leg; one hand</div></pre></td></tr></table></figure>
+<p>可以看到第一个词就是<code>Sperm Whale</code> 。</p>
+<h3 id="计算其他东西"><a href="#计算其他东西" class="headerlink" title="计算其他东西"></a>计算其他东西</h3><h4 id="词长分布"><a href="#词长分布" class="headerlink" title="词长分布"></a>词长分布</h4><p>也就是计算每个长度的词出现的次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lens = [len(w) for w in text1]</div><div class="line">fdistw = FreqDist(lens)</div><div class="line">fdistw.keys()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20]</div></pre></td></tr></table></figure>
+<p>可以看到<code>text1</code>中的词，最短长度是1，最长长度是20</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdistw.plot()</div></pre></td></tr></table></figure>
+<p><img src="http://os9coobhw.bkt.clouddn.com/f747171406e55481e79c3114983ce4f8.jpg" alt=""></p>
+<p>可以发现长度大于8和之后的的词出现的频度已经很小了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fdistw.max()</div><div class="line"></div><div class="line">outputs:</div><div class="line">3</div></pre></td></tr></table></figure>
+<p>可以发现，最频繁出现的词长度是3。</p>
 
       
     </div>
@@ -599,9 +594,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/devopps/" rel="tag"># devopps</a>
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
+            <a href="/tags/NLP/" rel="tag"># NLP</a>
           
         </div>
       
@@ -614,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/14526.html" rel="next" title="Week11:Photo OCR & Conclusion">
-                <i class="fa fa-chevron-left"></i> Week11:Photo OCR & Conclusion
+              <a href="/p/22281.html" rel="next" title="NLTK常用操作和语料库">
+                <i class="fa fa-chevron-left"></i> NLTK常用操作和语料库
               </a>
             
           </div>
@@ -623,10 +616,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/57750.html" rel="prev" title="科学上网神器之ss">
-                科学上网神器之ss <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -810,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker基础"><span class="nav-number">1.</span> <span class="nav-text">Docker基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多机结构"><span class="nav-number">2.</span> <span class="nav-text">多机结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dev-配置"><span class="nav-number">3.</span> <span class="nav-text">dev 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#volumes"><span class="nav-number">3.1.</span> <span class="nav-text">volumes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口配置"><span class="nav-number">3.2.</span> <span class="nav-text">端口配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义的php镜像"><span class="nav-number">3.3.</span> <span class="nav-text">自定义的php镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他配置"><span class="nav-number">3.4.</span> <span class="nav-text">其他配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#online配置"><span class="nav-number">4.</span> <span class="nav-text">online配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署步骤"><span class="nav-number">4.1.</span> <span class="nav-text">部署步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx的配置"><span class="nav-number">5.</span> <span class="nav-text">nginx的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件路径"><span class="nav-number">5.1.</span> <span class="nav-text">文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态文件测试"><span class="nav-number">5.2.</span> <span class="nav-text">静态文件测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php测试"><span class="nav-number">5.3.</span> <span class="nav-text">php测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FreqDist类"><span class="nav-number">1.</span> <span class="nav-text">FreqDist类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">1.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词数量"><span class="nav-number">1.2.</span> <span class="nav-text">词数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不重复词的数量-样本数量"><span class="nav-number">1.3.</span> <span class="nav-text">不重复词的数量(样本数量)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成副本"><span class="nav-number">1.4.</span> <span class="nav-text">生成副本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词频率"><span class="nav-number">1.5.</span> <span class="nav-text">词频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词频度（出现次数）"><span class="nav-number">1.6.</span> <span class="nav-text">词频度（出现次数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词和词频的对"><span class="nav-number">1.7.</span> <span class="nav-text">词和词频的对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只出现一次的词"><span class="nav-number">1.8.</span> <span class="nav-text">只出现一次的词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出现次数最多的词"><span class="nav-number">1.9.</span> <span class="nav-text">出现次数最多的词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词频分布介绍"><span class="nav-number">1.10.</span> <span class="nav-text">词频分布介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频率分布图"><span class="nav-number">1.11.</span> <span class="nav-text">频率分布图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频率分布表"><span class="nav-number">1.12.</span> <span class="nav-text">频率分布表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解文本的主题或风格"><span class="nav-number">2.1.</span> <span class="nav-text">理解文本的主题或风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#高频词"><span class="nav-number">2.1.1.</span> <span class="nav-text">高频词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#低频词"><span class="nav-number">2.1.2.</span> <span class="nav-text">低频词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#细粒度的选择词"><span class="nav-number">2.1.3.</span> <span class="nav-text">细粒度的选择词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长高频词"><span class="nav-number">2.1.4.</span> <span class="nav-text">长高频词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搭配词"><span class="nav-number">2.1.5.</span> <span class="nav-text">搭配词</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算其他东西"><span class="nav-number">2.2.</span> <span class="nav-text">计算其他东西</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#词长分布"><span class="nav-number">2.2.1.</span> <span class="nav-text">词长分布</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

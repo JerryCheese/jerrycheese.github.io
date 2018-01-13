@@ -124,18 +124,18 @@
 
 
 
-<meta name="description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
+<meta name="description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。 摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前大多数是">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求众数：摩尔投票法">
+<meta property="og:title" content="摩尔投票法和大多数">
 <meta property="og:url" content="http://blog.hijerry.cn/p/45987.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
+<meta property="og:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。 摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前大多数是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T05:15:42.310Z">
+<meta property="og:updated_time" content="2018-01-13T05:42:30.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="求众数：摩尔投票法">
-<meta name="twitter:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
+<meta name="twitter:title" content="摩尔投票法和大多数">
+<meta name="twitter:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。 摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前大多数是">
 
 
 
@@ -171,7 +171,7 @@
 
 
 
-  <title>求众数：摩尔投票法 | 可建韦's 博客</title>
+  <title>摩尔投票法和大多数 | 可建韦's 博客</title>
   
 
 
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">求众数：摩尔投票法</h1>
+          <h1 class="post-title" itemprop="name headline">摩尔投票法和大多数</h1>
         
 
         <div class="post-meta">
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,103 字
+                  1,138 字
                 </span>
               
 
@@ -477,26 +477,26 @@
       
 
       
-        <h2 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h2><p>假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的<strong>众数</strong>。</p>
-<p>摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是<code>同加，异减</code>。我们举个例子。</p>
+        <h2 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h2><p>假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。</p>
+<p>摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即<strong>大多数（majority）</strong>，算法核心思想是<code>同加，异减</code>。我们举个例子。</p>
 <p>假设数组是：[1,2,1,1,2,1]。算法步骤如下：</p>
 <ul>
-<li>1。当前众数是1，众数得分置1</li>
-<li>2。与当前众数不同，众数得分 - 1，<strong>得分为0</strong>，当前众数 = 1</li>
-<li>1。与当前众数不同，<strong>众数得分为0，所以设置当前众数 1 -&gt; 1</strong>，得分置1</li>
-<li>1。与当前众数相同，众数得分 + 1，得分为2，当前众数 = 1</li>
-<li>2。与当前众数不同，众数得分 - 1 ，得分为1，当前众数 = 1</li>
-<li>1。与当前众数相同，众数得分 + 1，得分为2，当前众数 = 1</li>
+<li>1。当前大多数是1，得分置1</li>
+<li>2。与当前大多数不同，得分 - 1，<strong>得分为0</strong>，当前大多数 = 1</li>
+<li>1。与当前大多数不同，<strong>得分为0，所以设置当前大多数 1 -&gt; 1</strong>，得分置1</li>
+<li>1。与当前大多数相同，得分 + 1，得分为2，当前大多数 = 1</li>
+<li>2。与当前大多数不同，得分 - 1 ，得分为1，当前大多数 = 1</li>
+<li>1。与当前大多数相同，得分 + 1，得分为2，当前大多数 = 1</li>
 </ul>
-<p>这意味着<strong>1</strong>是这个数组的出现次数最多的数。</p>
-<p>可以感受得到，算法会保存一个<strong>当前众数</strong>，和<strong>当前众数得分</strong>，当遇到一个数不是当前众数时，得分会减一，当减到0时，众数会发生改变，并且重置得分为1。</p>
-<p>所以，摩尔投票法可以用来计算一个数组中出现次数最多的数。</p>
+<p>这意味着<strong>1</strong>是这个数组中出现次数过半的数。</p>
+<p>可以感受得到，算法会保存一个<strong>当前大多数</strong>，和<strong>得分</strong>，当遇到一个数不是当前大多数时，得分会减一，当减到0时，大多数会发生改变，并且重置得分为1。</p>
+<p>这里需要区分的是，摩尔算法不能用来得到<strong>众数（mode）</strong>，例如数组：[1,1,1,2,2,3,3,4,4]，摩尔算法得出最后的结果应该是4，但4并不是<strong>众数</strong>，可是显然4也不是<strong>大多数</strong>，那是因为，大多数是指出现次数过半的数，而这个数组中没有这样的数，所以摩尔算法是是失效的，对于这种情况采取需要重新投票。</p>
 <h2 id="出现次数超过一半的数"><a href="#出现次数超过一半的数" class="headerlink" title="出现次数超过一半的数"></a>出现次数超过一半的数</h2><p>LeetCode原题：<a href="https://leetcode.com/problems/majority-element/description/" target="_blank" rel="external">169. Majority Element</a></p>
-<p>这里要求出现次数大于一半，其实一个数组的众数就是出现次数大于一半的数，所以直接套用摩尔投票算法即可得到答案。</p>
+<p>这里要求出现次数大于一半，所以直接套用摩尔投票算法即可得到答案。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type nums: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        a, ca = <span class="keyword">None</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   a == n : ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> ca == <span class="number">0</span>: a, ca = n, <span class="number">1</span></div><div class="line">            <span class="keyword">else</span>        : ca -= <span class="number">1</span></div><div class="line">        </div><div class="line">        <span class="keyword">return</span> a</div></pre></td></tr></table></figure>
 <h2 id="出现次数超过数组1-3长"><a href="#出现次数超过数组1-3长" class="headerlink" title="出现次数超过数组1/3长"></a>出现次数超过数组1/3长</h2><p>LeetCode原题：<a href="https://leetcode.com/problems/majority-element-ii/description/" target="_blank" rel="external">229. Majority Element II</a></p>
 <p>还能用摩尔投票法吗？答案当然是要，但是需要变通一下。</p>
-<p>最关键的问题在于，出现次数超过1/3数组长的数，也许会有多个，例子如下：</p>
+<p>需要注意的是出现次数超过1/3数组长的数，也许会有多个，例子如下：</p>
 <ul>
 <li>[1,1,1,2,2,2,3,3]，数组1/3长=2（向下取整），所以1和2都是符合条件的。</li>
 </ul>
@@ -507,13 +507,12 @@
 <p>①  $ca + cb + cc = n$</p>
 <p>②  $ca + cb = 2 * (\frac n 3 - \frac b 3) + 2 = \frac {2n} 3 - \frac {2b} 3 + 2$</p>
 <p>由①、②整理得 $ cc = \frac {n + 2b - 6} 3 $ ，做差：</p>
-<p>③ $ cc - ⌊\frac n 3⌋ = \frac {n + 2b - 6} 3 -  \frac n 3  - \frac b 3 = \frac {b - 6} 3​$ </p>
+<p>③ $ cc - ⌊\frac n 3⌋ = \frac {n + 2b - 6} 3 -  \frac n 3  - \frac b 3 = \frac {b - 6} 3$ </p>
 <p>因为$b = n \% 3$，所以 $b - 6 &lt; 0$ 恒成立，所以 $ cc &lt; ⌊\frac n 3⌋$ </p>
 <p>可以知道，如果连 $ ca = cb=  ⌊\frac n 3⌋ + 1$ 时都找不到一个 $cc$ 使得它大于 $ ⌊\frac n 3⌋$，那么取ca、cb为其他比$ ⌊\frac n 3⌋$ 大的数，更加不可能找到符合条件的$cc$ 。</p>
 <p>综上，一个数组中不可能存在2个以上的数它们出现的次数大于$ ⌊\frac n 3⌋$。</p>
-<h3 id="回到题目"><a href="#回到题目" class="headerlink" title="回到题目"></a>回到题目</h3><p>摩尔投票法除了能够找出一个众数外，它还能找出<strong>次众数</strong>也就是出现次数仅次于众数的数。</p>
-<p>但问题是众数和次众数出现的次数不一定超过数组的1/3长，比如数组：[1,1,1,2,2,3,3,4,4]，众数是1，但是1出现了3次，并没有<strong>超过</strong>数组的1/3长。</p>
-<p>所以我们得到众数和次众数后，还需要检查他们出现的次数是否符合条件。</p>
+<h3 id="回到题目"><a href="#回到题目" class="headerlink" title="回到题目"></a>回到题目</h3><p>如果我们在使用摩尔算法时，同时记录两个大多数，会怎么样呢？直觉告诉我，这会得到一个大多数，和一个出现次数仅次于大多数的数，但是这两个数不一定会比数组长的1/3大</p>
+<p>所以我们得到它们后，还需要检查它们出现的次数是否符合条件。</p>
 <p>AC代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type nums: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        a, b, ca, cb, ans = <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="number">0</span>, []</div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   n  == a: ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> n  == b: cb += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> ca == <span class="number">0</span>: a, ca = n, <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> cb == <span class="number">0</span>: b, cb = n, <span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:         ca, cb = ca - <span class="number">1</span>, cb - <span class="number">1</span></div><div class="line">        ca, cb = <span class="number">0</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   n == a: ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> n == b: cb += <span class="number">1</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> ca &gt; len(nums)/<span class="number">3</span>:</div><div class="line">            ans.append(a)</div><div class="line">        <span class="keyword">if</span> cb &gt; len(nums)/<span class="number">3</span>:</div><div class="line">            ans.append(b)</div><div class="line">        <span class="keyword">return</span> ans</div></pre></td></tr></table></figure>
 

@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -124,16 +124,18 @@
 
 
 
-<meta name="description" content="我过我要的生活不是生活过我就好">
-<meta property="og:type" content="website">
-<meta property="og:title" content="可建韦&#39;s 博客">
-<meta property="og:url" content="http://blog.hijerry.cn/archives/2015/index.html">
+<meta name="description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
+<meta name="keywords" content="leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="求众数：摩尔投票法">
+<meta property="og:url" content="http://blog.hijerry.cn/p/45987.html">
 <meta property="og:site_name" content="可建韦&#39;s 博客">
-<meta property="og:description" content="我过我要的生活不是生活过我就好">
+<meta property="og:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T05:12:20.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="可建韦&#39;s 博客">
-<meta name="twitter:description" content="我过我要的生活不是生活过我就好">
+<meta name="twitter:title" content="求众数：摩尔投票法">
+<meta name="twitter:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
 
 
 
@@ -163,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hijerry.cn/archives/2015/"/>
+  <link rel="canonical" href="http://blog.hijerry.cn/p/45987.html"/>
 
 
 
 
 
-  <title>归档 | 可建韦's 博客</title>
+  <title>求众数：摩尔投票法 | 可建韦's 博客</title>
   
 
 
@@ -198,7 +200,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -336,74 +338,273 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 27 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2015">2015</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/45987.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可建韦's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/p/9879.html" itemprop="url">
-              
-                <span itemprop="name">汇编实现回文判断</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">求众数：摩尔投票法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-12-13T10:48:00+08:00"
-              content="2015-12-13" >
-          12-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T11:08:24+08:00">
+                2018-01-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程题/" itemprop="url" rel="index">
+                    <span itemprop="name">编程题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  1,108 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h2><p>假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的<strong>众数</strong>。</p>
+<p>摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是<code>同加，异减</code>。我们举个例子。</p>
+<p>假设数组是：[1,2,1,1,2,1]。算法步骤如下：</p>
+<ul>
+<li>1。当前众数是1，众数得分置1</li>
+<li>2。与当前众数不同，众数得分 - 1，<strong>得分为0</strong>，当前众数 = 1</li>
+<li>1。与当前众数不同，<strong>众数得分为0，所以设置当前众数 1 -&gt; 1</strong>，得分置1</li>
+<li>1。与当前众数相同，众数得分 + 1，得分为2，当前众数 = 1</li>
+<li>2。与当前众数不同，众数得分 - 1 ，得分为1，当前众数 = 1</li>
+<li>1。与当前众数相同，众数得分 + 1，得分为2，当前众数 = 1</li>
+</ul>
+<p>这意味着<strong>1</strong>是这个数组的出现次数最多的数。</p>
+<p>可以感受得到，算法会保存一个<strong>当前众数</strong>，和<strong>当前众数得分</strong>，当遇到一个数不是当前众数时，得分会减一，当减到0时，众数会发生改变，并且重置得分为1。</p>
+<p>所以，摩尔投票法可以用来计算一个数组中出现次数最多的数。</p>
+<h2 id="出现次数超过一半的数"><a href="#出现次数超过一半的数" class="headerlink" title="出现次数超过一半的数"></a>出现次数超过一半的数</h2><p>LeetCode原题：<a href="https://leetcode.com/problems/majority-element/description/" target="_blank" rel="external">169. Majority Element</a></p>
+<p>这里要求出现次数大于一半，其实一个数组的众数就是出现次数大于一半的数，所以直接套用摩尔投票算法即可得到答案。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type nums: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        a, ca = <span class="keyword">None</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   a == n : ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> ca == <span class="number">0</span>: a, ca = n, <span class="number">1</span></div><div class="line">            <span class="keyword">else</span>        : ca -= <span class="number">1</span></div><div class="line">        </div><div class="line">        <span class="keyword">return</span> a</div></pre></td></tr></table></figure>
+<h2 id="出现次数超过数组1-3长"><a href="#出现次数超过数组1-3长" class="headerlink" title="出现次数超过数组1/3长"></a>出现次数超过数组1/3长</h2><p>LeetCode原题：<a href="https://leetcode.com/problems/majority-element-ii/description/" target="_blank" rel="external">229. Majority Element II</a></p>
+<p>还能用摩尔投票法吗？答案当然是要，但是需要变通一下。</p>
+<p>最关键的问题在于，出现次数超过1/3数组长的数，也许会有多个，例子如下：</p>
+<ul>
+<li>[1,1,1,2,2,2,3,3]，数组1/3长=2（向下取整），所以1和2都是符合条件的。</li>
+</ul>
+<p>但最多只能是2个，证明如下：</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>假设数组有且只有3个数a,b,c，它出现的次数分别为ca, cb ,cc ，不妨假设 $ ca = cb=  ⌊\frac n 3⌋ + 1$，数组长度为$n$</p>
+<p>设 $n  = 3a + b$，其中$a、b$均为非负整数，其实这就是余数公式，其中 $b$ 是余数，$ a =  ⌊\frac n 3⌋$，那么 $ \frac n 3 = a + \frac b 3$，即 $ \frac n 3  - \frac b 3 = ⌊\frac n 3⌋$</p>
+<p>所以：</p>
+<p>①  $ca + cb + cc = n$</p>
+<p>②  $ca + cb = 2 <em>  ⌊\frac n 3⌋ + 2  = 2 </em> (\frac n 3 - \frac b 3) + 2 = \frac {2n} 3 - \frac {2b} 3 + 2$</p>
+<p>由①、②整理得 $ cc = \frac {n + 2b - 6} 3 $ ，做差：</p>
+<p>③ $ cc - ⌊\frac n 3⌋ = \frac {n + 2b - 6} 3 -  \frac n 3  - \frac b 3 = \frac {b - 6} 3$ </p>
+<p>因为$b = n \% 3$，所以 $b - 6 &lt; 0$ 恒成立，所以 $ cc &lt; ⌊\frac n 3⌋$ </p>
+<p>可以知道，如果连 $ ca = cb=  ⌊\frac n 3⌋ + 1$ 时都找不到一个 $cc$ 使得它大于 $ ⌊\frac n 3⌋$，那么取ca、cb为其他比$ ⌊\frac n 3⌋$ 大的数，更加不可能找到符合条件的$cc$ 。</p>
+<p>综上，一个数组中不可能存在2个以上的数它们出现的次数大于$ ⌊\frac n 3⌋$。</p>
+<h3 id="回到题目"><a href="#回到题目" class="headerlink" title="回到题目"></a>回到题目</h3><p>摩尔投票法除了能够找出一个众数外，它还能找出<strong>次众数</strong>也就是出现次数仅次于众数的数。</p>
+<p>但问题是众数和次众数出现的次数不一定超过数组的1/3长，比如数组：[1,1,1,2,2,3,3,4,4]，众数是1，但是1出现了3次，并没有<strong>超过</strong>数组的1/3长。</p>
+<p>所以我们得到众数和次众数后，还需要检查他们出现的次数是否符合条件。</p>
+<p>AC代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">        :type nums: List[int]</span></div><div class="line"><span class="string">        :rtype: int</span></div><div class="line"><span class="string">        """</span></div><div class="line">        a, b, ca, cb, ans = <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="number">0</span>, []</div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   n  == a: ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> n  == b: cb += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> ca == <span class="number">0</span>: a, ca = n, <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> cb == <span class="number">0</span>: b, cb = n, <span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:         ca, cb = ca - <span class="number">1</span>, cb - <span class="number">1</span></div><div class="line">        ca, cb = <span class="number">0</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span>   n == a: ca += <span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> n == b: cb += <span class="number">1</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> ca &gt; len(nums)/<span class="number">3</span>:</div><div class="line">            ans.append(a)</div><div class="line">        <span class="keyword">if</span> cb &gt; len(nums)/<span class="number">3</span>:</div><div class="line">            ans.append(b)</div><div class="line">        <span class="keyword">return</span> ans</div></pre></td></tr></table></figure>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创文章分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/pay.jpg" alt="可建韦 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/26677.html" rel="next" title="House Robber系列">
+                <i class="fa fa-chevron-left"></i> House Robber系列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -411,6 +612,12 @@
 
 
           
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
 
         </div>
         
@@ -431,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +752,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摩尔投票算法"><span class="nav-number">1.</span> <span class="nav-text">摩尔投票算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出现次数超过一半的数"><span class="nav-number">2.</span> <span class="nav-text">出现次数超过一半的数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出现次数超过数组1-3长"><span class="nav-number">3.</span> <span class="nav-text">出现次数超过数组1/3长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#证明"><span class="nav-number">3.1.</span> <span class="nav-text">证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到题目"><span class="nav-number">3.2.</span> <span class="nav-text">回到题目</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -669,6 +901,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

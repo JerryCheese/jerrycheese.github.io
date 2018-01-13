@@ -132,7 +132,7 @@
 <meta property="og:site_name" content="可建韦&#39;s 博客">
 <meta property="og:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T05:12:20.113Z">
+<meta property="og:updated_time" content="2018-01-13T05:15:42.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求众数：摩尔投票法">
 <meta name="twitter:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数最多的那个人，也就是这个数组的众数。 摩尔投票算法可以快速的计算出一个数组中出现次数最多的数，算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前众数是1，众数">
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,108 字
+                  1,103 字
                 </span>
               
 
@@ -505,9 +505,9 @@
 <p>设 $n  = 3a + b$，其中$a、b$均为非负整数，其实这就是余数公式，其中 $b$ 是余数，$ a =  ⌊\frac n 3⌋$，那么 $ \frac n 3 = a + \frac b 3$，即 $ \frac n 3  - \frac b 3 = ⌊\frac n 3⌋$</p>
 <p>所以：</p>
 <p>①  $ca + cb + cc = n$</p>
-<p>②  $ca + cb = 2 <em>  ⌊\frac n 3⌋ + 2  = 2 </em> (\frac n 3 - \frac b 3) + 2 = \frac {2n} 3 - \frac {2b} 3 + 2$</p>
+<p>②  $ca + cb = 2 * (\frac n 3 - \frac b 3) + 2 = \frac {2n} 3 - \frac {2b} 3 + 2$</p>
 <p>由①、②整理得 $ cc = \frac {n + 2b - 6} 3 $ ，做差：</p>
-<p>③ $ cc - ⌊\frac n 3⌋ = \frac {n + 2b - 6} 3 -  \frac n 3  - \frac b 3 = \frac {b - 6} 3$ </p>
+<p>③ $ cc - ⌊\frac n 3⌋ = \frac {n + 2b - 6} 3 -  \frac n 3  - \frac b 3 = \frac {b - 6} 3​$ </p>
 <p>因为$b = n \% 3$，所以 $b - 6 &lt; 0$ 恒成立，所以 $ cc &lt; ⌊\frac n 3⌋$ </p>
 <p>可以知道，如果连 $ ca = cb=  ⌊\frac n 3⌋ + 1$ 时都找不到一个 $cc$ 使得它大于 $ ⌊\frac n 3⌋$，那么取ca、cb为其他比$ ⌊\frac n 3⌋$ 大的数，更加不可能找到符合条件的$cc$ 。</p>
 <p>综上，一个数组中不可能存在2个以上的数它们出现的次数大于$ ⌊\frac n 3⌋$。</p>

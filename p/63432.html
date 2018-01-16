@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="NLP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="词性标注重要性回想学英语的时候，老师就开始讲词性，通过分析句子中某个单词的词性，我们可以推测这个词的意思，猜测这个词在句子中的作用，这对理解句子意思有极大的帮助。小弟也还是初学，以后若发现词性有更多作用时会继续补充~ 标注语料库NLTK(3.2.5)中提供了一些已经标注好词性的文本，通过下面代码可以查看： 12345import nltknltk.corpus.brown.tagged_words">
+<meta name="keywords" content="NLP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLTK之词性标注">
+<meta property="og:url" content="http://blog.hijerry.cn/p/63432.html">
+<meta property="og:site_name" content="可建韦&#39;s 博客">
+<meta property="og:description" content="词性标注重要性回想学英语的时候，老师就开始讲词性，通过分析句子中某个单词的词性，我们可以推测这个词的意思，猜测这个词在句子中的作用，这对理解句子意思有极大的帮助。小弟也还是初学，以后若发现词性有更多作用时会继续补充~ 标注语料库NLTK(3.2.5)中提供了一些已经标注好词性的文本，通过下面代码可以查看： 12345import nltknltk.corpus.brown.tagged_words">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-16T15:49:16.441Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NLTK之词性标注">
+<meta name="twitter:description" content="词性标注重要性回想学英语的时候，老师就开始讲词性，通过分析句子中某个单词的词性，我们可以推测这个词的意思，猜测这个词在句子中的作用，这对理解句子意思有极大的帮助。小弟也还是初学，以后若发现词性有更多作用时会继续补充~ 标注语料库NLTK(3.2.5)中提供了一些已经标注好词性的文本，通过下面代码可以查看： 12345import nltknltk.corpus.brown.tagged_words">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.hijerry.cn/p/63432.html"/>
+
+
+
+
+
+  <title>NLTK之词性标注 | 可建韦's 博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3693e3a7f3385f3178527bcab766f862";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">可建韦's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生🐟忧患死🐟安乐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hijerry.cn/p/63432.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可建韦's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NLTK之词性标注</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T20:56:26+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  2,151 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="词性标注重要性"><a href="#词性标注重要性" class="headerlink" title="词性标注重要性"></a>词性标注重要性</h2><p>回想学英语的时候，老师就开始讲<code>词性</code>，通过分析句子中某个单词的词性，我们可以推测这个词的意思，猜测这个词在句子中的作用，这对理解句子意思有极大的帮助。小弟也还是初学，以后若发现词性有更多作用时会继续补充~</p>
+<h2 id="标注语料库"><a href="#标注语料库" class="headerlink" title="标注语料库"></a>标注语料库</h2><p>NLTK(3.2.5)中提供了一些已经标注好词性的文本，通过下面代码可以查看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> nltk</div><div class="line">nltk.corpus.brown.tagged_words()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">u'The'</span>, <span class="string">u'AT'</span>), (<span class="string">u'Fulton'</span>, <span class="string">u'NP-TL'</span>), ...]</div></pre></td></tr></table></figure>
+<p>这表示<code>The</code> 被标注为<code>AT</code>词性，<code>Fulton</code> 被标注为<code>NP-TL</code> 词性，似乎看不太懂？</p>
+<p>下面可以把它们转成<code>统一词性名称</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nltk.corpus.brown.tagged_words(tagset=<span class="string">'universal'</span>)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">u'The'</span>, <span class="string">u'DET'</span>), (<span class="string">u'Fulton'</span>, <span class="string">u'NOUN'</span>), ...]</div></pre></td></tr></table></figure>
+<p><code>DET</code> 是限定词，<code>NOUN</code> 是名词。</p>
+<p>这是因为标注器本身所使用的<code>符号</code>与<code>统一符号</code> 不一样的原因，通过制定<code>tagset</code> 可以转化为统一符号，而<code>标注转换</code>可以在<code>~/nltk_data/taggers/universal_tagset</code> 中找到对应的文件。</p>
+<p>我调查源代码发现，上述代码所使用的是<code>en-brown.map</code>文件，打开查看可以发现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">....</div><div class="line">36 AT  DET</div><div class="line">....</div><div class="line">294 NP-TL   NOUN</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="其他标注语料库"><a href="#其他标注语料库" class="headerlink" title="其他标注语料库"></a>其他标注语料库</h3><p>如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nltk.corpus.sinica_treebank.tagged_words()</div><div class="line">nltk.corpus.indian.tagged_words()</div><div class="line">nltk.corpus.mac_morpho.tagged_words()</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>拿<code>indian</code>为例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nltk.corpus.indian.tagged_words()</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">u'\u09ae\u09b9\u09bf\u09b7\u09c7\u09b0'</span>, <span class="string">u'NN'</span>), (<span class="string">u'\u09b8\u09a8\u09cd\u09a4\u09be\u09a8'</span>, <span class="string">u'NN'</span>), ...]</div></pre></td></tr></table></figure>
+<p>似乎输出了<code>unicode_escape</code>编码，怎么办呢？下面可以解决：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> <span class="string">', '</span>.join([word + <span class="string">'/ + tag for (word, tag) in nltk.corpus.indian.tagged_words()][:100])</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">outputs:</span></div><div class="line"><span class="string">মহিষের/NN, সন্তান/NN, :/SYM, তোড়া/NNP, উপজাতি/NN, ৷/SYM, বাসস্থান-ঘরগৃহস্থালি/NN, তোড়া/NNP, ভাষায়/NN, গ্রামকেও/NN, বলে/VM, `/SYM, মোদ/NN, '</span>/SYM, ৷/SYM, মোদের/NN, আয়তন/NN, খুব/INTF, বড়ো/JJ, নয়/VM, ৷/SYM, প্রতি/QF, মোদে/NN, আছে/VM, কিছু/QF, কুঁড়েঘর/NN, ,/SYM, সাধারণ/JJ, মহিষশালা/NN, ৷/SYM, আর/CC, গ্রামের/NN, বাইরে/NST, থাকে/VM, ডেয়ারি-মন্দির/NN, ৷/SYM, আয়তনের/NN, তারতম্য/NN, অনুসারে/PSP, গ্রামগুলি/NN, দু/QC, রকমের/NN, :/SYM, এতূডমোদ/NNP, (/SYM, বড়ো/JJ, গ্রাম/NN, )/SYM, ওকিনমোদ/NNP, (/SYM, ছোট/JJ, গ্রাম/NN, )/SYM, ৷/SYM, কোন/DEM, কোন/RDP, গ্রামের/NN, আবার/CC, ধর্মীয়/JJ, বা_Cমহিষের/NN, সন্তান/NN, :/SYM, তোড়া/NNP, উপজাতি/NN, ৷/SYM, িকে/PRP, বলে/VM, `/SYM, সোতি-মোদ/NNP, <span class="string">'/SYM, ৷/SYM, কুঁড়েঘরগুলির/NN, আকার/NN, বাংলার/NNP, বা/CC, ভারতের/NNP, অন্য/JJ, অঞ্চলের/NN, প্রচলিত/JJ, কুঁড়ে/NN, ঘর/NN, নয়/VM, ৷/SYM, এগুলি/PRP, দেখতে/NN, শোয়ানো/JJ, পিপের/NN, মতো/PSP, ৷/SYM, এক/QC, দিকের/PSP, বাঁশের/NN, কাঠামো/NN, খিলানের/NN, মতো/PSP, বেঁকে/JJ, গিয়ে/VM, অন্যদিকের/NN, মাটিতে/NN, মিশেছে/VM</span></div></pre></td></tr></table></figure>
+<h2 id="标注器"><a href="#标注器" class="headerlink" title="标注器"></a>标注器</h2><h3 id="使用标注器"><a href="#使用标注器" class="headerlink" title="使用标注器"></a>使用标注器</h3><p>NLTK提供了现成的标注器，你可以直接使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">text = nltk.word_tokenize(<span class="string">'This beautiful future is just his imagination so far'</span>)</div><div class="line">nltk.pos_tag(text, tagset=<span class="string">'universal'</span>)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">'This'</span>, <span class="string">u'DET'</span>), (<span class="string">'beautiful'</span>, <span class="string">u'ADJ'</span>), (<span class="string">'future'</span>, <span class="string">u'NOUN'</span>), (<span class="string">'is'</span>, <span class="string">u'VERB'</span>), (<span class="string">'just'</span>, <span class="string">u'ADV'</span>), (<span class="string">'his'</span>, <span class="string">u'PRON'</span>), (<span class="string">'imagination'</span>, <span class="string">u'NOUN'</span>), (<span class="string">'so'</span>, <span class="string">u'ADV'</span>), (<span class="string">'far'</span>, <span class="string">u'ADV'</span>)]</div></pre></td></tr></table></figure>
+<p>你觉得这个标注器的准确率怎么样呢？</p>
+<p>似乎完成的还不错，那么我们试试另外一个句子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">text = nltk.word_tokenize(<span class="string">'They refuse to permit us to obtain the refuse permit'</span>)</div><div class="line">nltk.pos_tag(text, tagset=<span class="string">'universal'</span>)</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">'They'</span>, <span class="string">u'PRON'</span>), (<span class="string">'refuse'</span>, <span class="string">u'VERB'</span>), (<span class="string">'to'</span>, <span class="string">u'PRT'</span>), (<span class="string">'permit'</span>, <span class="string">u'VERB'</span>), (<span class="string">'us'</span>, <span class="string">u'PRON'</span>), (<span class="string">'to'</span>, <span class="string">u'PRT'</span>), (<span class="string">'obtain'</span>, <span class="string">u'VERB'</span>), (<span class="string">'the'</span>, <span class="string">u'DET'</span>), (<span class="string">'refuse'</span>, <span class="string">u'NOUN'</span>), (<span class="string">'permit'</span>, <span class="string">u'NOUN'</span>)]</div></pre></td></tr></table></figure>
+<p>对于文中的两个<code>refuse</code>，前者被标为<code>动词</code>，后者被标为<code>名词</code>，完成的还不错。</p>
+<p>这有什么意义呢？拿第二个句子来说，其实两个<code>refuse</code>的读音不一样，第一个读作<code>refUSE</code>，第二个读作<code>REFuse</code>，所以语音系统为了正确的发音，需要先做词性标注才行。</p>
+<h3 id="自动标注器"><a href="#自动标注器" class="headerlink" title="自动标注器"></a>自动标注器</h3><p>为了更好的理解标注器的原理，我们慢慢来自建构建一个词性标注器，先载入数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> brown</div><div class="line">brown_tagged_sents = brown.tagged_sents(categories=<span class="string">'news'</span>)</div><div class="line">brown_sents = brown.sents(categories=<span class="string">'news'</span>)</div><div class="line">brown_tagged_words = brown.tagged_words(categories=<span class="string">'news'</span>)</div><div class="line">brown_words = brown.words(categories=<span class="string">'news'</span>)</div></pre></td></tr></table></figure>
+<h4 id="默认标注器"><a href="#默认标注器" class="headerlink" title="默认标注器"></a>默认标注器</h4><p>这是最简单的标注器了，它给所有的标识符都分配同样的词性标记，我们先看来来哪个标记是最有可能的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tags = [tag <span class="keyword">for</span> (word, tag) <span class="keyword">in</span> brown_tagged_words]</div><div class="line">nltk.FreqDist(tags).max()</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="string">u'NN'</span></div></pre></td></tr></table></figure>
+<p>说明名词是最多的，那么我们就生成一个标注器，它将所有词都标注为名词：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">default_tagger = nltk.DefaultTagger(<span class="string">'NN'</span>)</div><div class="line">default_tagger.tag(nltk.word_tokenize(<span class="string">'This beautiful future is just his imagination so far'</span>))</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">'This'</span>, <span class="string">'NN'</span>), (<span class="string">'beautiful'</span>, <span class="string">'NN'</span>), (<span class="string">'future'</span>, <span class="string">'NN'</span>), (<span class="string">'is'</span>, <span class="string">'NN'</span>), (<span class="string">'just'</span>, <span class="string">'NN'</span>), (<span class="string">'his'</span>, <span class="string">'NN'</span>), (<span class="string">'imagination'</span>, <span class="string">'NN'</span>), (<span class="string">'so'</span>, <span class="string">'NN'</span>), (<span class="string">'far'</span>, <span class="string">'NN'</span>)]</div></pre></td></tr></table></figure>
+<p>可以看到，已经全部标注为<code>NN</code>了，下面<code>评估</code>一下我们这个标注器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">default_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.13089484257215028</span></div></pre></td></tr></table></figure>
+<p>哈哈，说明这个标注器太差了，它的标注正确率只有13.1%。</p>
+<p>虽然如此，但碰巧的是在处理大量文本的时候，大部分新词都是名词，这意味着默认标注器可以帮助我们提高语言处理系统的稳定性。</p>
+<h4 id="正则表达式标注器"><a href="#正则表达式标注器" class="headerlink" title="正则表达式标注器"></a>正则表达式标注器</h4><p>在英语单词中，我们可以通过后缀<code>ness</code>、<code>ing</code>、<code>ed</code>等来推测一个单词的词性，那么这样做是否也有效呢？试试就知道啦~</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">patterns = [</div><div class="line">  (<span class="string">r'.*ing$'</span>, <span class="string">'VBG'</span>),</div><div class="line">  (<span class="string">r'.*ed$'</span>, <span class="string">'VBD'</span>),</div><div class="line">  (<span class="string">r'.*es$'</span>, <span class="string">'VBZ'</span>),</div><div class="line">  (<span class="string">r'.*ould$'</span>, <span class="string">'MD'</span>),</div><div class="line">  (<span class="string">r'.*\'s$'</span>, <span class="string">'NN$'</span>),</div><div class="line">  (<span class="string">r'.*s$'</span>, <span class="string">'NNS'</span>),</div><div class="line">  (<span class="string">r'^-?[0-9]+(.[0-9]+)?$'</span>, <span class="string">'CD'</span>),</div><div class="line">  (<span class="string">r'.*'</span>, <span class="string">'NN'</span>)</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>按照顺序匹配，当全部都不匹配时，最后会被标注为<code>NN</code>词性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">regexp_tagger = nltk.RegexpTagger(patterns)</div><div class="line">regexp_tagger.tag(brown_sents[<span class="number">3</span>])</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">u'``'</span>, <span class="string">'NN'</span>), (<span class="string">u'Only'</span>, <span class="string">'NN'</span>), (<span class="string">u'a'</span>, <span class="string">'NN'</span>), (<span class="string">u'relative'</span>, <span class="string">'NN'</span>), (<span class="string">u'handful'</span>, <span class="string">'NN'</span>), (<span class="string">u'of'</span>, <span class="string">'NN'</span>), (<span class="string">u'such'</span>, <span class="string">'NN'</span>), (<span class="string">u'reports'</span>, <span class="string">'NNS'</span>), (<span class="string">u'was'</span>, <span class="string">'NNS'</span>), (<span class="string">u'received'</span>, <span class="string">'VBD'</span>), (<span class="string">u"''"</span>, <span class="string">'NN'</span>), (<span class="string">u','</span>, <span class="string">'NN'</span>), (<span class="string">u'the'</span>, <span class="string">'NN'</span>), (<span class="string">u'jury'</span>, <span class="string">'NN'</span>), (<span class="string">u'said'</span>, <span class="string">'NN'</span>), (<span class="string">u','</span>, <span class="string">'NN'</span>), (<span class="string">u'``'</span>, <span class="string">'NN'</span>), (<span class="string">u'considering'</span>, <span class="string">'VBG'</span>), (<span class="string">u'the'</span>, <span class="string">'NN'</span>), (<span class="string">u'widespread'</span>, <span class="string">'NN'</span>), (<span class="string">u'interest'</span>, <span class="string">'NN'</span>), (<span class="string">u'in'</span>, <span class="string">'NN'</span>), (<span class="string">u'the'</span>, <span class="string">'NN'</span>), (<span class="string">u'election'</span>, <span class="string">'NN'</span>), (<span class="string">u','</span>, <span class="string">'NN'</span>), (<span class="string">u'the'</span>, <span class="string">'NN'</span>), (<span class="string">u'number'</span>, <span class="string">'NN'</span>), (<span class="string">u'of'</span>, <span class="string">'NN'</span>), (<span class="string">u'voters'</span>, <span class="string">'NNS'</span>), (<span class="string">u'and'</span>, <span class="string">'NN'</span>), (<span class="string">u'the'</span>, <span class="string">'NN'</span>), (<span class="string">u'size'</span>, <span class="string">'NN'</span>), (<span class="string">u'of'</span>, <span class="string">'NN'</span>), (<span class="string">u'this'</span>, <span class="string">'NNS'</span>), (<span class="string">u'city'</span>, <span class="string">'NN'</span>), (<span class="string">u"''"</span>, <span class="string">'NN'</span>), (<span class="string">u'.'</span>, <span class="string">'NN'</span>)]</div></pre></td></tr></table></figure>
+<p>评估一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">regexp_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.20326391789486245</span></div></pre></td></tr></table></figure>
+<p>比默认标注器要好点，哈哈</p>
+<h4 id="查询标注器"><a href="#查询标注器" class="headerlink" title="查询标注器"></a>查询标注器</h4><p>可以发现，名词虽然出现的频率最高，但出现频率最高的词未必都是名词，所以我们可以试试取频率最大的前100个词，用他们最有可能的词性来进行标注。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">fd = nltk.FreqDist(brown_words)</div><div class="line">cfd = nltk.ConditionalFreqDist(brown_tagged_words)</div><div class="line">most_freq_words = fd.most_common()[:<span class="number">100</span>]</div><div class="line">likely_tags = dict((word, cfd[word].max()) <span class="keyword">for</span> (word, freq) <span class="keyword">in</span> most_freq_words)</div><div class="line">baseline_tagger = nltk.UnigramTagger(model=likely_tags)</div><div class="line">baseline_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.45578495136941344</span></div></pre></td></tr></table></figure>
+<p>可见，就算只取前100个词，效率也已经比之前高很多了。</p>
+<p>我们实地看看它的工作结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">baseline_tagger.tag(brown_sents[<span class="number">3</span>])</div><div class="line"></div><div class="line">outputs:</div><div class="line">[(<span class="string">u'``'</span>, <span class="string">u'``'</span>), (<span class="string">u'Only'</span>, <span class="keyword">None</span>), (<span class="string">u'a'</span>, <span class="string">u'AT'</span>), (<span class="string">u'relative'</span>, <span class="keyword">None</span>), (<span class="string">u'handful'</span>, <span class="keyword">None</span>), (<span class="string">u'of'</span>, <span class="string">u'IN'</span>), (<span class="string">u'such'</span>, <span class="keyword">None</span>), (<span class="string">u'reports'</span>, <span class="keyword">None</span>), (<span class="string">u'was'</span>, <span class="string">u'BEDZ'</span>), (<span class="string">u'received'</span>, <span class="keyword">None</span>), (<span class="string">u"''"</span>, <span class="string">u"''"</span>), (<span class="string">u','</span>, <span class="string">u','</span>), (<span class="string">u'the'</span>, <span class="string">u'AT'</span>), (<span class="string">u'jury'</span>, <span class="keyword">None</span>), (<span class="string">u'said'</span>, <span class="string">u'VBD'</span>), (<span class="string">u','</span>, <span class="string">u','</span>), (<span class="string">u'``'</span>, <span class="string">u'``'</span>), (<span class="string">u'considering'</span>, <span class="keyword">None</span>), (<span class="string">u'the'</span>, <span class="string">u'AT'</span>), (<span class="string">u'widespread'</span>, <span class="keyword">None</span>), (<span class="string">u'interest'</span>, <span class="keyword">None</span>), (<span class="string">u'in'</span>, <span class="string">u'IN'</span>), (<span class="string">u'the'</span>, <span class="string">u'AT'</span>), (<span class="string">u'election'</span>, <span class="keyword">None</span>), (<span class="string">u','</span>, <span class="string">u','</span>), (<span class="string">u'the'</span>, <span class="string">u'AT'</span>), (<span class="string">u'number'</span>, <span class="keyword">None</span>), (<span class="string">u'of'</span>, <span class="string">u'IN'</span>), (<span class="string">u'voters'</span>, <span class="keyword">None</span>), (<span class="string">u'and'</span>, <span class="string">u'CC'</span>), (<span class="string">u'the'</span>, <span class="string">u'AT'</span>), (<span class="string">u'size'</span>, <span class="keyword">None</span>), (<span class="string">u'of'</span>, <span class="string">u'IN'</span>), (<span class="string">u'this'</span>, <span class="string">u'DT'</span>), (<span class="string">u'city'</span>, <span class="keyword">None</span>), (<span class="string">u"''"</span>, <span class="string">u"''"</span>), (<span class="string">u'.'</span>, <span class="string">u'.'</span>)]</div></pre></td></tr></table></figure>
+<p>可以看到有很多是<code>None</code>，说明它没有出现在<code>前100</code>个词中，这时候我们可以把它们交给<code>默认标注器</code>处理，也就是标记为<code>NN</code>，这个转移工作叫做<code>回退</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">baseline_tagger = nltk.UnigramTagger(model=likely_tags, backoff=nltk.DefaultTagger(<span class="string">'NN'</span>))</div><div class="line">baseline_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.5817769556656125</span></div></pre></td></tr></table></figure>
+<p>准确率瞬间提高了10%+ 有木有！！</p>
+<p>如果取更多的词呢？下面给出数据：</p>
+<table>
+<thead>
+<tr>
+<th>高频词数量</th>
+<th>准确率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>0.5060962269029576</td>
+</tr>
+<tr>
+<td>800</td>
+<td>0.6335401873620145</td>
+</tr>
+<tr>
+<td>1600</td>
+<td>0.7067247449131809</td>
+</tr>
+<tr>
+<td>3200</td>
+<td>0.7813513137219802</td>
+</tr>
+</tbody>
+</table>
+<p>说明随着数量增加，准确率还会提升~</p>
+<h2 id="N-gram标注"><a href="#N-gram标注" class="headerlink" title="N-gram标注"></a>N-gram标注</h2><h3 id="一元标注"><a href="#一元标注" class="headerlink" title="一元标注"></a>一元标注</h3><p>它使用简单的统计算法，给每一个词分配一个最可能的标记，不会关联上下文。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">unigram_tagger = nltk.UnigramTagger(brown_tagged_sents)</div><div class="line">unigram_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.9349006503968017</span></div></pre></td></tr></table></figure>
+<p>准确率还蛮高的，学过的同学知道，这其实是过拟合啦，不信？我们试试其他十个语料库：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> <span class="string">"\n"</span>.join([cate + <span class="string">"\t"</span> + str(unigram_tagger.evaluate(brown.tagged_sents(categories=cate))) <span class="keyword">for</span> cate <span class="keyword">in</span> brown.categories()[:<span class="number">10</span>]])</div><div class="line"></div><div class="line">outputs:</div><div class="line">adventure		<span class="number">0.787891898128</span></div><div class="line">belles_lettres	<span class="number">0.798707075842</span></div><div class="line">editorial		<span class="number">0.813940653204</span></div><div class="line">fiction			<span class="number">0.799147295877</span></div><div class="line">government		<span class="number">0.807778427485</span></div><div class="line">hobbies			<span class="number">0.771327949481</span></div><div class="line">humor			<span class="number">0.793178151648</span></div><div class="line">learned			<span class="number">0.772942690007</span></div><div class="line">lore			<span class="number">0.798085204762</span></div><div class="line">mystery			<span class="number">0.80790288443</span></div></pre></td></tr></table></figure>
+<p>准确率表现在80%左右，下降了10%多，影响还是蛮大的啦。</p>
+<h3 id="一般的N-gram的标注"><a href="#一般的N-gram的标注" class="headerlink" title="一般的N-gram的标注"></a>一般的N-gram的标注</h3><p>它是根据上下文来推断词性的。比如一段句子是 $w<em>{n-2} w</em>{n-1} w<em>{n} w</em>{n+1}$，对应的词性是$t<em>{n-2} t</em>{n-1} t<em>{n} t</em>{n+1}$，三元标准器（n=3）就是考虑当前词$w<em>{n}$ 的<code>前两个词</code>的标记$t</em>{n-2} t<em>{n-1}$ ，我们来推断$t</em>{n}$ 的词性。</p>
+<p>下面是一个二元标注器（即只考虑前一个词）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">bigram_tagger = nltk.BigramTagger(brown_tagged_sents)</div><div class="line">bigram_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.7860751437038805</span></div></pre></td></tr></table></figure>
+<p>三元标注器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">trigram_tagger = nltk.TrigramTagger(brown_tagged_sents)</div><div class="line">trigram_tagger.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.8223641028700996</span></div></pre></td></tr></table></figure>
+<p>准确率要高点。我们来试试它对其他文本的准确率怎么样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> <span class="string">"\n"</span>.join([cate + <span class="string">"\t"</span> + str(trigram_tagger.evaluate(brown.tagged_sents(categories=cate))) <span class="keyword">for</span> cate <span class="keyword">in</span> brown.categories()[:<span class="number">10</span>]])</div><div class="line"></div><div class="line">outputs:</div><div class="line">adventure		<span class="number">0.0947189293646</span></div><div class="line">belles_lettres	<span class="number">0.0632885797477</span></div><div class="line">editorial		<span class="number">0.0675930134407</span></div><div class="line">fiction			<span class="number">0.0889498890317</span></div><div class="line">government		<span class="number">0.0531682758817</span></div><div class="line">hobbies			<span class="number">0.0558503855729</span></div><div class="line">humor			<span class="number">0.0754551740032</span></div><div class="line">learned			<span class="number">0.0566172589726</span></div><div class="line">lore			<span class="number">0.0623759054933</span></div><div class="line">mystery			<span class="number">0.096993125645</span></div></pre></td></tr></table></figure>
+<p>好吧，我怀疑我用了假标注器！</p>
+<p>我们组合一下所建的标注器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">t0 = nltk.DefaultTagger(<span class="string">'NN'</span>)</div><div class="line">t1 = nltk.UnigramTagger(brown_tagged_sents, backoff=t0)</div><div class="line">t2 = nltk.BigramTagger(brown_tagged_sents, backoff=t1)</div><div class="line">t2.evaluate(brown_tagged_sents)</div><div class="line"></div><div class="line">outputs:</div><div class="line"><span class="number">0.9730592517453309</span></div></pre></td></tr></table></figure>
+<p>嗯。。。准确率还不错，下面试试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> <span class="string">"\n"</span>.join([cate + <span class="string">"\t"</span> + str(t2.evaluate(brown.tagged_sents(categories=cate))) <span class="keyword">for</span> cate <span class="keyword">in</span> brown.categories()[:<span class="number">10</span>]])</div><div class="line"></div><div class="line">outputs:</div><div class="line">adventure		<span class="number">0.835626315941</span></div><div class="line">belles_lettres	<span class="number">0.840522022462</span></div><div class="line">editorial		<span class="number">0.849977274203</span></div><div class="line">fiction			<span class="number">0.84151968228</span></div><div class="line">government		<span class="number">0.844089165252</span></div><div class="line">hobbies			<span class="number">0.825283866659</span></div><div class="line">humor			<span class="number">0.839041253745</span></div><div class="line">learned			<span class="number">0.836756685433</span></div><div class="line">lore			<span class="number">0.844033037471</span></div><div class="line">mystery			<span class="number">0.85128303801</span></div></pre></td></tr></table></figure>
+<p>em………还不错吧，下降也有10%，但准确率还有85%左右</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创文章分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/pay.jpg" alt="可建韦 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NLP/" rel="tag"># NLP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/64326.html" rel="next" title="CentOS使用ss">
+                <i class="fa fa-chevron-left"></i> CentOS使用ss
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="可建韦" />
+            
+              <p class="site-author-name" itemprop="name">可建韦</p>
+              <p class="site-description motion-element" itemprop="description">我过我要的生活不是生活过我就好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JerryCheese" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:thinkjerry@icloud.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/5340792685" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/qq_18661257" title="77458" target="_blank">77458</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mochiko.cn" title="mochiko" target="_blank">mochiko</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#词性标注重要性"><span class="nav-number">1.</span> <span class="nav-text">词性标注重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标注语料库"><span class="nav-number">2.</span> <span class="nav-text">标注语料库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他标注语料库"><span class="nav-number">2.1.</span> <span class="nav-text">其他标注语料库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标注器"><span class="nav-number">3.</span> <span class="nav-text">标注器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用标注器"><span class="nav-number">3.1.</span> <span class="nav-text">使用标注器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动标注器"><span class="nav-number">3.2.</span> <span class="nav-text">自动标注器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认标注器"><span class="nav-number">3.2.1.</span> <span class="nav-text">默认标注器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式标注器"><span class="nav-number">3.2.2.</span> <span class="nav-text">正则表达式标注器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询标注器"><span class="nav-number">3.2.3.</span> <span class="nav-text">查询标注器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N-gram标注"><span class="nav-number">4.</span> <span class="nav-text">N-gram标注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一元标注"><span class="nav-number">4.1.</span> <span class="nav-text">一元标注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般的N-gram的标注"><span class="nav-number">4.2.</span> <span class="nav-text">一般的N-gram的标注</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">可建韦</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: true,
+        notify: false,
+        app_id: 'EQT2jfdoprWjnALVbYHro6Wy-gzGzoHsz',
+        app_key: 'zgjyNKXovG43HpCN4Rq9zC0G',
+        placeholder: 'ヾ(o◕∀◕)ﾉ你要留言吗∽∽∽',
+        path: window.location.pathname,
+        avatar: 'mm',
+        guest_info: ['nick', 'link']
+    });
+  </script>
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

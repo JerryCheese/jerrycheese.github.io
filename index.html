@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  333 字
+                  339 字
                 </span>
               
 
@@ -471,10 +471,10 @@
           问题计算取模运算的值 $ a^n \% b$，其中a、b、n均为int类型的变量。
 分析因为 $a^n$ 可能很大，所以不能先计算 $a^n$ 再将其 $ \%b$ 。
 现有取模公式，写作：
- $ (ab) \% c = [ (a \% c)  (b \% c) ] \% c $ 
+ $ (a*b) \% c = [ (a \% c) \times (b \% c) ] \% c $ 
 那么：
 
-幂为偶数，则有 $ a^n \% b = (a^{\frac n 2}  a^{\frac n 2}) \% b = [(a^{\frac n 2} \% b)  (a^{\frac n 2}) \% b ] \% b
+幂为偶数，则有 $ a^n \% b = (a^{\frac n 2} \times a^{\frac n 2}) \% b = [(a^{\frac n 2} \% b) \times (a^{\fra
           ...
           <!--noindex-->
           <div class="post-button text-center">

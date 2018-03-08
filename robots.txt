@@ -8,5 +8,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://blog.hijerry.cn/sitemap.xml
-Sitemap: http://blog.hijerry.cn/baidusitemap.xml
+Sitemap: https://www.hijerry.cn/sitemap.xml
+Sitemap: https://www.hijerry.cn/baidusitemap.xml

@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="Laravel,前端," />
 
 
 
@@ -117,25 +117,18 @@
 
 
 
-<meta name="description" content="序第六周的内容是机器学习的训练方法。 我们已经学习了线性回归、逻辑回归、神经网络，本质上他们都是通过数据的输入，来习得一个预测函数。那么怎么来评估习得函数的好坏呢？如果一个预测函数很好的预测了训练数据，而对于新数据的预测却不准，那这就不是一个好的预测函数，所以判断预测函数好坏的标准就是它对新数据的预测结果准不准，当出现不准的情况时，通常可以采取下面几个方法来提高准确度：  增加训练集数据 用更少的">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。 参考文档：Laravel 的资源任务编译器 Laravel Mix 安装先确保安装了npm和node，运行下面命令进行检查： 12node -vnpm -v Laravel5自带了package.json，内容如下： 123456789101112&amp;#12">
+<meta name="keywords" content="Laravel,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exercise 5: Regularized Linear Regression and Bias v.s. Variance">
-<meta property="og:url" content="https://www.hijerry.cn/p/42787.html">
+<meta property="og:title" content="Laravel5与前端（一）快速上手">
+<meta property="og:url" content="https://www.hijerry.cn/p/64069.html">
 <meta property="og:site_name" content="全栈说">
-<meta property="og:description" content="序第六周的内容是机器学习的训练方法。 我们已经学习了线性回归、逻辑回归、神经网络，本质上他们都是通过数据的输入，来习得一个预测函数。那么怎么来评估习得函数的好坏呢？如果一个预测函数很好的预测了训练数据，而对于新数据的预测却不准，那这就不是一个好的预测函数，所以判断预测函数好坏的标准就是它对新数据的预测结果准不准，当出现不准的情况时，通常可以采取下面几个方法来提高准确度：  增加训练集数据 用更少的">
+<meta property="og:description" content="Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。 参考文档：Laravel 的资源任务编译器 Laravel Mix 安装先确保安装了npm和node，运行下面命令进行检查： 12node -vnpm -v Laravel5自带了package.json，内容如下： 123456789101112&amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/54d80c4bf29670d1713c0ed4c742e545.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/a31c363b473b5584c76b2e5aa62f5ffb.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/966a3670346b24f4ee7295cc88ee1288.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/fbd9b07b9264aa2cfcf3f2d80f9dcd28.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/377095de7b8d470d45e07b4d52277414.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/f5e0cc0d105ede4d3ea6b27728fb54a5.jpg">
-<meta property="og:updated_time" content="2017-11-25T18:53:21.232Z">
+<meta property="og:updated_time" content="2018-03-22T05:27:29.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Exercise 5: Regularized Linear Regression and Bias v.s. Variance">
-<meta name="twitter:description" content="序第六周的内容是机器学习的训练方法。 我们已经学习了线性回归、逻辑回归、神经网络，本质上他们都是通过数据的输入，来习得一个预测函数。那么怎么来评估习得函数的好坏呢？如果一个预测函数很好的预测了训练数据，而对于新数据的预测却不准，那这就不是一个好的预测函数，所以判断预测函数好坏的标准就是它对新数据的预测结果准不准，当出现不准的情况时，通常可以采取下面几个方法来提高准确度：  增加训练集数据 用更少的">
-<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/54d80c4bf29670d1713c0ed4c742e545.jpg">
+<meta name="twitter:title" content="Laravel5与前端（一）快速上手">
+<meta name="twitter:description" content="Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。 参考文档：Laravel 的资源任务编译器 Laravel Mix 安装先确保安装了npm和node，运行下面命令进行检查： 12node -vnpm -v Laravel5自带了package.json，内容如下： 123456789101112&amp;#12">
 
 
 
@@ -165,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="https://www.hijerry.cn/p/42787.html"/>
+  <link rel="canonical" href="https://www.hijerry.cn/p/64069.html"/>
 
 
 
 
 
-  <title>Exercise 5: Regularized Linear Regression and Bias v.s. Variance | 全栈说</title>
+  <title>Laravel5与前端（一）快速上手 | 全栈说</title>
   
 
 
@@ -352,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/42787.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/64069.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -369,7 +362,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Exercise 5: Regularized Linear Regression and Bias v.s. Variance</h2>
+          <h2 class="post-title" itemprop="name headline">Laravel5与前端（一）快速上手</h2>
         
 
         <div class="post-meta">
@@ -381,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T22:48:25+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T19:16:38+08:00">
+                2018-03-21
               </time>
             
 
@@ -404,8 +397,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/研/" itemprop="url" rel="index">
-                    <span itemprop="name">研</span>
+                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
+                    <span itemprop="name">Web全栈</span>
                   </a>
                 </span>
 
@@ -440,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,159 字
+                  1,337 字
                 </span>
               
 
@@ -456,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分
+                  11 分
                 </span>
               
             </div>
@@ -477,57 +470,88 @@
       
 
       
-        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>第六周的内容是机器学习的训练方法。</p>
-<p>我们已经学习了线性回归、逻辑回归、神经网络，本质上他们都是通过数据的输入，来习得一个预测函数。那么怎么来评估习得函数的好坏呢？如果一个预测函数很好的预测了训练数据，而对于新数据的预测却不准，那这就不是一个好的预测函数，所以判断预测函数好坏的标准就是它对新数据的预测结果准不准，当出现不准的情况时，通常可以采取下面几个方法来提高准确度：</p>
+        <h2 id="Laravel-Mix与资源编译"><a href="#Laravel-Mix与资源编译" class="headerlink" title="Laravel Mix与资源编译"></a>Laravel Mix与资源编译</h2><p>Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。</p>
+<p>参考文档：<a href="https://laravel-china.org/docs/laravel/5.5/mix" target="_blank" rel="external">Laravel 的资源任务编译器 Laravel Mix</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先确保安装了npm和node，运行下面命令进行检查：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
+<p>Laravel5自带了<code>package.json</code>，内容如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    "devDependencies": &#123;</div><div class="line">        "axios": "^0.17",</div><div class="line">        "bootstrap-sass": "^3.3.7",</div><div class="line">        "cross-env": "^5.1",</div><div class="line">        "jquery": "^3.2",</div><div class="line">        "laravel-mix": "^2.0",</div><div class="line">        "lodash": "^4.17.4",</div><div class="line">        "vue": "^2.5.7"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>说明自带了sass版本的<code>bootstrap</code>、<code>jquery</code> 等，可以看到其中还有<code>laravel-mix</code>。所以，直接运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>如果在windows上或是在windows上运行的虚拟机里，那需要加<code>--no-bin-links</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --no-bin-links</div></pre></td></tr></table></figure>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>安装完之后就可以运行Mix了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 运行所有Mix任务</div><div class="line">npm run dev</div><div class="line"></div><div class="line">// 运行所有Mix任务但缩小输出</div><div class="line">npm run production</div></pre></td></tr></table></figure>
+<p>如果资源文件修改了的话，需要重新运行上述命令。</p>
+<p>下面的 <code>watch</code> 命令可以帮你监视资源文件修改，并自动编译。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 资源更改时自动编译</div><div class="line">npm run watch</div><div class="line">// watch失效时，用watch-poll</div><div class="line">npm run watch-poll</div></pre></td></tr></table></figure>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p><code>webpack.mix.js</code> 相当于Webpack中的配置清单。Mix 任务支持链式调用，可以精确定义资源的编译方式。</p>
+<h3 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h3><p><code>less</code> 方法可以把Less编译为css，只需在webpack.mix.js写入下方代码，即可把<code>app.less</code> 编译、保存为 <code>public/css/app.css</code> 文件 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mix.less(<span class="string">'resource/assets/less/app.less'</span>, <span class="string">'public/css'</span>);</div></pre></td></tr></table></figure>
+<p> 编译多个：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mix.less(<span class="string">'resources/assets/less/app.less'</span>, <span class="string">'public/css'</span>)</div><div class="line">   .less(<span class="string">'resources/assets/less/admin.less'</span>, <span class="string">'public/css'</span>);</div></pre></td></tr></table></figure>
+<p>指定文件名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mix.less(<span class="string">'resources/assets/less/app.less'</span>, <span class="string">'public/stylesheets/styles.css'</span>);</div></pre></td></tr></table></figure>
+<p>指定 <a href="https://github.com/webpack-contrib/less-loader#options" target="_blank" rel="external">Less插件</a> 选项：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mix.less(<span class="string">'resources/assets/less/app.less'</span>, <span class="string">'public/css'</span>, &#123;</div><div class="line">    strictMath: <span class="literal">true</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h3><p>与Less的用法一样，不过底层的编译器使用的是 <a href="https://github.com/sass/node-sass#options" target="_blank" rel="external">Node-Sass 插件选项</a>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mix.sass(<span class="string">'resources/assets/sass/app.scss'</span>, <span class="string">'public/css'</span>);</div></pre></td></tr></table></figure>
+<h3 id="Stylus"><a href="#Stylus" class="headerlink" title="Stylus"></a>Stylus</h3><p>与Less用法一样，不可以指定其他Stylus插件，如 Rupture（记得通过<code>npminstall rupture</code>）安装插件，在使用时代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mix.stylus(<span class="string">'resources/assets/stylus/app.styl'</span>, <span class="string">'public/css'</span>, &#123;</div><div class="line">    use: [</div><div class="line">        <span class="built_in">require</span>(<span class="string">'rupture'</span>)()</div><div class="line">    ]</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="纯CSS"><a href="#纯CSS" class="headerlink" title="纯CSS"></a>纯CSS</h3><p>用法也类似，而且可以使用 <code>styles</code> 方法合并css文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mix.styles([</div><div class="line">    <span class="string">'public/css/vendor/normalize.css'</span>,</div><div class="line">    <span class="string">'public/css/vendor/videojs.css'</span></div><div class="line">], <span class="string">'public/css/all.css'</span>);</div></pre></td></tr></table></figure>
+<h3 id="URL处理"><a href="#URL处理" class="headerlink" title="URL处理"></a>URL处理</h3><p>在编译CSS时，Webpack会优化样式表中的 <code>url()</code> 调用，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.example</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'../images/example.png'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述代码在默认情况下，图片会被移动到<code>public/images</code> 目录下面，并且会被编译成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.example</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(/images/example.png?d41d8cd98f00b204e9800998ecf8427e);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：绝对路径如 <code>url(&#39;/images/example.png&#39;)</code> 或 <code>url(&#39;http://example.com/images/example.png&#39;)</code>不会被修改</p>
+<p>如果不希望处理 <code>url()</code> 调用，那么可以禁用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mix.sass(<span class="string">'resources/assets/app/app.scss'</span>, <span class="string">'public/css'</span>)</div><div class="line">   .options(&#123;</div><div class="line">      processCssUrls: <span class="literal">false</span></div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>上代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mix.js(<span class="string">'resources/assets/js/app.js'</span>, <span class="string">'public/js'</span>);</div></pre></td></tr></table></figure>
+<p>这一行代码包括了：</p>
 <ul>
-<li>增加训练集数据</li>
-<li>用更少的特征进行训练</li>
-<li>用更多的特征进行训练</li>
-<li>添加多项式</li>
-<li>增加/减少 $\lambda$ </li>
+<li>ES 2015 语法</li>
+<li>模块化</li>
+<li>编译 <code>.vue</code> 文件</li>
+<li>生产环境压缩代码</li>
 </ul>
-<p>那么现在问题抛出来了，是不是从上到下依次尝试呢？答案必须是否定的，因为每一个尝试都会花费大量的时间，有的也许还要花费财力，所以我们需要根据现有情况来判断到底选择哪一种方法。</p>
-<h2 id="训练集、测试集"><a href="#训练集、测试集" class="headerlink" title="训练集、测试集"></a>训练集、测试集</h2><p>假如你正要基于机器学习开发一款应用，现在你手中只有100组数据，在没有办法获得新数据的情况下，你需要想方设法来提高最后习得函数的泛化效率，那么可以考虑这么做：把数据按7:3划分，70%作为训练集，30%作为测试集。这样你就有了两份数据，一份用于训练，一份是新数据（相对训练集而言），那么习得函数在测试集上的准确率可以近似为泛化效率，我们使用误差函数来评判预测函数的好坏。</p>
-<p>线性回归的误差函数可以表示为：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/54d80c4bf29670d1713c0ed4c742e545.jpg" alt=""></p>
-<p>二分类误差函数：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/a31c363b473b5584c76b2e5aa62f5ffb.jpg" alt=""></p>
-<h2 id="模型选择和验证集"><a href="#模型选择和验证集" class="headerlink" title="模型选择和验证集"></a>模型选择和验证集</h2><p>线性回归需要预先选择模型，如果特征项（项的幂）太多，会导致过拟合，太少则会导致欠拟合。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/966a3670346b24f4ee7295cc88ee1288.jpg" alt=""></p>
-<p>使用训练集、测试集，可以取得一个比较好的”$\theta$”，而模型选择，则是需要选择最高次幂的大小，所以引入了验证集来判断。</p>
-<p>假如现在要在上面的1~10个模型中选取一个作为你的线性回归模型，你需要针对每一个模型，计算出他们的最低误差$J_{test}(\theta)^{(i)}$ ，再选取误差最小的那个模型作为你的预测模型。</p>
-<h2 id="偏差和方差"><a href="#偏差和方差" class="headerlink" title="偏差和方差"></a>偏差和方差</h2><p>记 $J<em>{train}(Θ)$ 为训练集的误差，$J</em>{cv}(Θ)$ 为验证集的误差 。</p>
+<h3 id="提取依赖库"><a href="#提取依赖库" class="headerlink" title="提取依赖库"></a>提取依赖库</h3><p>将js和依赖库捆绑在一起一个很大缺点就是每次都需要打包合并成一个文件，这样会使得缓存效率低下，一个好的方法是使用 <code>extract</code> 方法将依赖库单独提取出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mix.js(<span class="string">'resources/assets/js/app.js'</span>, <span class="string">'public/js'</span>)</div><div class="line">   .extract([<span class="string">'vue'</span>])</div></pre></td></tr></table></figure>
+<p>这样一来，Mix 将生成三个文件：</p>
 <ul>
-<li>$J<em>{train}(Θ)$ 很大，$J</em>{cv}(Θ)$ 也很大，则说明预测函数的偏差高，这表示欠拟合</li>
-<li>$J<em>{train}(Θ)$ 很小，$J</em>{cv}(Θ)$ 也很大，则说明预测函数的方差高，这表示过拟合</li>
+<li><code>public/js/manifest.js</code> ： Webpack 运行的内容清单</li>
+<li><code>public/js/vendor.js</code> ：依赖库</li>
+<li><code>public/js/app.js</code> ： 应用代码</li>
 </ul>
-<p><img src="http://os9coobhw.bkt.clouddn.com/fbd9b07b9264aa2cfcf3f2d80f9dcd28.jpg" alt=""></p>
-<p>通过引入$\lambda$ 进行正规化，可以很好的解决方差/偏差过高的问题</p>
-<h2 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h2><p>通过绘制误差函数与训练集大小的函数图像，可以观察到高偏差和高方差的情况。</p>
-<p>下图表示的是高偏差，可以看到训练误差和测试误差高于了期望值，而且两者几乎相等</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/377095de7b8d470d45e07b4d52277414.jpg" alt=""></p>
-<p>下图表示的是高方差，可以看到训练误差比较小和测试误差很大</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/f5e0cc0d105ede4d3ea6b27728fb54a5.jpg" alt=""></p>
-<h2 id="回到第一个问题"><a href="#回到第一个问题" class="headerlink" title="回到第一个问题"></a>回到第一个问题</h2><p>我们说到了，当发现预测函数效果不太好时，可以采取以下几种方式提高效果：</p>
+<p>他们在html中的引入顺序为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/manifest.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/vendor.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/app.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mix.react(<span class="string">'resources/assets/js/app.jsx'</span>, <span class="string">'public/js'</span>);</div></pre></td></tr></table></figure>
+<h3 id="原生JS"><a href="#原生JS" class="headerlink" title="原生JS"></a>原生JS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mix.scripts([</div><div class="line">    <span class="string">'public/js/admin.js'</span>,</div><div class="line">    <span class="string">'public/js/dashboard.js'</span></div><div class="line">], <span class="string">'public/js/all.js'</span>);</div></pre></td></tr></table></figure>
+<h2 id="实战：初探"><a href="#实战：初探" class="headerlink" title="实战：初探"></a>实战：初探</h2><p>假定已使用 <code>npm install</code> 安装了各种依赖。</p>
+<h3 id="样例代码和目录结构"><a href="#样例代码和目录结构" class="headerlink" title="样例代码和目录结构"></a>样例代码和目录结构</h3><p>查看 <code>webpack.mix.js</code> 文件内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mix.js(<span class="string">'resources/assets/js/app.js'</span>, <span class="string">'public/js'</span>)</div><div class="line">   .sass(<span class="string">'resources/assets/sass/app.scss'</span>, <span class="string">'public/css'</span>);</div></pre></td></tr></table></figure>
+<p>它编译了一个脚本文件 <code>app.js</code> 和一个样式文件 <code>app.scss</code>，进入到 <code>resource/assets/</code> 文件夹可以找到这俩文件。先来看看这个文件夹的结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── js</div><div class="line">│   ├── app.js</div><div class="line">│   ├── bootstrap.js</div><div class="line">│   └── components</div><div class="line">│       └── ExampleComponent.vue</div><div class="line">└── sass</div><div class="line">    ├── app.scss</div><div class="line">    └── _variables.scss</div></pre></td></tr></table></figure>
+<p><code>components</code> 目录从来放 <code>vue</code> 组件，默认有一个 <code>ExampleComponent.vue</code> 文件，相当于Hello world。</p>
+<p>查看 <code>app.js</code> 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'./bootstrap'</span>);</div><div class="line"><span class="built_in">window</span>.Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>);</div><div class="line">Vue.component(<span class="string">'example-component'</span>, <span class="built_in">require</span>(<span class="string">'./components/ExampleComponent.vue'</span>));</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: <span class="string">'#app'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>它依次干了以下事情：</p>
 <ul>
-<li>增加训练集数据</li>
-<li>用更少的特征进行训练</li>
-<li>用更多的特征进行训练</li>
-<li>添加多项式</li>
-<li>增加/减少 $\lambda$ </li>
+<li>引入bootstrap模块 （<strong>不是指Bootstrap框架，而是初始化工作</strong>）</li>
+<li>引入vue模块并挂载的 <code>window.Vue</code> </li>
+<li>加载 <code>ExampleComponent.vue</code> 组件</li>
+<li>初始化Vue</li>
 </ul>
-<p>那么这些方法，分别对应什么样的情况呢？可以根据欠拟合和过拟合分类，高偏差就是欠拟合，高方差就是过拟合，结论如下：</p>
-<ul>
-<li>过拟合，高方差 ：增加训练集数据</li>
-<li>过拟合，高方差 ：用更少的特征进行训练</li>
-<li>欠拟合，高偏差 ：用更多的特征进行训练</li>
-<li>欠拟合，高偏差 ：添加多项式</li>
-<li>欠拟合，高偏差 ：减少 $\lambda$ 的值</li>
-<li>过拟合，高方差 ：增加 $\lambda$ 的值</li>
-</ul>
-<p>如果是神经网络，隐藏层越多则可能过拟合，越少则可能欠拟合，判断逻辑与上述一样。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以后尽量少贴代码而采取文字总结的方式，因为我觉得贴代码起不到总结的效果。</p>
-<p>以后也尽量按照coursera给出的课程大纲来进行分点总结，起到翻译的效果吧。</p>
+<h3 id="跑起来"><a href="#跑起来" class="headerlink" title="跑起来"></a>跑起来</h3><p> 好了，看完代码之后，有过资源编译经验的朋友可能已经通了，这和以往Webpack+各种编译器的使用方法是一样的。那现在我们让这个Hello World程序跑起来。</p>
+<p>我们在<code>routes/web.php</code> 新加一条路由：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'/hellomix'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> view(<span class="string">'hellomix'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>创建前端模板文件 <code>resource/views/hellomix.blade.php</code> ，写入代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"&#123;&#123; app()-&gt;getLocale() &#125;&#125;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- CSRF Token --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"csrf-token"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; csrf_token() &#125;&#125;"</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123; config('app.name', 'Laravel') &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!-- Styles --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; mix('css/app.css') &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">example-component</span>&gt;</span><span class="tag">&lt;/<span class="name">example-component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Scripts --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; mix('js/app.js') &#125;&#125;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>注意：上面使用 <code>mix</code>方法来输出 <code>app.css</code> 和 <code>app.js</code> 的正确路径，建议回看 <code>webpack.mix.js</code> 的配置。</p>
+<p>接着启动资源编译器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run watch</div></pre></td></tr></table></figure>
+<p>访问刚刚定义的路由即可。</p>
 
       
     </div>
@@ -569,7 +593,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/Laravel/" rel="tag"># Laravel</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -582,8 +608,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/8039.html" rel="next" title="Exercise 4: Neural Networks Learning">
-                <i class="fa fa-chevron-left"></i> Exercise 4: Neural Networks Learning
+              <a href="/p/18313.html" rel="next" title="快速幂（取模）算法">
+                <i class="fa fa-chevron-left"></i> 快速幂（取模）算法
               </a>
             
           </div>
@@ -591,10 +617,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/62235.html" rel="prev" title="Week 6:Machine Learning System Design">
-                Week 6:Machine Learning System Design <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -772,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练集、测试集"><span class="nav-number">2.</span> <span class="nav-text">训练集、测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型选择和验证集"><span class="nav-number">3.</span> <span class="nav-text">模型选择和验证集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差和方差"><span class="nav-number">4.</span> <span class="nav-text">偏差和方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习曲线"><span class="nav-number">5.</span> <span class="nav-text">学习曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回到第一个问题"><span class="nav-number">6.</span> <span class="nav-text">回到第一个问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Laravel-Mix与资源编译"><span class="nav-number">1.</span> <span class="nav-text">Laravel Mix与资源编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式"><span class="nav-number">4.</span> <span class="nav-text">样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Less"><span class="nav-number">4.1.</span> <span class="nav-text">Less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass"><span class="nav-number">4.2.</span> <span class="nav-text">Sass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stylus"><span class="nav-number">4.3.</span> <span class="nav-text">Stylus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯CSS"><span class="nav-number">4.4.</span> <span class="nav-text">纯CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL处理"><span class="nav-number">4.5.</span> <span class="nav-text">URL处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-number">5.</span> <span class="nav-text">脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译"><span class="nav-number">5.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取依赖库"><span class="nav-number">5.2.</span> <span class="nav-text">提取依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React"><span class="nav-number">5.3.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生JS"><span class="nav-number">5.4.</span> <span class="nav-text">原生JS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战：初探"><span class="nav-number">6.</span> <span class="nav-text">实战：初探</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#样例代码和目录结构"><span class="nav-number">6.1.</span> <span class="nav-text">样例代码和目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跑起来"><span class="nav-number">6.2.</span> <span class="nav-text">跑起来</span></a></li></ol></li></ol></div>
             
 
           </div>

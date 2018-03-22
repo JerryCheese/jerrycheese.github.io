@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="全栈说">
 <meta property="og:description" content="Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。 参考文档：Laravel 的资源任务编译器 Laravel Mix 安装先确保安装了npm和node，运行下面命令进行检查： 12node -vnpm -v Laravel5自带了package.json，内容如下： 123456789101112&amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T05:27:29.095Z">
+<meta property="og:updated_time" content="2018-03-22T05:38:56.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel5与前端（一）快速上手">
 <meta name="twitter:description" content="Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。 参考文档：Laravel 的资源任务编译器 Laravel Mix 安装先确保安装了npm和node，运行下面命令进行检查： 12node -vnpm -v Laravel5自带了package.json，内容如下： 123456789101112&amp;#12">
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,337 字
+                  1,469 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11 分
+                  12 分
                 </span>
               
             </div>
@@ -475,7 +475,7 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先确保安装了npm和node，运行下面命令进行检查：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
 <p>Laravel5自带了<code>package.json</code>，内容如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    "devDependencies": &#123;</div><div class="line">        "axios": "^0.17",</div><div class="line">        "bootstrap-sass": "^3.3.7",</div><div class="line">        "cross-env": "^5.1",</div><div class="line">        "jquery": "^3.2",</div><div class="line">        "laravel-mix": "^2.0",</div><div class="line">        "lodash": "^4.17.4",</div><div class="line">        "vue": "^2.5.7"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    "devDependencies": &#123;</div><div class="line">        "axios": "^0.17",</div><div class="line">        "bootstrap-sass": "^3.3.7",</div><div class="line">        "cross-env": "^5.1",</div><div class="line">        "jquery": "^3.2",</div><div class="line">        "laravel-mix": "^1.0",</div><div class="line">        "lodash": "^4.17.4",</div><div class="line">        "vue": "^2.5.7"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>说明自带了sass版本的<code>bootstrap</code>、<code>jquery</code> 等，可以看到其中还有<code>laravel-mix</code>。所以，直接运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
 <p>如果在windows上或是在windows上运行的虚拟机里，那需要加<code>--no-bin-links</code>：</p>
@@ -483,6 +483,11 @@
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>安装完之后就可以运行Mix了：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 运行所有Mix任务</div><div class="line">npm run dev</div><div class="line"></div><div class="line">// 运行所有Mix任务但缩小输出</div><div class="line">npm run production</div></pre></td></tr></table></figure>
 <p>如果资源文件修改了的话，需要重新运行上述命令。</p>
+<p>上述命令可能报错，因为找不到 <code>cross-env</code> 命令，查看<code>package.json</code> 得知：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">	"scripts": &#123;</div><div class="line">        "dev": "npm run development",</div><div class="line">        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",</div><div class="line">    	...</div><div class="line">    &#125;,</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>development</code> 脚本中需要用到 <code>cross-env</code> 命令，我们把这要用到这个命令的脚本代码都更改为：</p>
+<p><code>node node_modules/cross-env/dist/bin/cross-env.js</code> 即可，改完后就是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">	"scripts": &#123;</div><div class="line">        "dev": "npm run development",</div><div class="line">        "development": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",</div><div class="line">    	...</div><div class="line">    &#125;,</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>下面的 <code>watch</code> 命令可以帮你监视资源文件修改，并自动编译。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 资源更改时自动编译</div><div class="line">npm run watch</div><div class="line">// watch失效时，用watch-poll</div><div class="line">npm run watch-poll</div></pre></td></tr></table></figure>
 <h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p><code>webpack.mix.js</code> 相当于Webpack中的配置清单。Mix 任务支持链式调用，可以精确定义资源的编译方式。</p>

@@ -117,19 +117,19 @@
 
 
 
-<meta name="description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
+<meta name="description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要HTTP请">
 <meta name="keywords" content="Laravel,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Laravel5与前端（二）单页与懒加载">
 <meta property="og:url" content="https://www.hijerry.cn/p/40500.html">
 <meta property="og:site_name" content="全栈说">
-<meta property="og:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
+<meta property="og:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要HTTP请">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/9224d4896641d941e3aa5d897eefe5c0.jpg">
-<meta property="og:updated_time" content="2018-03-24T06:22:16.670Z">
+<meta property="og:updated_time" content="2018-03-24T06:23:31.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel5与前端（二）单页与懒加载">
-<meta name="twitter:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
+<meta name="twitter:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要HTTP请">
 <meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/9224d4896641d941e3aa5d897eefe5c0.jpg">
 
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,378 字
+                  1,374 字
                 </span>
               
 
@@ -474,10 +474,10 @@
       
         <p>接上一篇：<a href="/p/64069.html">Laravel5与前端（一）快速上手</a></p>
 <h2 id="单页-vs-多页"><a href="#单页-vs-多页" class="headerlink" title="单页 vs 多页"></a>单页 vs 多页</h2><p>熟悉前端的同学也许听过 <code>SPA</code>（single page web application，单页Web应用），它究竟是个什么东西呢？</p>
-<h3 id="单页特点"><a href="#单页特点" class="headerlink" title="单页特点"></a>单页特点</h3><h4 id="前段路由"><a href="#前段路由" class="headerlink" title="前段路由"></a>前段路由</h4><p> <code>app.js</code>（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。</p>
-<h4 id="更少的HTTP请求"><a href="#更少的HTTP请求" class="headerlink" title="更少的HTTP请求"></a>更少的HTTP请求</h4><p>不用像多页应用那样，每一个页面都需要HTTP请求，单页应用由于后端路由只有一个，所以HTTP请求较少。而多页应用的页面和页面内的资源文件每次都需要重新请求，这样对HTTP压力较大（缓存压力也大）。</p>
-<h4 id="更快的响应"><a href="#更快的响应" class="headerlink" title="更快的响应"></a>更快的响应</h4><p>在SPA中进行页面切换时，没有白屏期，用户使用更加流畅。</p>
-<h4 id="更注重分离"><a href="#更注重分离" class="headerlink" title="更注重分离"></a>更注重分离</h4><p>后端只需提供数据即可，无需计算页面展示逻辑和合成页面，这样以来后端更加专注数据处理，前端更加注重交互处理。</p>
+<h3 id="前段路由"><a href="#前段路由" class="headerlink" title="前段路由"></a>前段路由</h3><p> <code>app.js</code>（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。</p>
+<h3 id="更少的HTTP请求"><a href="#更少的HTTP请求" class="headerlink" title="更少的HTTP请求"></a>更少的HTTP请求</h3><p>不用像多页应用那样，每一个页面都需要HTTP请求，单页应用由于后端路由只有一个，所以HTTP请求较少。而多页应用的页面和页面内的资源文件每次都需要重新请求，这样对HTTP压力较大（缓存压力也大）。</p>
+<h3 id="更快的响应"><a href="#更快的响应" class="headerlink" title="更快的响应"></a>更快的响应</h3><p>在SPA中进行页面切换时，没有白屏期，用户使用更加流畅。</p>
+<h3 id="更注重分离"><a href="#更注重分离" class="headerlink" title="更注重分离"></a>更注重分离</h3><p>后端只需提供数据即可，无需计算页面展示逻辑和合成页面，这样以来后端更加专注数据处理，前端更加注重交互处理。</p>
 <h2 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h2><p>vue-router可以轻松的实现前端路由功能，它是配合vue一起使用的。</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用npm安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-router -S</div></pre></td></tr></table></figure>
@@ -764,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单页-vs-多页"><span class="nav-number">1.</span> <span class="nav-text">单页 vs 多页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单页特点"><span class="nav-number">1.1.</span> <span class="nav-text">单页特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前段路由"><span class="nav-number">1.1.1.</span> <span class="nav-text">前段路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更少的HTTP请求"><span class="nav-number">1.1.2.</span> <span class="nav-text">更少的HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更快的响应"><span class="nav-number">1.1.3.</span> <span class="nav-text">更快的响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更注重分离"><span class="nav-number">1.1.4.</span> <span class="nav-text">更注重分离</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-router"><span class="nav-number">2.</span> <span class="nav-text">vue-router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始使用"><span class="nav-number">2.2.</span> <span class="nav-text">开始使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化-vs-组件化"><span class="nav-number">3.</span> <span class="nav-text">模块化 vs 组件化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">4.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载一个模块"><span class="nav-number">4.1.</span> <span class="nav-text">懒加载一个模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改懒加载文件目录"><span class="nav-number">4.2.</span> <span class="nav-text">更改懒加载文件目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单页-vs-多页"><span class="nav-number">1.</span> <span class="nav-text">单页 vs 多页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前段路由"><span class="nav-number">1.1.</span> <span class="nav-text">前段路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更少的HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">更少的HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更快的响应"><span class="nav-number">1.3.</span> <span class="nav-text">更快的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更注重分离"><span class="nav-number">1.4.</span> <span class="nav-text">更注重分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-router"><span class="nav-number">2.</span> <span class="nav-text">vue-router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始使用"><span class="nav-number">2.2.</span> <span class="nav-text">开始使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化-vs-组件化"><span class="nav-number">3.</span> <span class="nav-text">模块化 vs 组件化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">4.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载一个模块"><span class="nav-number">4.1.</span> <span class="nav-text">懒加载一个模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改懒加载文件目录"><span class="nav-number">4.2.</span> <span class="nav-text">更改懒加载文件目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

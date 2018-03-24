@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="Laravel,前端," />
 
 
 
@@ -117,35 +117,20 @@
 
 
 
-<meta name="description" content="序因为时间上的限制，本周必须要把Course的课程看完，之后开始步入实战，所以周二就搞定了第七周的内容。支持向量机（Support Vector Machines）这个词很早就听过，今天总算是学到了这个知识点。 线性可分和非线性可分什么是线性可分？例如对于下图所表示的数据集，我们可以用一条直线将红蓝圆点分开，就叫做这个问题是线性可分问题。（下图均出自知乎，作者简之）  但是当数据变多的时候，也许会">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
+<meta name="keywords" content="Laravel,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Week7: Support Vector Machines">
-<meta property="og:url" content="https://www.hijerry.cn/p/38722.html">
+<meta property="og:title" content="Laravel5与前端（二）单页与懒加载">
+<meta property="og:url" content="https://www.hijerry.cn/p/40500.html">
 <meta property="og:site_name" content="全栈说">
-<meta property="og:description" content="序因为时间上的限制，本周必须要把Course的课程看完，之后开始步入实战，所以周二就搞定了第七周的内容。支持向量机（Support Vector Machines）这个词很早就听过，今天总算是学到了这个知识点。 线性可分和非线性可分什么是线性可分？例如对于下图所表示的数据集，我们可以用一条直线将红蓝圆点分开，就叫做这个问题是线性可分问题。（下图均出自知乎，作者简之）  但是当数据变多的时候，也许会">
+<meta property="og:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/fbb7bfbea3f6655e6fd1ed8ff0881ad2.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/c0cd0150ba23aa1add181a9103e16f0a.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/240a1686eb64725376fd25788615192a.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/05c8d745f217cabbe4b65dc0f4037331.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/49d90e6a3741428687b9d8408031cd6e.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/462256e3b1344867b030c5b1c2b75df3.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/b307c2903a6daca79a9bf21516fd2764.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/f3d4c13b8536c99db2743be80e27fe69.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/4a96fddb4578b2d7dd1b1991b16051ae.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/31ce657c9a7717f3c1beb7625b09cb64.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/af8606bcaf64949391606491ddfddef9.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/fec384340c8c70fbecc45ead92fc979d.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/726c14839744f0c02836f9a42557f3fc.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/13cd84a5b5b68fa5b3f3c360e187d336.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/f4ece8fdea93517f084ead472ed330a1.jpg">
-<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/4be6d68f9b3e77209631c6ab16a0aee1.jpg">
-<meta property="og:updated_time" content="2017-12-02T16:55:15.478Z">
+<meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/9224d4896641d941e3aa5d897eefe5c0.jpg">
+<meta property="og:updated_time" content="2018-03-24T06:22:04.961Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Week7: Support Vector Machines">
-<meta name="twitter:description" content="序因为时间上的限制，本周必须要把Course的课程看完，之后开始步入实战，所以周二就搞定了第七周的内容。支持向量机（Support Vector Machines）这个词很早就听过，今天总算是学到了这个知识点。 线性可分和非线性可分什么是线性可分？例如对于下图所表示的数据集，我们可以用一条直线将红蓝圆点分开，就叫做这个问题是线性可分问题。（下图均出自知乎，作者简之）  但是当数据变多的时候，也许会">
-<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/fbb7bfbea3f6655e6fd1ed8ff0881ad2.jpg">
+<meta name="twitter:title" content="Laravel5与前端（二）单页与懒加载">
+<meta name="twitter:description" content="接上一篇：Laravel5与前端（一）快速上手 单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？ 单页特点前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。 更少的HTTP请求不用像多页应用那样，每一个页面都需要H">
+<meta name="twitter:image" content="http://os9coobhw.bkt.clouddn.com/9224d4896641d941e3aa5d897eefe5c0.jpg">
 
 
 
@@ -175,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="https://www.hijerry.cn/p/38722.html"/>
+  <link rel="canonical" href="https://www.hijerry.cn/p/40500.html"/>
 
 
 
 
 
-  <title>Week7: Support Vector Machines | 全栈说</title>
+  <title>Laravel5与前端（二）单页与懒加载 | 全栈说</title>
   
 
 
@@ -362,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/38722.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/40500.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -379,7 +364,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Week7: Support Vector Machines</h2>
+          <h2 class="post-title" itemprop="name headline">Laravel5与前端（二）单页与懒加载</h2>
         
 
         <div class="post-meta">
@@ -391,8 +376,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T21:50:06+08:00">
-                2017-11-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T20:18:32+08:00">
+                2018-03-23
               </time>
             
 
@@ -414,8 +399,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/研/" itemprop="url" rel="index">
-                    <span itemprop="name">研</span>
+                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
+                    <span itemprop="name">Web全栈</span>
                   </a>
                 </span>
 
@@ -450,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  954 字
+                  1,378 字
                 </span>
               
 
@@ -466,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分
+                  11 分
                 </span>
               
             </div>
@@ -487,63 +472,56 @@
       
 
       
-        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>因为时间上的限制，本周必须要把Course的课程看完，之后开始步入实战，所以周二就搞定了第七周的内容。支持向量机（Support Vector Machines）这个词很早就听过，今天总算是学到了这个知识点。</p>
-<h2 id="线性可分和非线性可分"><a href="#线性可分和非线性可分" class="headerlink" title="线性可分和非线性可分"></a>线性可分和非线性可分</h2><p>什么是线性可分？例如对于下图所表示的数据集，我们可以用一条直线将红蓝圆点分开，就叫做这个问题是线性可分问题。（下图均出自<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">知乎</a>，作者<a href="https://www.zhihu.com/people/wangjianzhi/activities" target="_blank" rel="external">简之</a>）</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/fbb7bfbea3f6655e6fd1ed8ff0881ad2.jpg" alt=""></p>
-<p>但是当数据变多的时候，也许会出现一些错误分类，例如下图：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/c0cd0150ba23aa1add181a9103e16f0a.jpg" alt=""></p>
-<p>线性不可分就是说，对于下面这张<code>二维</code>数据，你无法用一条直线将其分开：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/240a1686eb64725376fd25788615192a.jpg" alt=""></p>
-<h2 id="最大间距和升维"><a href="#最大间距和升维" class="headerlink" title="最大间距和升维"></a>最大间距和升维</h2><p>SVM可用于线性可分，也可以用于线性不可分问题。</p>
-<p>对于线性可分问题，SVM的策略是选取一个“间距”最大的划分直线，也就是下图的黄色区域越大越好。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/05c8d745f217cabbe4b65dc0f4037331.jpg" alt=""></p>
-<p>因为这样的话，在数据增多的情况下，仍有比较好的分类效果。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/49d90e6a3741428687b9d8408031cd6e.jpg" alt=""></p>
-<p>而对于线性不可分问题，SVM的策略是将数据升维，在二维上看起来无法用直线划分解决问题，将其提升到三维用一个平面进行划分。</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/462256e3b1344867b030c5b1c2b75df3.jpg" alt=""></p>
-<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><p>首先，线性模型的预测函数为：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/b307c2903a6daca79a9bf21516fd2764.jpg" alt=""></p>
-<p>$x_1 … x_n$ 是特征值，将其替换为 $ f_1 … f_n$ 就得到了SVM模型的预测函数：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/f3d4c13b8536c99db2743be80e27fe69.jpg" alt=""></p>
-<p> $f_i$ 就是 $x_i$ 的<code>核函数</code>，它通常是非线性的，例如 $f_i = x<em>i x</em>{i+1} (i &lt; n)$  ，可以知道，$f_i$ 其实是一个映射函数。</p>
-<p>通过$f_i$ 的映射，可以将低维特征转化为高维特征，所以SVM对非线性也有很好拟合能力。</p>
-<p>常用的核函数有：</p>
-<ul>
-<li>线性核：$κ(x, x_i) = x·x_i$</li>
-<li>多项式核：$κ(x, x_i) = ((x · x_i) + 1)^d$</li>
-<li>高斯核（RBF）：$κ(x, x_i) = exp(- \frac {||x - x_i||^2} {δ^2}) $ </li>
-</ul>
-<h2 id="高斯核"><a href="#高斯核" class="headerlink" title="高斯核"></a>高斯核</h2><p>假设SVM模型为：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/4a96fddb4578b2d7dd1b1991b16051ae.jpg" alt=""></p>
-<p>值得注意的是，$f$ 的数量不一定和特征 $x$ 数量一样，例如模型中 $f$ 有3个，而特征 $x$ 只有2个。</p>
-<p>我们可以在数据集中取三个点 $l^{(1)}, l^{(2)}, l^{(3)}$，函数 $f_i$ 就是点 $x$ 到点 $l^{(i)}$ 的相似度（similarity），它的计算公式为：</p>
-<p>$f_i =similarity(x, l^{(i)}) = exp(- \frac {||x - l^{(i)}||^2} {2δ^2}) $</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/31ce657c9a7717f3c1beb7625b09cb64.jpg" alt=""></p>
-<p>假设 $l^{(1)} = [1,3], δ = 1$ 那么$f_1 = exp(-(x1- 1)^2 - (x2 - 3)^2)$，它表示的是一个三维曲面。</p>
-<h2 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h2><p>逻辑回归的代价函数为：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/af8606bcaf64949391606491ddfddef9.jpg" alt=""></p>
-<p>SVM对 $y = 0$  和 $y = 1$ 两种情况所对应的曲线用直线代替了，如下图：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/fec384340c8c70fbecc45ead92fc979d.jpg" alt=""></p>
-<p>这样一来，我们得到了 $cost_1$ 和 $cost_2$ 函数，所以SVM的代价函数变成了：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/726c14839744f0c02836f9a42557f3fc.jpg" alt=""></p>
-<h2 id="Cost-Function-正规化"><a href="#Cost-Function-正规化" class="headerlink" title="Cost Function 正规化"></a>Cost Function 正规化</h2><p>逻辑回归中的 $\lambda$ 是正规化参数，SVM中C参数有着相似的作用，先看逻辑回归的代价函数：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/13cd84a5b5b68fa5b3f3c360e187d336.jpg" alt=""></p>
-<p>常数项只影响最优值大小，而不会影响取得最优值时的参数，所以可以去掉上图的 $m$。</p>
-<p>并且 $\lambda $ 作用于左边的误差上，而不是右边的 $\theta$ 上就得到了：</p>
-<p><img src="http://os9coobhw.bkt.clouddn.com/f4ece8fdea93517f084ead472ed330a1.jpg" alt=""></p>
-<p>其中 $C$ 的作用类似于$\frac {1} {\lambda}$ 。</p>
-<h2 id="C和δ参数"><a href="#C和δ参数" class="headerlink" title="C和δ参数"></a>C和δ参数</h2><p>C参数作用于代价函数，它的作用类似于$\frac {1} {\lambda}$ ，所以</p>
-<ul>
-<li>C大 → 方差大，偏差小</li>
-<li>C小 → 方差小，偏差大</li>
-</ul>
-<p>δ参数作用于高斯核函数，可以发现δ越大，函数值的的变化率其实越小，所以随着x远离 $l^{(i)}$ ，函数值降低的比较慢，那么方差就越小，偏差就越大，所以</p>
-<ul>
-<li>δ大 → 方差小，偏差大</li>
-<li>δ小 → 方差大，偏差小</li>
-</ul>
-<p><img src="http://os9coobhw.bkt.clouddn.com/4be6d68f9b3e77209631c6ab16a0aee1.jpg" alt=""></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我觉得SVM的核心就在于$f$ 核函数，通过升维来解决低维问题着实厉害。</p>
+        <p>接上一篇：<a href="/p/64069.html">Laravel5与前端（一）快速上手</a></p>
+<h2 id="单页-vs-多页"><a href="#单页-vs-多页" class="headerlink" title="单页 vs 多页"></a>单页 vs 多页</h2><p>熟悉前端的同学也许听过 <code>SPA</code>（single page web application，单页Web应用），它究竟是个什么东西呢？</p>
+<h3 id="单页特点"><a href="#单页特点" class="headerlink" title="单页特点"></a>单页特点</h3><h4 id="前段路由"><a href="#前段路由" class="headerlink" title="前段路由"></a>前段路由</h4><p> <code>app.js</code>（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。</p>
+<h4 id="更少的HTTP请求"><a href="#更少的HTTP请求" class="headerlink" title="更少的HTTP请求"></a>更少的HTTP请求</h4><p>不用像多页应用那样，每一个页面都需要HTTP请求，单页应用由于后端路由只有一个，所以HTTP请求较少。而多页应用的页面和页面内的资源文件每次都需要重新请求，这样对HTTP压力较大（缓存压力也大）。</p>
+<h4 id="更快的响应"><a href="#更快的响应" class="headerlink" title="更快的响应"></a>更快的响应</h4><p>在SPA中进行页面切换时，没有白屏期，用户使用更加流畅。</p>
+<h4 id="更注重分离"><a href="#更注重分离" class="headerlink" title="更注重分离"></a>更注重分离</h4><p>后端只需提供数据即可，无需计算页面展示逻辑和合成页面，这样以来后端更加专注数据处理，前端更加注重交互处理。</p>
+<h2 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h2><p>vue-router可以轻松的实现前端路由功能，它是配合vue一起使用的。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用npm安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-router -S</div></pre></td></tr></table></figure>
+<p>在 <code>app.js</code> 中引入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></div><div class="line"></div><div class="line">Vue.use(VueRouter)</div></pre></td></tr></table></figure>
+<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello App!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/foo"</span>&gt;</span>Go to Foo<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/bar"</span>&gt;</span>Go to Bar<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>app.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = &#123; <span class="attr">template</span>: <span class="string">'&lt;div&gt;foo&lt;/div&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> Bar = &#123; <span class="attr">template</span>: <span class="string">'&lt;div&gt;bar&lt;/div&gt;'</span> &#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">  &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;,</div><div class="line">  &#123; <span class="attr">path</span>: <span class="string">'/bar'</span>, <span class="attr">component</span>: Bar &#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  routes <span class="comment">// （缩写）相当于 routes: routes</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 记得要通过 router 配置参数注入路由，</span></div><div class="line"><span class="comment">// 从而让整个应用都有路由功能</span></div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  router</div><div class="line">&#125;).$mount(<span class="string">'#app'</span>)</div></pre></td></tr></table></figure>
+<p>上述代码定义了2个前端路由页面，各行代码的作用如下：</p>
+<p>1-2行：定义了两个页面 <code>Foo</code> 和 <code>Bar</code> </p>
+<p>4-7行：配置这俩页面到路由 <code>/foo</code> 和 <code>/bar</code> 上</p>
+<p>9-11行：实例化VueRouter对象</p>
+<p>15-17行：实例化Vue对象并挂载到 <code>#app</code> 元素上，同时注入router</p>
+<p>在线演示：<a href="https://codepen.io/JerryCheese/pen/xWrebL" target="_blank" rel="external">https://codepen.io/JerryCheese/pen/xWrebL</a></p>
+<p>关于更多vue-router使用方法，参见官方教程：<a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="external">https://router.vuejs.org/zh-cn/</a></p>
+<h2 id="模块化-vs-组件化"><a href="#模块化-vs-组件化" class="headerlink" title="模块化 vs 组件化"></a>模块化 vs 组件化</h2><p>多页应用中的 <code>页</code> 实际上指的就是一个个 <code>.html</code> 文件，在单页应用中不同的内容称为 <code>模块</code> 对应一个一个 <code>.vue</code> 文件。例如下面两个模块，表示两个不同的管理页面：</p>
+<p>modules/User.vue 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h3&gt;用户管理&lt;/h3&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<p>modules/Course.vue 文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h3&gt;课程管理&lt;/h3&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>app.js 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></div><div class="line"><span class="keyword">import</span> UserPage <span class="keyword">from</span> <span class="string">'./modules/User'</span></div><div class="line"><span class="keyword">import</span> CoursePage <span class="keyword">from</span> <span class="string">'./modules/Course'</span></div><div class="line"></div><div class="line">Vue.use(VueRouter)</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user'</span>, <span class="attr">component</span>: UserPage &#125;,</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/course'</span>, <span class="attr">component</span>: CoursePage &#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">    routes <span class="comment">// （缩写）相当于 routes: routes</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: <span class="string">'#app'</span>,</div><div class="line">    router</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello App!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>用户管理<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/course"</span>&gt;</span>课程管理<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样一来，每个模块（或者说页面）对应到了一个 <code>.vue</code> 文件。从代码本质上来说，他们都是vue组件，只是为了便于区分而取了名字而已。</p>
+<h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><p>现在我们知道了，单页应用通过js调用来显示不同的页面内容，也叫做模块。</p>
+<p>现在的问题是，当页面数量很多时，它们会被打包进一个app.js文件中，这会导致这个文件非常大，那么在用户首次访问时会占用大量HTTP资源。</p>
+<p>用户也许只看其中的一两个模块而已，有没有方法可以让模块按需加载而不是一次性都加载呢？答案就是懒加载。</p>
+<p>所幸vue-router支持懒加载功能，所以我们不必自己基于Webpack的代码分割功能来自己实现了。</p>
+<h3 id="懒加载一个模块"><a href="#懒加载一个模块" class="headerlink" title="懒加载一个模块"></a>懒加载一个模块</h3><p>我们看这段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="keyword">import</span> UserPage <span class="keyword">from</span> <span class="string">'./modules/User'</span></div><div class="line"><span class="keyword">import</span> CoursePage <span class="keyword">from</span> <span class="string">'./modules/Course'</span></div><div class="line">...</div><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user'</span>, <span class="attr">component</span>: UserPage &#125;,</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/course'</span>, <span class="attr">component</span>: CoursePage &#125;</div><div class="line">]</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>它引入了两个模块，并且直接配置到了routes的component中，如果要懒加载，怎么做呢？改成下面这样就行：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="comment">//import UserPage from './modules/User'</span></div><div class="line"><span class="comment">//import CoursePage from './modules/Course'</span></div><div class="line"><span class="keyword">const</span> UserPage = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./modules/User'</span>)</div><div class="line"><span class="keyword">const</span> CoursePage = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./modules/Course'</span>)</div><div class="line">...</div><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user'</span>, <span class="attr">component</span>: UserPage &#125;,</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/course'</span>, <span class="attr">component</span>: CoursePage &#125;</div><div class="line">]</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>如果报错的话，那是因为babel不能正确解析异步语法 <code>() =&gt; import</code>，需要安装<a href="https://babeljs.io/docs/plugins/syntax-dynamic-import/" target="_blank" rel="external">syntax-dynamic-import</a>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel-plugin-syntax-dynamic-import</div></pre></td></tr></table></figure>
+<p>并且在webpack.mix.js同目录处新建文件 <code>.babelrc</code>，输入以下配置信息：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"plugins"</span>: [<span class="string">"syntax-dynamic-import"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完成之后，打开页面，访问路由，发现：</p>
+<p><img src="http://os9coobhw.bkt.clouddn.com/9224d4896641d941e3aa5d897eefe5c0.jpg" alt=""></p>
+<p>这俩文件其实就是前边定义的俩模块对应的js，在访问到它们时，它们的js才会被加载，也就是所谓的懒加载啦。</p>
+<h3 id="更改懒加载文件目录"><a href="#更改懒加载文件目录" class="headerlink" title="更改懒加载文件目录"></a>更改懒加载文件目录</h3><p>默认情况下，上述的 <code>0.js</code> 、<code>1.js</code> 是在根目录的，这样对目录结构很不友好，我们希望把它们放在一个特定的目录去，在 <code>webpack.mix.js</code> 中添加：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mix.webpackConfig(&#123;</div><div class="line">    output: &#123;</div><div class="line">        publicPath: <span class="string">"/"</span>,</div><div class="line">        chunkFilename: <span class="string">'js/lazy/[name].[chunkhash].js'</span></div><div class="line">    &#125;,</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这样的话，懒加载的js文件会放到 <code>/js/lazy</code> 目录中去，而不是在 <code>/</code> 中。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>单页应用写起来非常爽（私以为）</p>
 
       
     </div>
@@ -585,7 +563,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/Laravel/" rel="tag"># Laravel</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -598,8 +578,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/62235.html" rel="next" title="Week 6:Machine Learning System Design">
-                <i class="fa fa-chevron-left"></i> Week 6:Machine Learning System Design
+              <a href="/p/64069.html" rel="next" title="Laravel5与前端（一）快速上手">
+                <i class="fa fa-chevron-left"></i> Laravel5与前端（一）快速上手
               </a>
             
           </div>
@@ -607,10 +587,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/31473.html" rel="prev" title="Week8-1: Clustering">
-                Week8-1: Clustering <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -788,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性可分和非线性可分"><span class="nav-number">2.</span> <span class="nav-text">线性可分和非线性可分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大间距和升维"><span class="nav-number">3.</span> <span class="nav-text">最大间距和升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核函数"><span class="nav-number">4.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯核"><span class="nav-number">5.</span> <span class="nav-text">高斯核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-Function"><span class="nav-number">6.</span> <span class="nav-text">Cost Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-Function-正规化"><span class="nav-number">7.</span> <span class="nav-text">Cost Function 正规化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C和δ参数"><span class="nav-number">8.</span> <span class="nav-text">C和δ参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单页-vs-多页"><span class="nav-number">1.</span> <span class="nav-text">单页 vs 多页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单页特点"><span class="nav-number">1.1.</span> <span class="nav-text">单页特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前段路由"><span class="nav-number">1.1.1.</span> <span class="nav-text">前段路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更少的HTTP请求"><span class="nav-number">1.1.2.</span> <span class="nav-text">更少的HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更快的响应"><span class="nav-number">1.1.3.</span> <span class="nav-text">更快的响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更注重分离"><span class="nav-number">1.1.4.</span> <span class="nav-text">更注重分离</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-router"><span class="nav-number">2.</span> <span class="nav-text">vue-router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始使用"><span class="nav-number">2.2.</span> <span class="nav-text">开始使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化-vs-组件化"><span class="nav-number">3.</span> <span class="nav-text">模块化 vs 组件化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">4.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载一个模块"><span class="nav-number">4.1.</span> <span class="nav-text">懒加载一个模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改懒加载文件目录"><span class="nav-number">4.2.</span> <span class="nav-text">更改懒加载文件目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

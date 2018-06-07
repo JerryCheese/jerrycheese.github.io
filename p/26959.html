@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/6cb08e94347f077b3664deed9c01b2b3.jpg">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/2266559c98a3fc58f7cdc4a01a03aa32.jpg">
 <meta property="og:image" content="http://os9coobhw.bkt.clouddn.com/b1c026c4450dee4415c0f8837016c14a.jpg">
-<meta property="og:updated_time" content="2018-06-07T09:46:19.951Z">
+<meta property="og:updated_time" content="2018-06-07T09:50:23.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Tensorflow训练一元线性模型">
 <meta name="twitter:description" content="引言这是一次使用python进行机器学习的实验。 一是总结自己学过的各种python包，二是了解一下使用python进行机器学习大概是什么样的，不过这次使用主要的目的还是熟悉Tensorflow的使用。 本次实验使用到的python包及其版本：  Tensorflow 1.8.0 Numpy 1.14.3 Pandas 0.22.0 Matplotlib 2.2.2  机器环境是：macOS 10">
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  4,517 字
+                  4,520 字
                 </span>
               
 
@@ -563,7 +563,7 @@
 <p>这是个封装好的函数，只要传入数据集、训练步数、学习率就可以得到训练好的模型了（即 $W$ 和 $b$）。</p>
 <p>需要提醒一下的是，第33、35行的 <code>{x: train_set[&#39;x&#39;], y: train_set[&#39;y&#39;]}</code> 不能把 <code>key</code> 写成单引号的 <code>{&#39;x&#39;: train_set[&#39;x&#39;], &#39;y&#39;: train_set[&#39;y&#39;]}</code> 。</p>
 <h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><p>那么下面是需要拿到数据，这里我用的是随机生成的数据：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_data</span><span class="params">(data_size, devi_degree)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    Make random linear data</span></div><div class="line"><span class="string">    :param data_size: data size</span></div><div class="line"><span class="string">    :param devi_degree: degree of deviation</span></div><div class="line"><span class="string">    :return: linear data with x and y</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="comment"># standard linear function</span></div><div class="line">    x = np.array(range(data_size))</div><div class="line">    y = <span class="number">3</span> * x + <span class="number">0.6</span></div><div class="line"></div><div class="line">    <span class="comment"># make deviation</span></div><div class="line">    y += np.random.randn(data_size) * devi_degree</div><div class="line"></div><div class="line">    data = pd.DataFrame(&#123;<span class="string">'x'</span>: x, <span class="string">'y'</span>: y&#125;)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> data</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_data</span><span class="params">(data_size, devi_degree)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    Make random linear data</span></div><div class="line"><span class="string">    :param data_size: data size</span></div><div class="line"><span class="string">    :param devi_degree: degree of deviation</span></div><div class="line"><span class="string">    :return: linear data with x and y</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="comment"># standard linear function</span></div><div class="line">    x = np.array(range(data_size), dtype=np.float64)</div><div class="line">    y = <span class="number">3</span> * x + <span class="number">0.6</span></div><div class="line"></div><div class="line">    <span class="comment"># make deviation</span></div><div class="line">    y += np.random.randn(data_size) * devi_degree</div><div class="line"></div><div class="line">    data = pd.DataFrame(&#123;<span class="string">'x'</span>: x, <span class="string">'y'</span>: y&#125;)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> data</div></pre></td></tr></table></figure>
 <p>做法是：</p>
 <ul>
 <li>先拿到大小为<code>data_size</code> 的标准一元一次函数点集</li>

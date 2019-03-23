@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,44 +45,6 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
@@ -117,16 +79,16 @@
 
 
 
-<meta name="description" content="Full 80%">
+<meta name="description" content="Efficiency 80%">
 <meta property="og:type" content="website">
 <meta property="og:title" content="全栈说">
 <meta property="og:url" content="https://www.hijerry.cn/index.html">
 <meta property="og:site_name" content="全栈说">
-<meta property="og:description" content="Full 80%">
+<meta property="og:description" content="Efficiency 80%">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全栈说">
-<meta name="twitter:description" content="Full 80%">
+<meta name="twitter:description" content="Efficiency 80%">
 
 
 
@@ -134,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.3',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -162,7 +124,7 @@
 
 
 
-  <title>全栈说 - Full 80%</title>
+  <title>全栈说 - Efficiency 80%</title>
   
 
 
@@ -173,7 +135,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?3693e3a7f3385f3178527bcab766f862";
+      hm.src = "https://hm.baidu.com/hm.js?bb67e264840164880197b152780f6c40";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -183,7 +145,6 @@
 
 
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -208,7 +169,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">Empty 20%</h1>
+        <h1 class="site-subtitle" itemprop="description">Work 20%</h1>
       
   </div>
 
@@ -344,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/26959.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/48009.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -363,7 +324,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/p/26959.html" itemprop="url">使用Tensorflow训练一元线性模型</a></h2>
+                <a class="post-title-link" href="/p/48009.html" itemprop="url">复杂度与NP完全性</a></h2>
         
 
         <div class="post-meta">
@@ -375,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T20:37:47+08:00">
-                2018-06-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T11:34:33+08:00">
+                2019-03-23
               </time>
             
 
@@ -398,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/研/" itemprop="url" rel="index">
-                    <span itemprop="name">研</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -415,194 +376,16 @@
 
           
           
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  4,632 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  34 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          引言这是一次使用python进行机器学习的实验。
-一是总结自己学过的各种python包，二是了解一下使用python进行机器学习大概是什么样的，不过这次使用主要的目的还是熟悉Tensorflow的使用。
-本次实验使用到的python包及其版本：
-
-Tensorflow 1.8.0
-Numpy 1.14.3
-Pandas 0.22.0
-Matplotlib 2.2.2
-
-机器环境是：macOS 10.13
-Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键知识、概念，想了解详情可以
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/26959.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/33462.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/33462.html" itemprop="url">Laravel5与前端（三）导航和状态管理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T17:59:57+08:00">
-                2018-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
-                    <span itemprop="name">Web全栈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
+             <span id="/p/48009.html" class="leancloud_visitors" data-flag-title="复杂度与NP完全性">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -618,7 +401,7 @@ Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键�
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,260 字
+                  1,575 字
                 </span>
               
 
@@ -657,13 +440,13 @@ Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键�
       
         
           
-          侧边导航我们现在知道，单页应用中的每一页对应到一个vue组件，那么总会有一些公共组件，例如导航，那这些公共组件在单页中应该怎么实现呢。我们先直接把导航的代码写出来试试。
-版本1：先实现导航功能html：
-123456789101112131415&lt;div id="app"&gt;    &lt;h1&gt;导航&lt;/h1&gt;    &lt;ul class="menu"&gt;        &lt;li&gt;            &lt;router-link to="/user"&gt
+          无论是处理业务逻辑，还是解决数学问题，程序员的脑海里都必须有对问题的解决方案有准确的、完整的描述，也就是算法。我不讨论算法的各种性质和定义，这次主要是总结算法复杂度几种描述方式以及P、NP和NP完全性。
+复杂度时间复杂度算法的时间复杂度可以定性的描述 随着输入规模变大，算法耗时增长的快慢。
+插入排序最坏情况是 $O(n^2)​$ ，归并排序最坏情况是 $O(nlogn)​$ ，这表示插入排序随着输入规模的增大，耗时呈 平方级别 的增长；而归并排序的耗时呈 nlogn级别 的增长，所以这两个函数增长的阶不在同
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/p/33462.html#more" rel="contents">
+            <a class="btn" href="/p/48009.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -714,7 +497,7 @@ Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/40500.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/55002.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -733,7 +516,7 @@ Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/p/40500.html" itemprop="url">Laravel5与前端（二）单页与懒加载</a></h2>
+                <a class="post-title-link" href="/p/55002.html" itemprop="url">2019-CS224n-Assignment4</a></h2>
         
 
         <div class="post-meta">
@@ -745,559 +528,8 @@ Tensoflow基础知识这里只介绍本次实验所用到的Tensorflow的关键�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T20:18:32+08:00">
-                2018-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
-                    <span itemprop="name">Web全栈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  1,374 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  11 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          接上一篇：Laravel5与前端（一）快速上手
-单页 vs 多页熟悉前端的同学也许听过 SPA（single page web application，单页Web应用），它究竟是个什么东西呢？
-前段路由 app.js（入口） 文件只有一个，页面间的路由放在前端完成。而多页应用需要每个页面对应一个app.js，路由是放在后端来实现的。
-更少的HTTP请求不用像多页应用那样，每一个页面都需要HTTP请求，单页应用由于后端路由只有一个，所以HTTP请求较少。而多页应用的页面和页面内的资源文件每次都需要重新请求，这
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/40500.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/64069.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/64069.html" itemprop="url">Laravel5与前端（一）快速上手</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T19:16:38+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
-                    <span itemprop="name">Web全栈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  1,469 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  12 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Laravel Mix与资源编译Laravel Mix 提供的资源编译功能比Webpack来的舒服，也是Laravel官方推荐的资源编译工具。
-参考文档：Laravel 的资源任务编译器 Laravel Mix
-安装先确保安装了npm和node，运行下面命令进行检查：
-12node -vnpm -v
-Laravel5自带了package.json，内容如下：
-123456789101112&#123;    ...    "devDependencies": &#123;        "axios": "
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/64069.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/18313.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/18313.html" itemprop="url">快速幂（取模）算法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T21:43:28+08:00">
-                2018-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程题/" itemprop="url" rel="index">
-                    <span itemprop="name">编程题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  339 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          问题计算取模运算的值 $ a^n \% b$，其中a、b、n均为int类型的变量。
-分析因为 $a^n$ 可能很大，所以不能先计算 $a^n$ 再将其 $ \%b$ 。
-现有取模公式，写作：
- $ (a*b) \% c = [ (a \% c) \times (b \% c) ] \% c $ 
-那么：
-
-幂为偶数，则有 $ a^n \% b = (a^{\frac n 2} \times a^{\frac n 2}) \% b = [(a^{\frac n 2} \% b) \times (a^{\fra
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/18313.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/63432.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/63432.html" itemprop="url">NLTK之词性标注</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T20:56:26+08:00">
-                2018-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T18:24:56+08:00">
+                2019-03-21
               </time>
             
 
@@ -1336,6 +568,17 @@ Laravel5自带了package.json，内容如下：
 
           
           
+             <span id="/p/55002.html" class="leancloud_visitors" data-flag-title="2019-CS224n-Assignment4">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -1350,7 +593,7 @@ Laravel5自带了package.json，内容如下：
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  2,151 字
+                  1,444 字
                 </span>
               
 
@@ -1366,7 +609,7 @@ Laravel5自带了package.json，内容如下：
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17 分
+                  11 分
                 </span>
               
             </div>
@@ -1389,14 +632,15 @@ Laravel5自带了package.json，内容如下：
       
         
           
-          词性标注重要性回想学英语的时候，老师就开始讲词性，通过分析句子中某个单词的词性，我们可以推测这个词的意思，猜测这个词在句子中的作用，这对理解句子意思有极大的帮助。小弟也还是初学，以后若发现词性有更多作用时会继续补充~
-标注语料库NLTK(3.2.5)中提供了一些已经标注好词性的文本，通过下面代码可以查看：
-12345import nltknltk.corpus.brown.tagged_words()outputs:[(u'The', u'AT'), (u'Fulton', u'NP-TL'), ...]
+          这一次的内容甚至可以作为一个项目了，我最终得到BLEU是22.66。
+点击 这里 下载实验指导文档，这里 下载实验的预备代码
+RNN和神经机器翻译机器翻译是指，给定一个源句子（比如西班牙语），输出一个目标句子（比如英语）。本次作业中要实现的是一个带注意力机制的Seq2Seq神经模型，用于构建神经机器翻译（NMT）系统。首先我们来看NMT系统的训练过程，它用到了双向LSTM作为编码器（encoder）和单向LSTM作为解码器（decoder）。
 
+给定长度为m的源语言句子（source），经过嵌入层，得到输入
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/p/63432.html#more" rel="contents">
+            <a class="btn" href="/p/55002.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1447,7 +691,7 @@ Laravel5自带了package.json，内容如下：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/64326.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/35741.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -1466,7 +710,7 @@ Laravel5自带了package.json，内容如下：
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/p/64326.html" itemprop="url">CentOS使用ss</a></h2>
+                <a class="post-title-link" href="/p/35741.html" itemprop="url">2019-CS224n-Assignment3</a></h2>
         
 
         <div class="post-meta">
@@ -1478,8 +722,8 @@ Laravel5自带了package.json，内容如下：
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T13:59:12+08:00">
-                2018-01-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T20:34:24+08:00">
+                2019-03-19
               </time>
             
 
@@ -1501,8 +745,8 @@ Laravel5自带了package.json，内容如下：
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件技术/" itemprop="url" rel="index">
-                    <span itemprop="name">软件技术</span>
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
                   </a>
                 </span>
 
@@ -1518,6 +762,17 @@ Laravel5自带了package.json，内容如下：
 
           
           
+             <span id="/p/35741.html" class="leancloud_visitors" data-flag-title="2019-CS224n-Assignment3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -1532,7 +787,201 @@ Laravel5自带了package.json，内容如下：
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  795 字
+                  934 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          上个礼拜做完了，今天做个总结，主要方法和2017年差不多。
+机器学习和神经网络 (8分)这一节没什么难度，认真看 a3.pdf 就行。
+Adam的论文：ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION
+Dropout论文：Dropout: A Simple Way to Prevent Neural Networks fromOverfitting
+基于神经Transition的依赖解析 (42分)依赖解析，就是分析句子的句法结构，建立 head 词和修饰这些head的词
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/35741.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/13983.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/13983.html" itemprop="url">NLP会议介绍</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T13:02:10+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/13983.html" class="leancloud_visitors" data-flag-title="NLP会议介绍">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  766 字
                 </span>
               
 
@@ -1571,24 +1020,14 @@ Laravel5自带了package.json，内容如下：
       
         
           
-          ss客户端必要工具：
-
-python
-pip
-
-pip的安装方法：
-1234wget https://bootstrap.pypa.io/get-pip.pysudo python get-pip.pyrm get-pip.pypip --version
-我的的pip版本是 9.0.1 的
-下面开始安装ss：
-1sudo pip install shadowsocks
-下面配置ss：
-1sudo vi /etc/shadowsocks.json
-内容如下
-1234567891011&#123;  "serv
+          我以前在博客引用过 初学者如何查阅自然语言处理（NLP）领域学术资料 一文，里面比较详细的说明了NLP的学术会议。
+这次主要是罗列这些会议和CCF等级，把收集的信息汇总起来，以备以后自查，也记录了各个会议的截稿时间、会议时间、投稿数量、录取率等数据信息，以及一些比较有用网站链接。
+国外会议主要会议NLP领域四大顶会：ACL、EMNLP、NAACL（北美分会）和COLING。前三个会由ACL主办，COLING由ICCL主办。
+ACL、EMNLP、NAACL每年一次，因为是同一个学术组织举办，所以会有一些有意思
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/p/64326.html#more" rel="contents">
+            <a class="btn" href="/p/13983.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1639,7 +1078,7 @@ pip的安装方法：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/45987.html">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/54362.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="可建韦">
@@ -1658,7 +1097,7 @@ pip的安装方法：
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/p/45987.html" itemprop="url">摩尔投票法的应用和部分情况的证明</a></h2>
+                <a class="post-title-link" href="/p/54362.html" itemprop="url">2019-CS224n-Assignment2</a></h2>
         
 
         <div class="post-meta">
@@ -1670,377 +1109,8 @@ pip的安装方法：
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T11:08:24+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程题/" itemprop="url" rel="index">
-                    <span itemprop="name">编程题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  1,044 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。
-摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。
-假设数组是：[1,2,1,1,2,1]。算法步骤如下：
-
-1。当前大多数是1，得分置1
-2。与当前大多数不同，得分 - 1，得分为0，当前大多数 = 1
-1。与当前大多数不同，得分为0，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/45987.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/26677.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/26677.html" itemprop="url">House Robber系列</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T18:00:37+08:00">
-                2018-01-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程题/" itemprop="url" rel="index">
-                    <span itemprop="name">编程题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计 &#58;</span>
-                
-                <span title="字数统计">
-                  998 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7 分
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          House Robber链接：198. House Robber
-题意：
-​    一个专业小偷打算去偷某条街上的房子，每个房子藏有一定量的金钱，不过相邻的房子间装有报警系统，所以如果你偷了两个相邻的房子，报警系统就会被激活，小偷就会被警察带走。现在要求你给小偷安排一个方案，让他能够偷到最多的钱，同时不被警察带走。
-​    其实就是：给定一个非负数整数数组，求一个子序列a，要求序列中的元素在原数组互不相邻，求使得sum(a)最大的子序列a。
-分析：
-这个问题具有最优子结构性质，所以我们从头到尾遍历一次数组
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/26677.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/45749.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="可建韦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="全栈说">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/45749.html" itemprop="url">NLTK之词频</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T21:12:53+08:00">
-                2017-12-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-12T20:11:03+08:00">
+                2019-03-12
               </time>
             
 
@@ -2079,6 +1149,17 @@ pip的安装方法：
 
           
           
+             <span id="/p/54362.html" class="leancloud_visitors" data-flag-title="2019-CS224n-Assignment2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -2093,7 +1174,7 @@ pip的安装方法：
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  2,094 字
+                  2,096 字
                 </span>
               
 
@@ -2132,15 +1213,980 @@ pip的安装方法：
       
         
           
-          FreqDist类官方文档：nltk.probability.FreqDist
-介绍：词的概率分布类，包含一些概率学的方法。
-所在文件：probability.py ，大约在63~427行
-创建定义：__init__(self, samples=None)
-1234567import nltkfrom nltk.book import *fdist = FreqDist(gutenberg.words(&apos;chesterton-thursday.txt&apos;))print fdistoutpu
+          这次复习cs224n主要是先熟悉python和pytorch，方便之后进行论文复现等工作，同时也回顾一下模型和数学公式推导，找找感觉。
+解答：理解词向量（23分）我们先快速回顾一下word2vec算法，它的核心思想是“一个词的含义取决于它周围的词”。具体来说，我们有一个中心词（center word） c，和这个词 c 周围上下文构成的窗口，这个窗口内的除了 c 之外的词叫做外围词（outside words）。比如下图中，中心词是“banking”，窗口大小为2，所以上下文窗口是：“turning”、”i
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/p/45749.html#more" rel="contents">
+            <a class="btn" href="/p/54362.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/54554.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/54554.html" itemprop="url">2019-CS224n-Assignment1</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-12T11:14:07+08:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/54554.html" class="leancloud_visitors" data-flag-title="2019-CS224n-Assignment1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  2,432 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          去年冬季学习了cs224n的2017课程，做了三个assignments，用的是TensorFlow。今年cs224n再次放课，一共有5个assignments，使用PyTorch，主讲还是Manning，特别喜欢这个老师，讲课生动有趣还挺可爱的哈哈哈~~
+Assignment1(点击下载) 的任务是探索词向量。以基于计数的共现矩阵和基于预测的word2vec两种方式，计算词的相似度，研究近义词、反义词等等性质，从代码层面来理解它们，有更深刻的记忆。
+作业是ipynb文件，所以要用jupyter打开，可以参
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/54554.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/37831.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/37831.html" itemprop="url">不使用root权限安装zsh和oh-my-zsh</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T18:55:13+08:00">
+                2018-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件技术/" itemprop="url" rel="index">
+                    <span itemprop="name">软件技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/37831.html" class="leancloud_visitors" data-flag-title="不使用root权限安装zsh和oh-my-zsh">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  690 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          问题今天刚申请了一个服务器账号，登上去发现没有zsh。
+因为没有root权限，也就无法使用apt-get命令了。
+解决思路如下：
+
+编译、安装zsh到家目录 （make 时可能找不到 autoconf ）
+把安装好的zsh所在的目录添加到 PATH 环境变量中
+登录后自动切换到 zsh 
+安装oh-my-zsh （不需要root）
+
+下面是详细过程和遇到的问题及解决方法
+安装zsh官方文档：http://zsh.sourceforge.net/FAQ/zshfaq01.html
+下载源码：
+1wget -O
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/37831.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/53364.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/53364.html" itemprop="url">神经网络和BP算法推导</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T19:28:05+08:00">
+                2018-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/53364.html" class="leancloud_visitors" data-flag-title="神经网络和BP算法推导">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  3,603 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  28 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          感知机感知机（perceptron）于1957年由Rosenblatt提出，是一种二分类线性模型。感知机以样本特征向量作为输入，输出为预测类别，取正、负两类。感知机最终学习到的是将输入空间（特征空间）划分为正、负两类的分离超平面，属于判别模型。为此，使用误分类作为损失函数，利用梯度下降优化该函数，可求得感知机模型。感知机是神经网络与支持向量机的基础。
+单层感知机
+第 ${i}$ 个样本的预测值 $\hat{y_i} = f(\vec{w} \cdot \vec{x_i} + b)$ ，其中 $f(\cdot
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/53364.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/1967.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/1967.html" itemprop="url">理解线性代数中的矩阵</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T23:21:46+08:00">
+                2018-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研/" itemprop="url" rel="index">
+                    <span itemprop="name">研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/1967.html" class="leancloud_visitors" data-flag-title="理解线性代数中的矩阵">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  59 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          向量表示线性组合张成的空间和基向量矩阵矩阵乘法与线性变换矩阵的秩列空间和零空间逆矩阵行列式特征向量与特征值抽象向量空间
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/1967.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hijerry.cn/p/46865.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可建韦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全栈说">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/46865.html" itemprop="url">Web总结：部署和安全</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T14:02:12+08:00">
+                2018-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web全栈/" itemprop="url" rel="index">
+                    <span itemprop="name">Web全栈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/p/46865.html" class="leancloud_visitors" data-flag-title="Web总结：部署和安全">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计 &#58;</span>
+                
+                <span title="字数统计">
+                  1,372 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前言这一次的总结内容范围比较广，主要对代码管理到系统发布、系统维护和其中中可能会出现的一些安全问题进行总结。
+代码管理工具和代码托管平台在一个项目开始之前，首先要选择一款代码管理工具，目前流行是 GIT 和 SVN ，如果没有历史问题，建议都使用 GIT 进行代码管理。
+选好了管理工具后，需要选择托管平台，目前国内有 码云 、Coding.net 等，国外有 GitHub 、GitLab 。需要注意的是代码仓库的私有性， GitHub 的私有项目是需要收费的。我个人喜欢把私有项目托管在 码云，把公开项目托管
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/46865.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2182,7 +2228,7 @@ pip的安装方法：
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2232,7 +2278,7 @@ pip的安装方法：
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2243,7 +2289,7 @@ pip的安装方法：
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2254,7 +2300,7 @@ pip的安装方法：
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2274,7 +2320,7 @@ pip的安装方法：
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:thinkjerry@icloud.com" target="_blank" title="E-Mail">
+                  <a href="mailto:jerrycheese@icloud.com" target="_blank" title="E-Mail">
                     
                       <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
@@ -2326,15 +2372,16 @@ pip的安装方法：
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">
-<!--
-&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   
-  <span class="author" itemprop="copyrightHolder">可建韦</span>-->
+  <span class="author" itemprop="copyrightHolder">可建韦</span>
 
+<!--
  <a href="http://www.miitbeian.gov.cn/">湘ICP备16003413号</a>
+-->
  <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
   
 </div>
@@ -2348,26 +2395,6 @@ pip的安装方法：
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
 
 
@@ -2447,13 +2474,6 @@ pip的安装方法：
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
 
   
 
@@ -2839,6 +2859,113 @@ pip的安装方法：
   
 
   
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("EQT2jfdoprWjnALVbYHro6Wy-gzGzoHsz", "zgjyNKXovG43HpCN4Rq9zC0G");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
 <script>
 (function(){
     var bp = document.createElement('script');
@@ -2877,7 +3004,9 @@ pip的安装方法：
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/mathjax/2.7.5/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
   
 
 

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="全栈说">
 <meta property="og:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。 摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前大多数是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T05:00:43.706Z">
+<meta property="og:updated_time" content="2019-07-31T12:36:59.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="摩尔投票法的应用和部分情况的证明">
 <meta name="twitter:description" content="摩尔投票算法假设有这样一个场景：票选村长，每人可投一票，我们将候选村长从1开始编号，村民们在票上写上候选村长的编号即可完成投票。那么最后统计的票可形成一个整型数组。那么谁是村长呢？票数过半的那个人。 摩尔投票算法可以快速的计算出一个数组中出现次数过半的数即大多数（majority），算法核心思想是同加，异减。我们举个例子。 假设数组是：[1,2,1,1,2,1]。算法步骤如下：  1。当前大多数是">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计 &#58;</span>
                 
                 <span title="字数统计">
-                  1,044 字
+                  1,060 字
                 </span>
               
 
@@ -459,14 +459,14 @@
 <p>需要注意的是<strong>出现次数超过数组 $\frac 1 3$ 长</strong>的数也许会有多个。</p>
 <p>例如数组长度为8时：[1,1,1,2,2,2,3,3]，数组 $\frac 1 3$ 长= $2$ （向下取整），所以1和2都是符合条件的。</p>
 <p>但最多只能是2个，证明如下：</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>假设长度为 $n$ 的数组共有 $m$（$ m &gt;= 3$ ） 种数，它们出现的次数分别为 $a_1, a_2, … a_m$ ，且有2种数出现次数大于 $ ⌊\frac n 3⌋$ ，不妨就令 $a_1 = a_2 =  c + ⌊\frac n 3⌋  $ 其中 $(c &gt;= 1)$</p>
-<p>∵ $ a_1 + a_2 + … + a_m = n$ </p>
-<p>∴ $ a_3 + … + a_m = n - (a_1 + a_2) = n - 2 (c + ⌊\frac n 3⌋)  … ① $</p>
-<p>假设有第3种数，使得 $a_3 &gt;  ⌊\frac n 3⌋ $， 对 $ ① $ 式做差有：</p>
-<p>$  n - 2 (c + ⌊\frac n 3⌋) - a_3 &lt;  n - 2c - 3 ⌊\frac n 3⌋ $</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>设长度为 $n（n &gt; 0）$ 的数组共有 $m$（$ m \ge 3$ ） 种数，它们出现的次数分别为 $a_1, a_2, … a_m（a_i&gt;0,i=1,2,…,m）$ ，且有2种数出现次数大于 $ ⌊\frac n 3⌋$ 。不妨令 $a_1 = a_2 =  c + ⌊\frac n 3⌋  $ 其中 $(c &gt;= 1)$。</p>
+<p>由定义得： $ a_1 + a_2 + … + a_m = n$ ①</p>
+<p>易得： $n-a_1-a_2-a_3 \ge 0$ ②</p>
+<p>现假设有第3种数，使得 $a_3 &gt;  ⌊\frac n 3⌋ $， 由①得：</p>
+<p>$ n-a_1-a_2-a_3 =  n - 2 (c + ⌊\frac n 3⌋) - a_3 &lt;  n - 2c - 3 ⌊\frac n 3⌋ $</p>
 <p>令 $ b = n \% 3$， 则有 $ ⌊\frac n 3⌋ = \frac {n-b} 3 $</p>
-<p>∴ $ n - 2c - 3 ⌊\frac n 3⌋ = b - 2c  &lt; 0$ </p>
-<p>故有 $ n - (a_1 + a_2 + a_3) &lt; 0$ ，矛盾</p>
+<p>∴ $n-a_1-a_2-a_3 &lt; n - 2c - 3 ⌊\frac n 3⌋ = b - 2c  \le 0$ </p>
+<p>故有 $ n - (a_1 + a_2 + a_3) &lt; 0$ ，与②矛盾</p>
 <p>故不存在第3种出现次数大于 $  ⌊\frac n 3⌋  $ 的数</p>
 <h3 id="回到题目"><a href="#回到题目" class="headerlink" title="回到题目"></a>回到题目</h3><p>如果我们在使用摩尔算法时，同时记录两个大多数，会怎么样呢？直觉告诉我，这会得到一个大多数，和一个出现次数仅次于大多数的数，但是这两个数不一定会比数组长的1/3大</p>
 <p>所以我们得到它们后，还需要检查它们出现的次数是否符合条件。</p>
@@ -621,7 +621,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -632,7 +632,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -643,7 +643,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -737,11 +737,13 @@
   </span>
   
   <span class="author" itemprop="copyrightHolder">可建韦</span>
-
+<p>
 <!--
- <a href="http://www.miitbeian.gov.cn/">湘ICP备16003413号</a>
+ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
 -->
- <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+
+ <a href="http://www.beian.miit.gov.cn">湘ICP备16003413号</a>
+ </p>
   
 </div>
 

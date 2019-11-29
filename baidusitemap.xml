@@ -3,9 +3,70 @@
 
 
     
+    
+  <url>
+    <loc>https://www.hijerry.cn//p/45987.html</loc>
+    <lastmod>2019-07-31T12:36:59.022Z</lastmod>
+    <data>
+        <display>
+        <title>摩尔投票法的应用和部分情况的证明</title>
+        <pubTime>2018-01-13T03:08:24.000Z</pubTime>
+        
+        <tag>leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程题" url="https://www.hijerry.cn/categories/%E7%BC%96%E7%A8%8B%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hijerry.cn//p/49582.html</loc>
+    <lastmod>2019-07-08T07:18:18.725Z</lastmod>
+    <data>
+        <display>
+        <title>2019 Mac安装cuda+cudnn+pytorch</title>
+        <pubTime>2019-04-12T08:19:59.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="程" url="https://www.hijerry.cn/categories/%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hijerry.cn//p/1967.html</loc>
+    <lastmod>2019-03-23T09:03:33.494Z</lastmod>
+    <data>
+        <display>
+        <title>理解线性代数中的矩阵</title>
+        <pubTime>2018-09-18T15:21:46.000Z</pubTime>
+        
+        <tag>线性代数</tag>
+         
+         
+           
+             
+              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://www.hijerry.cn//p/48009.html</loc>
-    <lastmod>2019-03-23T09:03:26.834Z</lastmod>
+    <lastmod>2019-03-23T09:03:33.492Z</lastmod>
     <data>
         <display>
         <title>复杂度与NP完全性</title>
@@ -25,6 +86,27 @@
     </url>
 
     
+  <url>
+    <loc>https://www.hijerry.cn//p/35741.html</loc>
+    <lastmod>2019-03-22T11:56:29.878Z</lastmod>
+    <data>
+        <display>
+        <title>2019-CS224n-Assignment3</title>
+        <pubTime>2019-03-19T12:34:24.000Z</pubTime>
+        
+        <tag>NLP</tag>
+         
+        <tag>依赖解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://www.hijerry.cn//p/13983.html</loc>
@@ -71,28 +153,6 @@
 
     
   <url>
-    <loc>https://www.hijerry.cn//p/35741.html</loc>
-    <lastmod>2019-03-22T11:56:29.878Z</lastmod>
-    <data>
-        <display>
-        <title>2019-CS224n-Assignment3</title>
-        <pubTime>2019-03-19T12:34:24.000Z</pubTime>
-        
-        <tag>NLP</tag>
-         
-        <tag>依赖解析</tag>
-         
-         
-           
-             
-              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.hijerry.cn//p/54362.html</loc>
     <lastmod>2019-03-22T11:56:29.878Z</lastmod>
     <data>
@@ -103,28 +163,6 @@
         <tag>NLP</tag>
          
         <tag>word2vec</tag>
-         
-         
-           
-             
-              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hijerry.cn//p/54554.html</loc>
-    <lastmod>2019-03-22T11:56:29.877Z</lastmod>
-    <data>
-        <display>
-        <title>2019-CS224n-Assignment1</title>
-        <pubTime>2019-03-12T03:14:07.000Z</pubTime>
-        
-        <tag>NLP</tag>
-         
-        <tag>Stanford</tag>
          
          
            
@@ -161,6 +199,28 @@
 
     
   <url>
+    <loc>https://www.hijerry.cn//p/54554.html</loc>
+    <lastmod>2019-03-22T11:56:29.877Z</lastmod>
+    <data>
+        <display>
+        <title>2019-CS224n-Assignment1</title>
+        <pubTime>2019-03-12T03:14:07.000Z</pubTime>
+        
+        <tag>NLP</tag>
+         
+        <tag>Stanford</tag>
+         
+         
+           
+             
+              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.hijerry.cn//p/37831.html</loc>
     <lastmod>2019-03-22T11:56:29.876Z</lastmod>
     <data>
@@ -176,26 +236,6 @@
            
              
               <breadCrumb title="软件技术" url="https://www.hijerry.cn/categories/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hijerry.cn//p/1967.html</loc>
-    <lastmod>2018-09-18T16:17:43.983Z</lastmod>
-    <data>
-        <display>
-        <title>理解线性代数中的矩阵</title>
-        <pubTime>2018-09-18T15:21:46.000Z</pubTime>
-        
-        <tag>线性代数</tag>
-         
-         
-           
-             
-              <breadCrumb title="研" url="https://www.hijerry.cn/categories/%E7%A0%94/"/>
           
         </display>
     </data>
@@ -364,26 +404,6 @@
            
              
               <breadCrumb title="Web全栈" url="https://www.hijerry.cn/categories/Web%E5%85%A8%E6%A0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hijerry.cn//p/45987.html</loc>
-    <lastmod>2018-03-21T05:00:43.706Z</lastmod>
-    <data>
-        <display>
-        <title>摩尔投票法的应用和部分情况的证明</title>
-        <pubTime>2018-01-13T03:08:24.000Z</pubTime>
-        
-        <tag>leetcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程题" url="https://www.hijerry.cn/categories/%E7%BC%96%E7%A8%8B%E9%A2%98/"/>
           
         </display>
     </data>

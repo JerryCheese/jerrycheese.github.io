@@ -87,28 +87,6 @@
 
     
   <url>
-    <loc>https://hijerry.cn//p/35741.html</loc>
-    <lastmod>2019-03-22T11:56:29.878Z</lastmod>
-    <data>
-        <display>
-        <title>2019-CS224n-Assignment3</title>
-        <pubTime>2019-03-19T12:34:24.000Z</pubTime>
-        
-        <tag>NLP</tag>
-         
-        <tag>依赖解析</tag>
-         
-         
-           
-             
-              <breadCrumb title="研" url="https://hijerry.cn/categories/%E7%A0%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hijerry.cn//p/55002.html</loc>
     <lastmod>2019-03-22T11:56:29.878Z</lastmod>
     <data>
@@ -153,16 +131,16 @@
 
     
   <url>
-    <loc>https://hijerry.cn//p/54362.html</loc>
+    <loc>https://hijerry.cn//p/35741.html</loc>
     <lastmod>2019-03-22T11:56:29.878Z</lastmod>
     <data>
         <display>
-        <title>2019-CS224n-Assignment2</title>
-        <pubTime>2019-03-12T12:11:03.000Z</pubTime>
+        <title>2019-CS224n-Assignment3</title>
+        <pubTime>2019-03-19T12:34:24.000Z</pubTime>
         
         <tag>NLP</tag>
          
-        <tag>word2vec</tag>
+        <tag>依赖解析</tag>
          
          
            
@@ -175,16 +153,16 @@
 
     
   <url>
-    <loc>https://hijerry.cn//p/54554.html</loc>
-    <lastmod>2019-03-22T11:56:29.877Z</lastmod>
+    <loc>https://hijerry.cn//p/54362.html</loc>
+    <lastmod>2019-03-22T11:56:29.878Z</lastmod>
     <data>
         <display>
-        <title>2019-CS224n-Assignment1</title>
-        <pubTime>2019-03-12T03:14:07.000Z</pubTime>
+        <title>2019-CS224n-Assignment2</title>
+        <pubTime>2019-03-12T12:11:03.000Z</pubTime>
         
         <tag>NLP</tag>
          
-        <tag>Stanford</tag>
+        <tag>word2vec</tag>
          
          
            
@@ -209,6 +187,28 @@
         <tag>神经网络</tag>
          
         <tag>BP算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="研" url="https://hijerry.cn/categories/%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hijerry.cn//p/54554.html</loc>
+    <lastmod>2019-03-22T11:56:29.877Z</lastmod>
+    <data>
+        <display>
+        <title>2019-CS224n-Assignment1</title>
+        <pubTime>2019-03-12T03:14:07.000Z</pubTime>
+        
+        <tag>NLP</tag>
+         
+        <tag>Stanford</tag>
          
          
            
